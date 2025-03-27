@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="monitoramento.css">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <img id="logo"src="Images/logo.png" alt="">
+        <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_cinza1.png">Dashboard</button>
+        <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_cinza2.png">Monitoramento</button>
+        <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_cinza3.png">LogOut</button>
+    </div>
+    <div class="bloco_direita">
+        <div class="container">
+            <h2 style="color: grey;">Dashboard - Total</h2>
+            <canvas id="reciclagemChart"></canvas>
+            <br>
+        </div>
+        <div class="container2">
+            <h2 style="color: grey;">Dashboard - Rampas</h2>
+            <canvas id="grafico"></canvas>
+            <br>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
