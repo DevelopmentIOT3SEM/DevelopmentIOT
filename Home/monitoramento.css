@@ -9,31 +9,31 @@
 }
 
 body{
-    background-color: rgb(240, 244, 249);
+    background-color: #f4f9f9;
     display: flex;
+    padding: 0;
+    margin: 0;
 }
 
 .sidebar{
-    margin-top: 40px;
-    margin-left: 10px;
     margin-right: 100px;
     display: flex;
     flex-direction: column;
-    height: 500px;
+    height: 100vh;
     width: 15%;
-    background-color: white;
-    border-radius: 15px;
+    background-color: #b3dae8;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
+    position: fixed;
 }
 
 .botao_header{
     margin: 10px;
-    background-color: white;
+    background-color: transparent;
     border: none;
     border-radius: 15px;
     padding: 7px;
     font-size: 14px;
-    color: #99afba;
+    color: #004AAD;
     display: flex;
     font-size: 16px;
     justify-content: center;
@@ -71,33 +71,49 @@ body{
     display: flex;
 }
 .coluna{
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
 }
 h1{
     color: rgb(41, 31, 172);
 }
 .container {
-    width: 400px;
-    height: 300px;
+    width: 500px;
+    height: 400px;
     margin-top: 40px;
+    padding: 1px 10px;
     margin-left: 50px;
     margin-right: 10px;
     margin-bottom: 40px;
-    padding: 20px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
 }
 .container2 {
     width: 347px;
+    height: 250px;
     margin-top: 40px;
     margin-left: 50px;
     margin-right: 10px;
     margin-bottom: 40px;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
+}
+.container3{
+    width: 400px;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    padding: 1px 20px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
+}
+.container, .container2{
+    margin-left: 250px;
 }
 .caixa{
     width: 400px;
@@ -131,4 +147,79 @@ canvas {
     width: 150px;
     margin-left: 7%;
     margin-top: 10%;
+}
+* {
+    font-family: "Onest", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(240, 244, 249);
+    display: flex;
+}
+
+
+
+.conteudo {
+    margin-left: 17%;
+    width: 83%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.linha {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.grafico {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
+    text-align: center;
+}
+
+.maior {
+    width: 100%;
+}
+
+canvas {
+    max-width: 100%;
+}
+.botoes{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #b3dae8;
+    height: 5rem;
+    width: 100%;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
+    border-radius: 15px;
+}
+
+#bots{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 15px;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    transition: 0.3s;
+}
+
+#bots:hover{
+    background-color: #000000;
+    color: white;
 }

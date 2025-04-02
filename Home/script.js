@@ -1,8 +1,10 @@
-let tipoGrafico = 'line'; // Define o tipo do gráfico como linha
-let tipoGrafico2 = 'pie';
+let tipoGrafico = 'pie'; // Define o tipo do gráfico como linha
+let tipoGrafico2 = 'line';
+let tipoGrafico3 = 'bar';
 
 const ctx = document.getElementById('reciclagemChart').getContext('2d');
 const grafico = document.getElementById('grafico').getContext('2d');
+const grafico2 = document.getElementById('grafico2').getContext('2d');
 
 let dados = {
     labels: ['Vidro', 'Plástico', 'Metal', 'Margem de Erro'],
@@ -40,6 +42,27 @@ let chart = new Chart(ctx, {
 
 let tabela = new Chart(grafico, {
     type: tipoGrafico2,
+    data: dados, // Mantendo os dados originais
+    options: {
+        responsive: true,
+        scales: {
+            y: {
+                beginAtZero: true,
+                grid: {
+                    color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo Y
+                }
+            },
+            x: {
+                grid: {
+                    color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo X
+                }
+            }
+        }
+    }
+});
+
+let tabela2 = new Chart(grafico2, {
+    type: tipoGrafico3,
     data: dados, // Mantendo os dados originais
     options: {
         responsive: true,
