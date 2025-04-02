@@ -55,6 +55,7 @@ let tabela = new Chart(grafico, {
             x: {
                 grid: {
                     color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo X
+                    
                 }
             }
         }
@@ -121,3 +122,16 @@ function mudarCor() {
 //document.getElementById('texto_caixote2').textContent = dados.labels[1] + ": " + dados.datasets[0].data[1];
 //document.getElementById('texto_caixote3').textContent = dados.labels[2] + ": " + dados.datasets[0].data[2];
 //document.getElementById('texto_caixote4').textContent = dados.labels[3] + ": " + dados.datasets[0].data[3];
+
+
+function mudarMetal(){
+    chart.data.datasets[0].data = [
+       
+    ];
+    chart.update();
+    
+    tabela.data.datasets[0].data = [
+        
+    ];
+    tabela.update();
+}
