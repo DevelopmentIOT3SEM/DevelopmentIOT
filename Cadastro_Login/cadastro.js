@@ -1,15 +1,24 @@
-document.getElementById('cadastrar').addEventListener('click', () => {
-    const prim_nome = document.getElementById('prim_nome').value.trim();
-    const ult_nome = document.getElementById('ult_nome').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const senha = document.getElementById('senha').value.trim();
-    if(prim_nome === '' || ult_nome === '' || email === '' || senha === '') {
-        alert('Please enter below all fields');
-    } else {
-        localStorage.setItem('primeiroNome', prim_nome);
-        localStorage.setItem('ultimoNome', ult_nome);
-        localStorage.setItem('email', email);
-        localStorage.setItem('senha', senha);
-        window.location = 'monitoramento.html';
-    }
-});
+// Seleciona o elemento com a classe 'card'
+let card = document.querySelector('.card');
+
+// Seleciona o botão de login
+let loginButton = document.querySelector('.btnFacaLogin');
+
+// Seleciona o botão de cadastro
+let cadastroButton = document.querySelector('.cadastreSe');
+
+// Adiciona um evento de clique ao botão de login
+loginButton.onclick = () => {
+    // Remove a classe 'cadastroActive' do card
+    card.classList.remove('cadastroActive');
+    // Adiciona a classe 'loginActive' ao card
+    card.classList.add('loginActive');
+}
+
+// Adiciona um evento de clique ao botão de cadastro
+cadastroButton.onclick = () => {
+    // Remove a classe 'loginActive' do card
+    card.classList.remove('loginActive');
+    // Adiciona a classe 'cadastroActive' ao card
+    card.classList.add('cadastroActive');
+}

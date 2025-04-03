@@ -1,126 +1,204 @@
-* {
-    padding: 0;
+*{ /*Definições padrão e fonte*/
     margin: 0;
+    padding: 0; 
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Onest";
 }
-
-html,
-body {
-    display: grid;
-    height: 100%;
-    place-items: center;
-    background-color: #f0f4f9;
+.onest { /*Definição da fonte utilizada*/
+    font-family: "Onest", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
 }
-
-body {
-    width: 100%;
+body{
+    color: rgb(0, 0, 0);
 }
-
-.container {
-    position: relative;
+h2{
+    font-size: 58px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 32px;
+}
+form{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+form button{ /*Cor dos botões Entrar e Cadastrar*/
+    background: linear-gradient(90deg, #a3c1e5 0%, #647aa3 100%);
+}
+input, button{ /*Jeito que vai ficar os inputs e buttons da tela*/
+    border: none;
+    outline: none;
+    width: 400px;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+input{ /*Cor dos inputs e cor que sairá o texto*/
+    background-color: #56575a9a;
+    color: rgba(255,255, 255, 0.9);
+}
+input::placeholder{ /*Cor do placeholder que eu coloquei no HTML*/
+    color:rgba(255,255, 255, 0.5);
+}
+button{ /*Arrumando os botões e colocando transição*/
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 16px;
+    cursor: pointer;
+    color: #40394bcc;
+    transition: all 0.3s ease;
+}
+button:hover{ /*A transição propriamente dita é aqui*/
+    transform: translateY(-4px);
+}
+p{
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 32px ;
+}
+.containerPrincipal{
+    display: flex;
     width: 100%;
     height: 100vh;
-    background-size: cover;
-    display: flex;
+    background-color: #14151a;
     justify-content: center;
     align-items: center;
 }
-
-.container::after {
-    content: '';
+.card{
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 32px;
+    padding: 32px 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.esquerda,.direita{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+.formLogin, .fazerLogin, .formCadastro, .naotemCadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fazerLogin, .naotemCadastro{
     position: absolute;
+
+    h2,p{
+        color: rgba(46, 44, 44, 0.76);
+    }
+
+    button{
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1.8px solid #0E1C3B;
+    }
+}
+.card::after{
     width: 100%;
     height: 100%;
-    background: rgb(0, 0, 0, 0.4);
-    background-color: #ffffff;
+    content: "";
+    background-image: url(backg.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
 }
 
-.wrapper {
-    width: 300px;
-    padding: 20px;
-    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.15);
-    z-index: 99;
-    background: #ffffff8a;
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border: 1px solid #000000;
+.card.loginActive .fazerLogin {
+    opacity: 0;
+    pointer-events: none;
 }
 
-.input_box {
-    margin: 15px 0px;
+.card.loginActive .naotemCadastro{
+    transform: translateX(0);
+    transition: all .3s .3s;   
+    opacity: 1; 
 }
 
-input {
-    width: 100%;
-    padding: 12px 10px;
-    border: 0;
-    outline: none;
-    background: transparent;
-    color: #000000c9;
-    font-size: 12px;
-    letter-spacing: 1px;
-    border: 1px solid #000000;
-    border-radius: 5px;
+.card.loginActive .formLogin{
+    transition: all .3s .3s;
+    opacity: 1; 
 }
 
-input::placeholder {
-    color: #000000c9;
-    font-size: 12px;
-    letter-spacing: 1px;
+.card.loginActive .formCadastro{
+    opacity: 0;
+    pointer-events: none;
 }
 
-button {
-    border: 0;
-    outline: none;
-    width: 100%;
-    padding: 15px;
-    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.15);
-    border-radius: 7px;
+.card.loginActive::after{
+    transform: translateX(50%);
+}
+
+/* Estilos para quando o cadastro está ativo */
+.card.cadastroActive .naotemCadastro {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.cadastroActive .formLogin{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.cadastroActive::after{
+    transform: translateX(-50%);
+}
+
+.card.cadastroActive .fazerLogin{
+    transform: translateX(0);
+    transition: all .3s .3s;   
+    opacity: 1; 
+}
+
+.card.cadastroActive .formCadastro{
+    transition: all .3s .3s;
+    opacity: 1; 
+}
+
+/* Transições */
+.card::after {
+    transition: all .5s;
+}
+
+.naotemCadastro {
+    transition: all .3s 0;
+    transform: translateX(200%);
+    opacity: 0;
+}
+
+.fazerLogin {
+    transition: all .3s 0;
+    transform: translateX(-200%);
+    opacity: 0;
+}
+
+.formLogin {
+    opacity: 0;
+    transition: all .3s 0;
+}
+
+.formCadastro {
+    opacity: 0;
+    transition: all .3s 0;
+}
+#login{
+    color: #0E1C3B;
+}
+#entrar{
     color: white;
-    background: #3012dd;
-    transition: background 0.3s;
-    cursor: pointer;
 }
 
-button:hover {
-    background: #ffffffe5;
-    color: #3012dd;
-}
-
-.card {
-    z-index: 99;
-    color: #ffffff;
-    text-align: center;
-    margin-top: -100px;
-}
-
-#greetings {
-    margin-bottom: 20px;
-    font-weight: 300;
-}
-
-b {
-    font-weight: 500;
-    color: yellow;
-}
-
-.sla{
-    margin-top: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-}
-
-p{
-    color: rgb(0, 0, 0);
-    margin-right: 10px;
-}
-
-a{
-    color: blue;
-    text-decoration: none;
-}
-h1{
-    color: #3012dd;
-}
