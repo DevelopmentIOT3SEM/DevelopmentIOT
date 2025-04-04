@@ -1,0 +1,36 @@
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    width: 100%;
+    height: 585px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.background1 {
+    background-image: url('fundo_home.png');
+}
+
+.background2 {
+    background-image: url('fundo_home2.png');
+}
+  .custom-text {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .custom-text span {
+    color: #007bff;
+  }
+  .custom-lines {
+    width: 100%;
+    height: 150px;
+    background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+}
