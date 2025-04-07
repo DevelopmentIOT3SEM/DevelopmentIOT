@@ -39,12 +39,6 @@ body{
     background-color: #010b22;
 }
 
-.imagem-container {
-    width: 139px;
-    height: 100px; 
-    overflow: hidden;
-}
-
 .botao_header{
     margin: 10px;
     background-color: transparent;  
@@ -153,7 +147,7 @@ body{
     width: 100%; 
     height: 350px; 
 }
-.grafico {
+.grafico1, .grafico2, .grafico3 {
     flex: 1;
     background-color: #d0e1f2;
     padding: 20px;
@@ -161,91 +155,6 @@ body{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
     text-align: center;
     max-height: 290px; 
-}
-
-.bloco_direita{
-    display: flex;
-}
-
-.coluna{
-    display: flex;
-    flex-direction: row;
-}
-
-.container {
-    width: 200px;
-    height: 400px;
-    margin-top: 40px;
-    padding: 1px 10px;
-    margin-left: 50px;
-    margin-right: 10px;
-    margin-bottom: 40px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
-}
-.container2 {
-    width: 347px;
-    height: 250px;
-    margin-top: 40px;
-    margin-left: 50px;
-    margin-right: 10px;
-    margin-bottom: 40px;
-    padding: 10px 20px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
-}
-.container3{
-    width: 400px;
-    margin-top: 40px;
-    margin-left: 50px;
-    margin-right: 10px;
-    margin-bottom: 40px;
-    padding: 1px 20px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.142);
-}
-.container, .container2{
-    margin-left: 250px;
-}
-.caixa{
-    width: 400px;
-    margin: 20px auto;
-    background: rgb(0, 0, 0);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: white;
-    border: 1px solid grey;
-}
-
-.botao_dashboard {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    border: 2px solid blue;
-    border-radius: 5px;
-    background-color: #000000;
-    color: white;
-    transition: 0.3s;
-}
-.botao_dashboard:hover {
-    background-color: rgb(23, 23, 108);
-    color: white;
-}
-
-.maior {
-    width: 100%;
-    height: 250px; 
-}
-
-
-canvas {
-    max-width: 100%;
-    height: 100% !important;
 }
 
 h1{
@@ -295,7 +204,14 @@ h1{
     width: 100%;
     left: 0;
 }
+.grafico1{
+    padding: 20px 0;
+    
+}
 
-
-
-
+.grafico3, .grafico1, .grafico2{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}

@@ -19,36 +19,51 @@
             <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_azul2.png">Monitoramento</button>
             <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_azul3.png">LogOut</button>
         </div>
-        <div class = "botoes">
+        <div class="botoes">
             <button class="botao-1" id="bots" style="cursor: text;">Filtrar por:</button>
+        
             <div class="dropdown">
-                <button class="botao-1" id="bots">Filtrar por Material</button>
+                <button class="botao-1" id="bots" onclick="trocarMaterial()">Filtrar por Material</button>
                 <div class="dropdown-content">
-                  <a href="#">Madeira</a>
-                  <a href="#">Metal</a>
-                  <a href="#">Plástico</a>
+                    <a href="#">Madeira</a>
+                    <a href="#">Metal</a>
+                    <a href="#">Plástico</a>
                 </div>
-              </div>
-            <button class="botao-1" id="bots" onclick="trocarTurno()">Todos os Turnos</button>
-            <button class="botao-1" id="bots" onclick="trocarData()">Filtrar Data</button>
+            </div>
+        
+            <div class="dropdown">
+                <button class="botao-1" id="bots" onclick="trocarTurno()">Todos os Turnos</button>
+                <div class="dropdown-content">
+                    <a href="#">Manhã</a>
+                    <a href="#">Tarde</a>
+                    <a href="#">Noite</a>
+                </div>
+            </div>
+        
+            <div class="dropdown">
+                <button class="botao-1" id="bots" onclick="trocarData()">Filtrar Data</button>
+                <div class="dropdown-content">
+                    <input type="date" id="dataFiltro">
+                </div>
+            </div>
         </div>
     </div>
 
     <div class="conteudo">
         <div class="linha">
-            <div class="grafico">
+            <div class="grafico1">
                 <h2>Quantidade Total</h2>
-                <canvas id="reciclagemChart"></canvas>
+                <canvas id="sub-grafico1"></canvas>
             </div>
-            <div class="grafico">
+            <div class="grafico2">
                 <h2>Comparação de Eficiência</h2>
-                <canvas id="grafico2"></canvas>
+                <canvas id="sub-grafico2"></canvas>
             </div>
         </div>
         <div class="linha">
-            <div class="grafico maior">
+            <div class="grafico3">
                 <h2>Quantidade nas Rampas</h2>
-                <canvas id="grafico"></canvas>
+                <canvas id="sub-grafico3" width="920px" height="230px"></canvas>
             </div>
         </div>
     </div>

@@ -22,6 +22,10 @@ body {
 .background2 {
     background-image: url('fundo_home2.png');
 }
+
+.background3 {
+  background-image: url('fundo_home3.png');
+}
   .custom-text {
     font-size: 3rem;
     font-weight: bold;

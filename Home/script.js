@@ -1,60 +1,60 @@
-let tipoGrafico = 'pie'; // Define o tipo do gráfico como linha
-let tipoGrafico2 = 'line';
-let tipoGrafico3 = 'bar';
+let tipoGrafico1 = 'pie';
+let tipoGrafico2 = 'bar';
+let tipoGrafico3 = 'line';
 
-const ctx = document.getElementById('reciclagemChart').getContext('2d');
-const grafico = document.getElementById('grafico').getContext('2d');
-const grafico2 = document.getElementById('grafico2').getContext('2d');
+const grafico1 = document.getElementById('sub-grafico1').getContext('2d');
+const grafico2 = document.getElementById('sub-grafico2').getContext('2d');
+const grafico3 = document.getElementById('sub-grafico3').getContext('2d');
 
 let dados = {
     labels: ['Vidro', 'Plástico', 'Metal', 'Margem de Erro'],
     datasets: [{
         label: 'Quantidade Processada',
         data: [120, 200, 80, 15],
-        borderColor: 'blue', // Cor da linha
-        backgroundColor: 'rgba(0, 0, 255, 0.2)', // Cor de fundo semitransparente
-        fill: true, // Ativa o preenchimento abaixo da linha
-        tension: 0.3, // Suaviza as curvas da linha
-        borderWidth: 2 // Define a espessura da linha
+        borderColor: 'blue',
+        backgroundColor: 'rgba(0, 0, 255, 0.2)',
+        fill: true,
+        tension: 0.3,
+        borderWidth: 2
     }]
 };
 
-let chart = new Chart(ctx, {
-    type: tipoGrafico,
-    data: dados, // Mantendo os dados originais
+let graficooo1 = new Chart(grafico1, {
+    type: tipoGrafico1,
+    data: dados,
     options: {
         responsive: true,
         scales: {
             y: {
                 beginAtZero: true,
                 grid: {
-                    color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo Y
+                    color: 'rgba(200, 200, 200, 0.2)'
                 }
             },
             x: {
                 grid: {
-                    color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo X
+                    color: 'rgba(200, 200, 200, 0.2)'
                 }
             }
         }
     }
 });
 
-let tabela = new Chart(grafico, {
+let graficooo2 = new Chart(grafico2, {
     type: tipoGrafico2,
-    data: dados, // Mantendo os dados originais
+    data: dados,
     options: {
         responsive: true,
         scales: {
             y: {
                 beginAtZero: true,
                 grid: {
-                    color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo Y
+                    color: 'rgba(200, 200, 200, 0.2)'
                 }
             },
             x: {
                 grid: {
-                    color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo X
+                    color: 'rgba(200, 200, 200, 0.2)'
                     
                 }
             }
@@ -62,47 +62,27 @@ let tabela = new Chart(grafico, {
     }
 });
 
-let tabela2 = new Chart(grafico2, {
+let graficooo3 = new Chart(grafico3, {
     type: tipoGrafico3,
-    data: dados, // Mantendo os dados originais
+    data: dados,
     options: {
-        responsive: true,
+        responsive: false,
         scales: {
             y: {
                 beginAtZero: true,
                 grid: {
-                    color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo Y
+                    color: 'rgba(200, 200, 200, 0.2)'
                 }
             },
             x: {
                 grid: {
-                    color: 'rgba(200, 200, 200, 0.2)' // Cor da grade do eixo X
+                    color: 'rgba(200, 200, 200, 0.2)'
                 }
             }
         }
     }
 });
 
-// Atualizar os dados do gráfico dinamicamente
-function atualizarDados() {
-    chart.data.datasets[0].data = [
-        Math.floor(Math.random() * 200),  // Vidro
-        Math.floor(Math.random() * 200),  // Plástico
-        Math.floor(Math.random() * 100),  // Outros
-        Math.floor(Math.random() * 20)    // Margem de erro
-    ];
-    chart.update();
-    
-    tabela.data.datasets[0].data = [
-        Math.floor(Math.random() * 200),  // Vidro
-        Math.floor(Math.random() * 200),  // Plástico
-        Math.floor(Math.random() * 100),  // Outros
-        Math.floor(Math.random() * 20)    // Margem de erro
-    ];
-    tabela.update();
-}
-
-//Mudar abas das páginas
 function mudarMonitoramento(){
     window.location.href = "dashboard.html"
 }
@@ -118,11 +98,6 @@ function mudarCor() {
     let corAleatoria = cores[Math.floor(Math.random() * cores.length)];
     document.body.style.backgroundColor = corAleatoria;
 }
-//document.getElementById('texto_caixote').textContent = dados.labels[0] + ": " + dados.datasets[0].data[0];
-//document.getElementById('texto_caixote2').textContent = dados.labels[1] + ": " + dados.datasets[0].data[1];
-//document.getElementById('texto_caixote3').textContent = dados.labels[2] + ": " + dados.datasets[0].data[2];
-//document.getElementById('texto_caixote4').textContent = dados.labels[3] + ": " + dados.datasets[0].data[3];
-
 
 function mudarMetal(){
     chart.data.datasets[0].data = [
@@ -134,4 +109,19 @@ function mudarMetal(){
         
     ];
     tabela.update();
+}
+
+function trocarMaterial() {
+    let dropdown = event.target.nextElementSibling;
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+}
+
+function trocarTurno() {
+    let dropdown = event.target.nextElementSibling;
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
+}
+
+function trocarData() {
+    let dropdown = event.target.nextElementSibling;
+    dropdown.style.display = (dropdown.style.display === "block") ? "none" : "block";
 }
