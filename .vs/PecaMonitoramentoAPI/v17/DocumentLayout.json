@@ -1,0 +1,348 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\repositories\\pecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\pecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\repositories\\interfaces\\ipecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\ipecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\repositories\\interfaces\\imonitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\imonitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\services\\interfaces\\imonitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\interfaces\\imonitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\services\\interfaces\\ipecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\interfaces\\ipecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\services\\pecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\pecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\services\\monitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\monitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\controllers\\pecacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\pecacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\data\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:data\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\controllers\\monitoramentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\monitoramentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\models\\dto\\createpecadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\createpecadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\models\\dto\\createmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\createmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\models\\dto\\readmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\readmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\models\\dto\\readpecadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\readpecadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\models\\monitoramento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\monitoramento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\models\\peca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\peca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-04-09T14:18:00.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IMonitoramentoRepository.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Repositories\\Interfaces\\IMonitoramentoRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IMonitoramentoRepository.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Repositories\\Interfaces\\IMonitoramentoRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IMonitoramentoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:05:13.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PecaRepository.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Repositories\\PecaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\PecaRepository.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Repositories\\PecaRepository.cs",
+              "RelativeToolTip": "Repositories\\PecaRepository.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwBQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:06:26.387Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-09T14:21:23.683Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAwwA8AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:11:22.058Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IPecaService.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Services\\Interfaces\\IPecaService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IPecaService.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Services\\Interfaces\\IPecaService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IPecaService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:08:01.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IPecaRepository.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Repositories\\Interfaces\\IPecaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IPecaRepository.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Repositories\\Interfaces\\IPecaRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IPecaRepository.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA3wAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:05:02.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IMonitoramentoService.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Services\\Interfaces\\IMonitoramentoService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IMonitoramentoService.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Services\\Interfaces\\IMonitoramentoService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IMonitoramentoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:08:11.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PecaService.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Services\\PecaService.cs",
+              "RelativeDocumentMoniker": "Services\\PecaService.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Services\\PecaService.cs",
+              "RelativeToolTip": "Services\\PecaService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:08:44.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "MonitoramentoService.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Services\\MonitoramentoService.cs",
+              "RelativeDocumentMoniker": "Services\\MonitoramentoService.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Services\\MonitoramentoService.cs",
+              "RelativeToolTip": "Services\\MonitoramentoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:08:54.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PecaController.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Controllers\\PecaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PecaController.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Controllers\\PecaController.cs",
+              "RelativeToolTip": "Controllers\\PecaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:10:03.08Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DapperContext.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Data\\DapperContext.cs",
+              "RelativeDocumentMoniker": "Data\\DapperContext.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Data\\DapperContext.cs",
+              "RelativeToolTip": "Data\\DapperContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T14:21:03.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "MonitoramentoController.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Controllers\\MonitoramentoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MonitoramentoController.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Controllers\\MonitoramentoController.cs",
+              "RelativeToolTip": "Controllers\\MonitoramentoController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:10:14.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ReadMonitoramentoDTO.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\DTO\\ReadMonitoramentoDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\ReadMonitoramentoDTO.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\DTO\\ReadMonitoramentoDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\ReadMonitoramentoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:03:57.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CreateMonitoramentoDTO.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\DTO\\CreateMonitoramentoDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\CreateMonitoramentoDTO.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\DTO\\CreateMonitoramentoDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\CreateMonitoramentoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:03:46.302Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ReadPecaDTO.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\DTO\\ReadPecaDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\ReadPecaDTO.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\DTO\\ReadPecaDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\ReadPecaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:03:35.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CreatePecaDTO.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\DTO\\CreatePecaDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\CreatePecaDTO.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\DTO\\CreatePecaDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\CreatePecaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:03:25.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Monitoramento.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\Monitoramento.cs",
+              "RelativeDocumentMoniker": "Models\\Monitoramento.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\Monitoramento.cs",
+              "RelativeToolTip": "Models\\Monitoramento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:02:23.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Peca.cs",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\Peca.cs",
+              "RelativeDocumentMoniker": "Models\\Peca.cs",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Models\\Peca.cs",
+              "RelativeToolTip": "Models\\Peca.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T15:01:27.647Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
