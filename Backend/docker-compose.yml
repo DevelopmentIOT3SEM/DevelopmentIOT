@@ -34,6 +34,18 @@ services:
     depends_on:
       - postgres
 
+  backend:
+    build:
+      context: .
+    container_name: pecas_api
+    restart: always
+    ports:
+      - "5271:8080"
+    depends_on:
+      - postgres
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
 volumes:
   postgres_data:
   nodered_data:

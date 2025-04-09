@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("34e56be9-dd15-48b1-b477-f9e8bf44e763")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PecaMonitoramentoAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3574317f21d62e9ebfc7d7c6384009a2cfac5361")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a54e509673cc7d9c19e7964f4fc0e7d5337e014")]
 [assembly: System.Reflection.AssemblyProductAttribute("PecaMonitoramentoAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PecaMonitoramentoAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

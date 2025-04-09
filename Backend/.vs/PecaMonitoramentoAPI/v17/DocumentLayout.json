@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\backend\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\backend\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\faculdade\\3sem\\projetointegrador\\pecamonitoramentoapi\\backend\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,12 +43,64 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-09T18:14:31.571Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "docker-compose.yml",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\docker-compose.yml",
+              "RelativeDocumentMoniker": "docker-compose.yml",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\docker-compose.yml",
+              "RelativeToolTip": "docker-compose.yml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwC4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-04-09T18:13:08.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": ".dockerignore",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\.dockerignore",
+              "RelativeDocumentMoniker": ".dockerignore",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\.dockerignore",
+              "RelativeToolTip": ".dockerignore",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-09T18:12:52.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-09T18:11:56.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "README.md",
               "DocumentMoniker": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\README.md",
               "RelativeDocumentMoniker": "README.md",
               "ToolTip": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\README.md",
               "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAKUAAAAAAAAAAAAAAK0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
               "WhenOpened": "2025-04-09T17:56:41.288Z",
               "EditorCaption": ""
