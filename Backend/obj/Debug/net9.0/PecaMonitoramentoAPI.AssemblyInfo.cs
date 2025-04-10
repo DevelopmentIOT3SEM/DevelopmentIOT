@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PecaMonitoramentoAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a54e509673cc7d9c19e7964f4fc0e7d5337e014")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7334d46ff484a5640c10c90b7799424c944bbcbc")]
 [assembly: System.Reflection.AssemblyProductAttribute("PecaMonitoramentoAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PecaMonitoramentoAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
