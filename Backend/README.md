@@ -78,6 +78,13 @@ CREATE TABLE monitoramento (
     data_hora_monitoramento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     erros INT
 );
+
+CREATE TABLE Usuarios (
+    Id SERIAL PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    SenhaHash VARCHAR(60) NOT NULL
+);
 ```
 
 ---
