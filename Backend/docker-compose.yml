@@ -1,0 +1,51 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: pecasdb
+    ports:
+      - "5433:5432"  # Porta alterada
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5052:80"
+    depends_on:
+      - postgres
+
+  nodered:
+    image: nodered/node-red
+    container_name: nodered
+    ports:
+      - "1880:1880"
+    volumes:
+      - nodered_data:/data
+    depends_on:
+      - postgres
+
+  backend:
+    build:
+      context: .
+    container_name: pecas_api
+    restart: always
+    ports:
+      - "5271:8080"
+    depends_on:
+      - postgres
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+
+volumes:
+  postgres_data:
+  nodered_data:

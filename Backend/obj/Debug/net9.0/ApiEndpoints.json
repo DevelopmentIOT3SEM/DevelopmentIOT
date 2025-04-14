@@ -1,0 +1,118 @@
+[
+  {
+    "ContainingType": "PecaMonitoramentoAPI.Controllers.MonitoramentoController",
+    "Method": "GetAll",
+    "RelativePath": "api/Monitoramento",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PecaMonitoramentoAPI.Controllers.MonitoramentoController",
+    "Method": "Create",
+    "RelativePath": "api/Monitoramento",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PecaMonitoramentoAPI.DTOs.CreateMonitoramentoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PecaMonitoramentoAPI.Controllers.MonitoramentoController",
+    "Method": "GetById",
+    "RelativePath": "api/Monitoramento/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PecaMonitoramentoAPI.Controllers.MonitoramentoController",
+    "Method": "Delete",
+    "RelativePath": "api/Monitoramento/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PecaMonitoramentoAPI.Controllers.PecaController",
+    "Method": "GetAll",
+    "RelativePath": "api/Peca",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PecaMonitoramentoAPI.Controllers.PecaController",
+    "Method": "Create",
+    "RelativePath": "api/Peca",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PecaMonitoramentoAPI.DTOs.CreatePecaDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PecaMonitoramentoAPI.Controllers.PecaController",
+    "Method": "GetById",
+    "RelativePath": "api/Peca/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PecaMonitoramentoAPI.Controllers.PecaController",
+    "Method": "Delete",
+    "RelativePath": "api/Peca/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
