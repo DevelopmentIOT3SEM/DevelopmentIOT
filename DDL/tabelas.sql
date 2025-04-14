@@ -16,3 +16,10 @@ CREATE TABLE Monitoramento (
     erros INT NOT NULL,
     CONSTRAINT fk_peca FOREIGN KEY(id_peca) REFERENCES Peca(id_peca)
 );
+
+CREATE TABLE Usuarios (
+    Id SERIAL PRIMARY KEY,
+    Nome VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL UNIQUE,
+    SenhaHash VARCHAR(60) NOT NULL
+);
