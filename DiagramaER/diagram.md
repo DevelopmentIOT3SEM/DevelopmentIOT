@@ -10,7 +10,8 @@ erDiagram
      int id_monitoramento PK
      int id_peca FK
      boolean esteira_on_off
-     boolean atuador_on_off
+     boolean atuador1_on_off
+     boolean atuador2_on_off 
      int qtde_r1
      int qtde_r2
      int qtde_descartada
