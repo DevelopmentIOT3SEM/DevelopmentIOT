@@ -31,6 +31,7 @@ flowchart TD
 ```bash
 git https://github.com/DevelopmentIOT3SEM/DevelopmentIOT.git
 cd DevelopmentIOT
+cd Backend
 ```
 
 ### 2. Subir o banco com Docker
@@ -69,7 +70,8 @@ CREATE TABLE monitoramento (
     id_monitoramento SERIAL PRIMARY KEY,
     id_peca INT REFERENCES peca(id_peca),
     esteira_on_off BOOLEAN,
-    atuador_on_off BOOLEAN,
+    Atuador1OnOff BOOLEAN,
+    Atuador2OnOff BOOLEAN,
     qtde_r1 INT,
     qtde_r2 INT,
     qtde_descartada INT,
