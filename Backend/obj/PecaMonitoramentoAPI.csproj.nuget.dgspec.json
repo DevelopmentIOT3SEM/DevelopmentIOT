@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\PecaMonitoramentoAPI.csproj": {}
+    "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj": {}
   },
   "projects": {
-    "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\PecaMonitoramentoAPI.csproj": {
+    "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\PecaMonitoramentoAPI.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
         "projectName": "PecaMonitoramentoAPI",
-        "projectPath": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\PecaMonitoramentoAPI.csproj",
+        "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Faculdade\\3SEM\\ProjetoIntegrador\\PecaMonitoramentoAPI\\Backend\\obj\\",
+        "outputPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,9 +51,17 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "BCrypt.Net-Core": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
@@ -70,6 +78,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[8.1.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.8.0, )"
             }
           },
           "imports": [

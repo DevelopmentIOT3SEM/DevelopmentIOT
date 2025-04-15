@@ -1,5 +1,8 @@
 using System.Data;
+using System.Text;
 using Npgsql;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 using PecaMonitoramentoAPI.Repositories;
 using PecaMonitoramentoAPI.Repositories.Interfaces;
 using PecaMonitoramentoAPI.Services;
@@ -15,13 +18,34 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddScoped<IDbConnection>(sp => new NpgsqlConnection(connectionString));
 builder.Services.AddSingleton<DapperContext>();
 
+// Configuração do JWT
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"])),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero
+    };
+});
+
 // Repositórios
 builder.Services.AddScoped<IPecaRepository, PecaRepository>();
 builder.Services.AddScoped<IMonitoramentoRepository, MonitoramentoRepository>();
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Novo repositório
 
 // Serviços
 builder.Services.AddScoped<IPecaService, PecaService>();
 builder.Services.AddScoped<IMonitoramentoService, MonitoramentoService>();
+builder.Services.AddScoped<IAuthService, AuthService>(); // Novo serviço
 
 // Controller e API
 builder.Services.AddControllers();
@@ -39,6 +63,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// IMPORTANTE: UseAuthentication antes de UseAuthorization
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
