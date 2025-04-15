@@ -34,6 +34,7 @@ def get_dados():
                 acertos_algoritmo = int(total_processado * np.random.uniform(0.88, 0.98))
                 erro_plastico_como_metal = np.random.randint(0, mal_separado + 1)
                 erro_metal_como_plastico = mal_separado - erro_plastico_como_metal
+                umidade = np.random.randint(0, 8)
 
                 linhas.append({
                     'data': data.strftime('%Y-%m-%d'),
@@ -49,7 +50,8 @@ def get_dados():
                     'tempo_total_disponivel': tempo_total_disp,
                     'acertos_algoritmo': acertos_algoritmo,
                     'erro_plastico_como_metal': erro_plastico_como_metal,
-                    'erro_metal_como_plastico': erro_metal_como_plastico
+                    'erro_metal_como_plastico': erro_metal_como_plastico,
+                    'umidade': umidade
                 })
 
 

@@ -1,11 +1,3 @@
-let tipoGrafico1 = 'pie';
-let tipoGrafico2 = 'bar';
-let tipoGrafico3 = 'line';
-
-const grafico1 = document.getElementById('sub-grafico1').getContext('2d');
-const grafico2 = document.getElementById('sub-grafico2').getContext('2d');
-const grafico3 = document.getElementById('sub-grafico3').getContext('2d');
-
 async function carregarDados(){
     const response = await fetch('http://127.0.0.1:5000/api/dados');
     const dados = await response.json()
@@ -71,6 +63,14 @@ async function carregarDados(){
 
           agrupado[turno][material].push(taxaErro);
     });
+
+    //Gráfico de Dispersão
+    const pontosDispersao = dados
+      .filter(item => item.total_processado > 0 && item.umidade !== null)
+      .map(item => ({
+        x: item.umidade,
+        y: (item.mal_separado / item.total_processado) * 100
+      }));
   
     // Agora criamos o gráfico
     gerarGraficoBarrasEficiência(eficienciaPorTurno);
@@ -78,6 +78,11 @@ async function carregarDados(){
     gerarGraficoPizzaErros(erroPlasticoComoMetal, erroMetalComoPlastico)
     gerarhistograma(labels, bins)
     gerarheatmap(agrupado, turnos, materiais);
+    gerarGraficoDispersao(pontosDispersao)
+
+    console.log("Heatmap data (z):", z);
+  console.log("Turnos (y-axis):", turnos);
+  console.log("Materiais (x-axis):", materiais);
 }
     
     //Função do gráfico da comparação de eficiência
@@ -200,7 +205,7 @@ async function carregarDados(){
             }]
             },
             options: {
-            responsive: true,
+            responsive: false,
             plugins: {
                 title: {
                 display: true,
@@ -252,31 +257,86 @@ async function carregarDados(){
       function gerarheatmap(agrupado, turnos, materiais){
         const z = turnos.map(turno => {
           return materiais.map(material => {
-              const lista = agrupado[turno][material];
-              if (lista.length === 0) return null;
-              const media = lista.reduce((a, b) => a + b, 0) / lista.length;
-              return parseFloat(media.toFixed(2));
+            const lista = agrupado[turno][material];
+            if (lista.length === 0) return null;
+            const media = lista.reduce((a, b) => a + b, 0) / lista.length;
+            return parseFloat(media.toFixed(2));
           });
-      });
+        });
   
-      const data = [{
+        const data = [{
           z: z,
           x: materiais,
           y: turnos,
           type: 'heatmap',
           colorscale: 'Reds',
           hoverongaps: false
-      }];
+        }];
   
-      const layout = {
+        const layout = {
           title: 'Taxa de Erro (%) por Turno e Tipo de Material',
-          xaxis: { title: 'Tipo de Material' },
-          yaxis: { title: 'Turno' },
-          margin: { t: 50 }
-      };
+          xaxis: { title: 'Tipo de Material',
+                   showgrid: false,
+           },
+          yaxis: { title: 'Turno',
+                   showgrid: false,
+           },
+           plot_bgcolor: 'rgba(0,0,0,0)', // Transparent plot background
+           paper_bgcolor: 'rgba(0,0,0,0)',
+        };
   
-      Plotly.newPlot('heatmap', data, layout);
-    }
+        Plotly.newPlot('heatmap', data, layout);
+      }
+
+      //Gráfico de dispersão
+      function gerarGraficoDispersao(pontos) {
+        const ctx = document.getElementById('graficoDispersao').getContext('2d');
+        new Chart(ctx, {
+          type: 'scatter',
+          data: {
+            datasets: [{
+              label: 'Umidade x Taxa de Erro (%)',
+              data: pontos,
+              backgroundColor: 'rgba(255, 99, 132, 1)'
+            }]
+          },
+          options: {
+            responsive: false,
+            plugins: {
+              title: {
+                display: true,
+                text: 'Correlação: Umidade dos Materiais vs Taxa de Erro',
+                font: {
+                  size: 18
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: function(context) {
+                    return `Umidade: ${context.raw.x}%, Erro: ${context.raw.y.toFixed(2)}%`;
+                  }
+                }
+              }
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: 'Umidade (%)'
+                }
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: 'Taxa de Erro (%)'
+                },
+                beginAtZero: true,
+                max: 100
+              }
+            }
+          }
+        });
+      }
 carregarDados(); //Puxa a função para puxar todos os dados dos gráficos
 
 
