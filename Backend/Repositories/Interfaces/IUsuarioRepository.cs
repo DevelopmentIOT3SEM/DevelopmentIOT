@@ -6,5 +6,7 @@ namespace PecaMonitoramentoAPI.Repositories.Interfaces
     {
         Task<Usuario> GetByEmail(string email);
         Task<int> Create(Usuario usuario);
+        Task<Usuario> GetById(int id);
+
     }
 }

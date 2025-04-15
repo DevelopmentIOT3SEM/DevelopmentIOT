@@ -29,5 +29,12 @@ namespace PecaMonitoramentoAPI.Repositories
 
             return await _db.ExecuteScalarAsync<int>(sql, usuario);
         }
+
+        public async Task<Usuario> GetById(int id)
+        {
+            const string sql = "SELECT * FROM Usuarios WHERE Id = @Id";
+            return await _db.QueryFirstOrDefaultAsync<Usuario>(sql, new { Id = id });
+        }
+
     }
 }

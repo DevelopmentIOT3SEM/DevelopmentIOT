@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PecaMonitoramentoAPI.Models.DTO;
+using PecaMonitoramentoAPI.Repositories.Interfaces;
 using PecaMonitoramentoAPI.Services.Interfaces;
+using System.Security.Claims;
 
 namespace PecaMonitoramentoAPI.Controllers
 {
@@ -9,10 +12,12 @@ namespace PecaMonitoramentoAPI.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _authService;
+        private readonly IUsuarioRepository _usuarioRepository;
 
-        public AuthController(IAuthService authService)
+        public AuthController(IAuthService authService, IUsuarioRepository usuarioRepository)
         {
             _authService = authService;
+            _usuarioRepository = usuarioRepository;
         }
 
         [HttpPost("login")]
@@ -41,6 +46,30 @@ namespace PecaMonitoramentoAPI.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+
+        [HttpGet("me")]
+        [Authorize]
+        public async Task<IActionResult> GetMe()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (userIdClaim == null || !int.TryParse(userIdClaim, out int userId))
+                return Unauthorized("Token inválido.");
+
+            var usuario = await _usuarioRepository.GetById(userId);
+
+            if (usuario == null)
+                return NotFound("Usuário não encontrado.");
+
+            var usuarioDTO = new UsuarioDTO
+            {
+                
+                Nome = usuario.Nome,
+                Email = usuario.Email
+            };
+
+            return Ok(usuarioDTO);
         }
 
     }
