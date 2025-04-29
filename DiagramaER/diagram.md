@@ -33,7 +33,7 @@ erDiagram
 
     Peca ||--o{ Producao : "1:N"
     Sensor ||--o{ Monitoramento : "1:N"
-    Erros ||--o{ Monitoramento : "1:N"
+    
 
 
 ```
