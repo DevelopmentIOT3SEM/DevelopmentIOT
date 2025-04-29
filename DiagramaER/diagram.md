@@ -1,24 +1,39 @@
 ```mermaid
 erDiagram
 
-   Peca {
-     int id_peca PK
-     varchar tipo_peca
-   }
+    Peca {
+      int Id PK
+      varchar Tipo
+    }
 
-   Monitoramento {
-     int id_monitoramento PK
-     int id_peca FK
-     boolean esteira_on_off
-     boolean atuador1_on_off
-     boolean atuador2_on_off 
-     int qtde_r1
-     int qtde_r2
-     int qtde_descartada
-     timestamp data_hora_monitoramento
-     int erros
-   }
+    Sensor {
+      int Id PK
+      varchar Nome
+    }
 
-   
-   Peca ||--o{ Monitoramento : "N:1"
+    Erros {
+      int Id PK
+      varchar Codigo
+      timestamp Timestamp
+    }
+
+    Monitoramento {
+      int Id PK
+      int IdSensor FK
+      boolean Status
+      timestamp Timestamp
+    }
+
+    Producao {
+      int Id PK
+      int IdPeca FK
+      int Rampa
+      timestamp Timestamp
+    }
+
+    Peca ||--o{ Producao : "1:N"
+    Sensor ||--o{ Monitoramento : "1:N"
+    Erros ||--o{ Monitoramento : "1:N"
+
+
 ```
