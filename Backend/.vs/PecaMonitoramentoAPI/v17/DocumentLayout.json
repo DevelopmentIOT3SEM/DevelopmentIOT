@@ -1,137 +1,197 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\",
+  "WorkspaceRootPath": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\repositories\\pecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\pecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\repositories\\monitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\monitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\repositories\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\controllers\\monitoramentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\monitoramentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\controllers\\pecacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\pecacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\repositories\\interfaces\\ipecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\ipecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\repositories\\interfaces\\imonitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\imonitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\services\\monitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\monitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\dto\\registrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\registrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\registrodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\dto\\createpecadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\createpecadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\dto\\createmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\createmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\services\\interfaces\\imonitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\controllers\\producaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\producaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\producaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\producaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\interfaces\\iproducaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\interfaces\\iproducaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\interfaces\\imonitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\interfaces\\imonitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\services\\interfaces\\ipecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\interfaces\\ipecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\interfaces\\ipecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\services\\pecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\interfaces\\isensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\interfaces\\isensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\producaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\producaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\interfaces\\iproducaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\iproducaorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\readsensordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\readsensordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\readproducaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\readproducaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\createproducaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\createproducaodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\producao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\producao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\sensorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\sensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\sensorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\sensorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\sensorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\interfaces\\isensorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\isensorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\interfaces\\imonitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\imonitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\sensor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\controllers\\pecacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\pecacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\pecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\pecaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\pecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\pecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\monitoramento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\monitoramento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\dto\\readmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\readmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\interfaces\\ipecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\ipecarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\data\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:data\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\readpecadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\readpecadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\models\\peca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\peca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\peca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\controllers\\monitoramentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\monitoramentocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\services\\monitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:services\\monitoramentoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\monitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\monitoramentorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\readmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\readmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\createmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\createmonitoramentodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\monitoramento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\monitoramento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\data\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:data\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\repositories\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:repositories\\interfaces\\iusuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\models\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:models\\dto\\usuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:readme.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\pecamonitoramentoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\pecamonitoramentoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:pecamonitoramentoapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\pecamonitoramentoapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\pecamonitoramentoapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:pecamonitoramentoapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:docker-compose.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\developmentiot\\backend\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "AbsoluteMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|c:\\users\\mathe\\onedrive\\\u00E1rea de trabalho\\projeto\\developmentiot\\backend\\.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{9FCF601E-8466-4E41-8E21-DC031EDA6EBB}|PecaMonitoramentoAPI.csproj|solutionrelative:.dockerignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
     }
   ],
@@ -142,7 +202,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -154,219 +214,63 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwDMAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T21:20:37.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\UsuarioRepository.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\UsuarioRepository.cs",
-              "RelativeToolTip": "Repositories\\UsuarioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T21:21:35.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MonitoramentoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\MonitoramentoRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\MonitoramentoRepository.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\MonitoramentoRepository.cs",
-              "RelativeToolTip": "Repositories\\MonitoramentoRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T16:40:02.49Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IUsuarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IUsuarioRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUsuarioRepository.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IUsuarioRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IUsuarioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T21:21:24.067Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PecaRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\PecaRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\PecaRepository.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\PecaRepository.cs",
-              "RelativeToolTip": "Repositories\\PecaRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:29:18.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "MonitoramentoController.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Controllers\\MonitoramentoController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MonitoramentoController.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Controllers\\MonitoramentoController.cs",
-              "RelativeToolTip": "Controllers\\MonitoramentoController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAgwB4AAAAVAAAAAAAAAA==",
+              "Title": "ProducaoController.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\ProducaoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProducaoController.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\ProducaoController.cs",
+              "RelativeToolTip": "Controllers\\ProducaoController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAA7wDEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:36:36.532Z",
+              "WhenOpened": "2025-04-29T17:22:03.391Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "PecaController.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Controllers\\PecaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PecaController.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Controllers\\PecaController.cs",
-              "RelativeToolTip": "Controllers\\PecaController.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAUwCEAAAAIAAAAAAAAAA==",
+              "Title": "ProducaoService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\ProducaoService.cs",
+              "RelativeDocumentMoniker": "Services\\ProducaoService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\ProducaoService.cs",
+              "RelativeToolTip": "Services\\ProducaoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:36:42.966Z",
+              "WhenOpened": "2025-04-29T17:21:13.773Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IPecaRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IPecaRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IPecaRepository.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IPecaRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IPecaRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:29:26.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IMonitoramentoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IMonitoramentoRepository.cs",
-              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IMonitoramentoRepository.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IMonitoramentoRepository.cs",
-              "RelativeToolTip": "Repositories\\Interfaces\\IMonitoramentoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:29:24.505Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\AuthService.cs",
-              "RelativeToolTip": "Services\\AuthService.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAcwDQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T21:22:11.107Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IAuthService.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IAuthService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IAuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T21:21:59.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAqwDMAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T17:30:03.188Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 3,
               "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Usuario.cs",
               "RelativeDocumentMoniker": "Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\Usuario.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Usuario.cs",
               "RelativeToolTip": "Models\\Usuario.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-14T21:20:50.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UsuarioDTO.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\UsuarioDTO.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\UsuarioDTO.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\UsuarioDTO.cs",
-              "RelativeToolTip": "Models\\DTO\\UsuarioDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T21:21:11.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MonitoramentoService.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\MonitoramentoService.cs",
-              "RelativeDocumentMoniker": "Services\\MonitoramentoService.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\MonitoramentoService.cs",
-              "RelativeToolTip": "Services\\MonitoramentoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:29:35.266Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "RegistroDTO.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\RegistroDTO.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\RegistroDTO.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\RegistroDTO.cs",
-              "RelativeToolTip": "Models\\DTO\\RegistroDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-14T22:02:25.885Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 2,
               "Title": "LoginDTO.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\LoginDTO.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\LoginDTO.cs",
               "RelativeToolTip": "Models\\DTO\\LoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -375,115 +279,427 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CreatePecaDTO.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\CreatePecaDTO.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\CreatePecaDTO.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\CreatePecaDTO.cs",
-              "RelativeToolTip": "Models\\DTO\\CreatePecaDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAApAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "RegistroDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\RegistroDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\RegistroDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\RegistroDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\RegistroDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:38:53.32Z",
+              "WhenOpened": "2025-04-14T22:02:25.885Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "CreateMonitoramentoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\CreateMonitoramentoDTO.cs",
-              "RelativeDocumentMoniker": "Models\\DTO\\CreateMonitoramentoDTO.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\CreateMonitoramentoDTO.cs",
-              "RelativeToolTip": "Models\\DTO\\CreateMonitoramentoDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAuwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:38:45.707Z",
+              "WhenOpened": "2025-04-14T21:22:11.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "IMonitoramentoService.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IMonitoramentoService.cs",
-              "RelativeDocumentMoniker": "Services\\Interfaces\\IMonitoramentoService.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IMonitoramentoService.cs",
-              "RelativeToolTip": "Services\\Interfaces\\IMonitoramentoService.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "IProducaoService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IProducaoService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IProducaoService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IProducaoService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IProducaoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:29:42.733Z",
+              "WhenOpened": "2025-04-29T17:21:02.802Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 10,
               "Title": "IPecaService.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IPecaService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IPecaService.cs",
               "RelativeDocumentMoniker": "Services\\Interfaces\\IPecaService.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IPecaService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IPecaService.cs",
               "RelativeToolTip": "Services\\Interfaces\\IPecaService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T17:29:44.507Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ISensorService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\ISensorService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\ISensorService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\ISensorService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\ISensorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:17:00.732Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IMonitoramentoService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IMonitoramentoService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IMonitoramentoService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IMonitoramentoService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IMonitoramentoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:29:42.733Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T21:21:59.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ProducaoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\ProducaoRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\ProducaoRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\ProducaoRepository.cs",
+              "RelativeToolTip": "Repositories\\ProducaoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:20:10.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IProducaoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IProducaoRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IProducaoRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IProducaoRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IProducaoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:20:04.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ReadProducaoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadProducaoDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\ReadProducaoDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadProducaoDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\ReadProducaoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:18:57.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CreateProducaoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\CreateProducaoDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\CreateProducaoDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\CreateProducaoDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\CreateProducaoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:18:48.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Producao.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Producao.cs",
+              "RelativeDocumentMoniker": "Models\\Producao.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Producao.cs",
+              "RelativeToolTip": "Models\\Producao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:18:14.093Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SensorController.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\SensorController.cs",
+              "RelativeDocumentMoniker": "Controllers\\SensorController.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\SensorController.cs",
+              "RelativeToolTip": "Controllers\\SensorController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:17:54.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "SensorService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\SensorService.cs",
+              "RelativeDocumentMoniker": "Services\\SensorService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\SensorService.cs",
+              "RelativeToolTip": "Services\\SensorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:17:08.754Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReadSensorDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadSensorDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\ReadSensorDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadSensorDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\ReadSensorDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:14:43.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "SensorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\SensorRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\SensorRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\SensorRepository.cs",
+              "RelativeToolTip": "Repositories\\SensorRepository.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAADwvycAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:16:32.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 21,
+              "Title": "ISensorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\ISensorRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\ISensorRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\ISensorRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\ISensorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:15:40.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Sensor.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Sensor.cs",
+              "RelativeDocumentMoniker": "Models\\Sensor.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Sensor.cs",
+              "RelativeToolTip": "Models\\Sensor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T17:14:14.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "PecaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\PecaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\PecaRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\PecaRepository.cs",
+              "RelativeToolTip": "Repositories\\PecaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:29:18.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IMonitoramentoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IMonitoramentoRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IMonitoramentoRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IMonitoramentoRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IMonitoramentoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:29:24.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\UsuarioRepository.cs",
+              "RelativeToolTip": "Repositories\\UsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T21:21:35.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
               "Title": "PecaService.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\PecaService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\PecaService.cs",
               "RelativeDocumentMoniker": "Services\\PecaService.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Services\\PecaService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\PecaService.cs",
               "RelativeToolTip": "Services\\PecaService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAwwCQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T17:29:39.144Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-09T18:14:31.571Z",
+              "DocumentIndex": 28,
+              "Title": "IPecaRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IPecaRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IPecaRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IPecaRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IPecaRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:29:26.386Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
+              "Title": "PecaController.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\PecaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PecaController.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\PecaController.cs",
+              "RelativeToolTip": "Controllers\\PecaController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAcwCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:36:42.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ReadPecaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadPecaDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\ReadPecaDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadPecaDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\ReadPecaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:34:39.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "MonitoramentoController.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\MonitoramentoController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MonitoramentoController.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\MonitoramentoController.cs",
+              "RelativeToolTip": "Controllers\\MonitoramentoController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAkwDEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:36:36.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "MonitoramentoService.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\MonitoramentoService.cs",
+              "RelativeDocumentMoniker": "Services\\MonitoramentoService.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Services\\MonitoramentoService.cs",
+              "RelativeToolTip": "Services\\MonitoramentoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:29:35.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "MonitoramentoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\MonitoramentoRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\MonitoramentoRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\MonitoramentoRepository.cs",
+              "RelativeToolTip": "Repositories\\MonitoramentoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T16:40:02.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Peca.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Peca.cs",
+              "RelativeDocumentMoniker": "Models\\Peca.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Peca.cs",
+              "RelativeToolTip": "Models\\Peca.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T17:55:35.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
               "Title": "ReadMonitoramentoDTO.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadMonitoramentoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadMonitoramentoDTO.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\ReadMonitoramentoDTO.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadMonitoramentoDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\ReadMonitoramentoDTO.cs",
               "RelativeToolTip": "Models\\DTO\\ReadMonitoramentoDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA+wA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-10T17:55:40.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Monitoramento.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\Monitoramento.cs",
-              "RelativeDocumentMoniker": "Models\\Monitoramento.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\Monitoramento.cs",
-              "RelativeToolTip": "Models\\Monitoramento.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 35,
+              "Title": "CreateMonitoramentoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\CreateMonitoramentoDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\CreateMonitoramentoDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\CreateMonitoramentoDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\CreateMonitoramentoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:55:28.687Z",
+              "WhenOpened": "2025-04-10T17:38:45.707Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 36,
+              "Title": "Monitoramento.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Monitoramento.cs",
+              "RelativeDocumentMoniker": "Models\\Monitoramento.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\Monitoramento.cs",
+              "RelativeToolTip": "Models\\Monitoramento.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:31:31.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
               "Title": "DapperContext.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Data\\DapperContext.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Data\\DapperContext.cs",
               "RelativeDocumentMoniker": "Data\\DapperContext.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Data\\DapperContext.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Data\\DapperContext.cs",
               "RelativeToolTip": "Data\\DapperContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -492,94 +708,124 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Peca.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\Peca.cs",
-              "RelativeDocumentMoniker": "Models\\Peca.cs",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Models\\Peca.cs",
-              "RelativeToolTip": "Models\\Peca.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 38,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwDMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T17:55:35.84Z",
+              "WhenOpened": "2025-04-14T21:20:37.044Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 39,
+              "Title": "IUsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Repositories\\Interfaces\\IUsuarioRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUsuarioRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T21:21:24.067Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "UsuarioDTO.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\UsuarioDTO.cs",
+              "RelativeDocumentMoniker": "Models\\DTO\\UsuarioDTO.cs",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Models\\DTO\\UsuarioDTO.cs",
+              "RelativeToolTip": "Models\\DTO\\UsuarioDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T21:21:11.237Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-09T18:14:31.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
               "Title": "PecaMonitoramentoAPI.csproj",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
               "RelativeDocumentMoniker": "PecaMonitoramentoAPI.csproj",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
               "RelativeToolTip": "PecaMonitoramentoAPI.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-10T17:30:26.194Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T17:30:26.194Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 44,
               "Title": "PecaMonitoramentoAPI.http",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.http",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.http",
               "RelativeDocumentMoniker": "PecaMonitoramentoAPI.http",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.http",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.http",
               "RelativeToolTip": "PecaMonitoramentoAPI.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2025-04-10T17:29:58.329Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-10T17:29:58.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 42,
               "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\README.md",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\README.md",
               "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\README.md",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\README.md",
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAADYAAAAAAAAAAIBJwE0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-04-09T17:56:41.288Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T17:56:41.288Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 46,
               "Title": "docker-compose.yml",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\docker-compose.yml",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\docker-compose.yml",
               "RelativeDocumentMoniker": "docker-compose.yml",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\docker-compose.yml",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\docker-compose.yml",
               "RelativeToolTip": "docker-compose.yml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-04-09T18:13:08.377Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T18:13:08.377Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 45,
               "Title": "Dockerfile",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Dockerfile",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\Dockerfile",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\Dockerfile",
               "RelativeToolTip": "Dockerfile",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwA8AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-09T18:11:56.993Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T18:11:56.993Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 47,
               "Title": ".dockerignore",
-              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\.dockerignore",
+              "DocumentMoniker": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\.dockerignore",
               "RelativeDocumentMoniker": ".dockerignore",
-              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\DevelopmentIOT\\Backend\\.dockerignore",
+              "ToolTip": "C:\\Users\\mathe\\OneDrive\\\u00C1rea de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\.dockerignore",
               "RelativeToolTip": ".dockerignore",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-04-09T18:12:52.984Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-09T18:12:52.984Z"
             }
           ]
         },

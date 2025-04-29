@@ -18,15 +18,9 @@ namespace PecaMonitoramentoAPI.Repositories
         {
             var query = @"SELECT 
                             id_monitoramento AS IdMonitoramento,
-                            id_peca AS IdPeca,
-                            esteira_on_off AS EsteiraOnOff,
-                            atuador1_on_off AS Atuador1OnOff,
-                            atuador2_on_off AS Atuador2OnOff,
-                            qtde_r1 AS QtdeR1,
-                            qtde_r2 AS QtdeR2,
-                            qtde_descartada AS QtdeDescartada,
-                            data_hora_monitoramento AS DataHoraMonitoramento,
-                            erros AS Erros
+                            id_sensor AS IdSensor,
+                            estado AS Estado,
+                            timestamp_monitoramento AS TimestampMonitoramento
                         FROM monitoramento";
 
             using var connection = _context.CreateConnection();
@@ -37,15 +31,9 @@ namespace PecaMonitoramentoAPI.Repositories
         {
             var query = @"SELECT 
                             id_monitoramento AS IdMonitoramento,
-                            id_peca AS IdPeca,
-                            esteira_on_off AS EsteiraOnOff,
-                            atuador1_on_off AS Atuador1OnOff,
-                            atuador2_on_off AS Atuador2OnOff,
-                            qtde_r1 AS QtdeR1,
-                            qtde_r2 AS QtdeR2,
-                            qtde_descartada AS QtdeDescartada,
-                            data_hora_monitoramento AS DataHoraMonitoramento,
-                            erros AS Erros
+                            id_sensor AS IdSensor,
+                            estado AS Estado,
+                            timestamp_monitoramento AS TimestampMonitoramento
                         FROM monitoramento
                         WHERE id_monitoramento = @id";
 
@@ -56,11 +44,9 @@ namespace PecaMonitoramentoAPI.Repositories
         public async Task<int> CreateAsync(CreateMonitoramentoDTO dto)
         {
             var query = @"INSERT INTO monitoramento (
-                            id_peca, esteira_on_off, atuador1_on_off, atuador2_on_off,
-                            qtde_r1, qtde_r2, qtde_descartada, erros)
+                            id_sensor, estado)
                           VALUES (
-                            @IdPeca, @EsteiraOnOff, @Atuador1OnOff, @Atuador2OnOff,
-                            @QtdeR1, @QtdeR2, @QtdeDescartada, @Erros)
+                            @IdSensor, @Estado)
                           RETURNING id_monitoramento";
 
             using var connection = _context.CreateConnection();

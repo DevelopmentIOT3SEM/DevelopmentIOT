@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W7J2VMFE4wY=",
+  "dgSpecHash": "oB8DmeNK1j4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
+  "projectFilePath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mathe\\.nuget\\packages\\bcrypt.net-core\\1.6.0\\bcrypt.net-core.1.6.0.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\dapper\\2.1.66\\dapper.2.1.66.nupkg.sha512",

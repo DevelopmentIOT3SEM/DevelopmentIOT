@@ -1,21 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-public class CreateMonitoramentoDTO
+namespace PecaMonitoramentoAPI.DTOs
 {
-    [Required(ErrorMessage = "O id da peça é obrigatória.")]
-    public int IdPeca { get; set; }
-    [Required]
-    public bool EsteiraOnOff { get; set; }
-    [Required]
-    public bool Atuador1OnOff { get; set; }
-    [Required]
-    public bool Atuador2OnOff { get; set; }
-    [Required]
-    public int QtdeR1 { get; set; }
-    [Required]
-    public int QtdeR2 { get; set; }
-    [Required]
-    public int QtdeDescartada { get; set; }
-    [Required]
-    public int Erros { get; set; }
+    public class CreateMonitoramentoDTO
+    {
+        [Required(ErrorMessage = "O ID do sensor é obrigatório.")]
+        public int IdSensor { get; set; }
+
+        [Required(ErrorMessage = "O estado é obrigatório.")]
+        [RegularExpression("^(on|off)$", ErrorMessage = "O estado deve ser 'on' ou 'off'.")]
+        public string Estado { get; set; } = string.Empty;
+    }
 }

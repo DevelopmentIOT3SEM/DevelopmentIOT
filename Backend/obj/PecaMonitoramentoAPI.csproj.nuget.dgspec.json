@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj": {}
+    "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj": {
+    "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
+        "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
         "projectName": "PecaMonitoramentoAPI",
-        "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
+        "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\PecaMonitoramentoAPI.csproj",
         "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\DevelopmentIOT\\Backend\\obj\\",
+        "outputPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto\\DevelopmentIOT\\Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
