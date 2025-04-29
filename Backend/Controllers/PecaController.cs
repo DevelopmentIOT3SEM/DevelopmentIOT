@@ -30,21 +30,5 @@ namespace PecaMonitoramentoAPI.Controllers
                 return NotFound();
             return Ok(peca);
         }
-
-        [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreatePecaDTO dto)
-        {
-            var id = await _service.CreateAsync(dto);
-            return CreatedAtAction(nameof(GetById), new { id }, dto);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var deleted = await _service.DeleteAsync(id);
-            if (!deleted)
-                return NotFound();
-            return NoContent();
-        }
     }
 }

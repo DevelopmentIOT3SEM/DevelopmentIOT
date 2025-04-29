@@ -22,15 +22,5 @@ namespace PecaMonitoramentoAPI.Services
         {
             return await _repository.GetByIdAsync(id);
         }
-
-        public async Task<int> CreateAsync(CreatePecaDTO dto)
-        {
-            return await _repository.CreateAsync(dto);
-        }
-
-        public async Task<bool> DeleteAsync(int id)
-        {
-            return await _repository.DeleteAsync(id);
-        }
     }
 }
