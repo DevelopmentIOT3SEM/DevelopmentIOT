@@ -41,11 +41,15 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddScoped<IPecaRepository, PecaRepository>();
 builder.Services.AddScoped<IMonitoramentoRepository, MonitoramentoRepository>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Novo repositório
+builder.Services.AddScoped<IProducaoRepository, ProducaoRepository>();
+builder.Services.AddScoped<ISensorRepository, SensorRepository>();
 
 // Serviços
 builder.Services.AddScoped<IPecaService, PecaService>();
 builder.Services.AddScoped<IMonitoramentoService, MonitoramentoService>();
 builder.Services.AddScoped<IAuthService, AuthService>(); // Novo serviço
+builder.Services.AddScoped<ISensorService, SensorService>();
+builder.Services.AddScoped<IProducaoService, ProducaoService>();
 
 // Controller e API
 builder.Services.AddControllers();
