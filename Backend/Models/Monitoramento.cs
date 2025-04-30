@@ -1,17 +1,14 @@
 ﻿using PecaMonitoramentoAPI.Models;
 
-public class Monitoramento
+namespace PecaMonitoramentoAPI.Models
 {
-    public int IdMonitoramento { get; set; }
-    public int IdPeca { get; set; }
-    public bool EsteiraOnOff { get; set; }
-    public bool Atuador1OnOff { get; set; }
-    public bool Atuador2OnOff { get; set; }
-    public int QtdeR1 { get; set; }
-    public int QtdeR2 { get; set; }
-    public int QtdeDescartada { get; set; }
-    public DateTime DataHoraMonitoramento { get; set; }
-    public int Erros { get; set; }
+    public class Monitoramento
+    {
+        public int IdMonitoramento { get; set; }
+        public int IdSensor { get; set; }
+        public string Estado { get; set; } = string.Empty;
+        public DateTime TimestampMonitoramento { get; set; }
 
-    public Peca? Peca { get; set; }
+        
+    }
 }

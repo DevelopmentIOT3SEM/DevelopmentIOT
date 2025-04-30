@@ -11,14 +11,14 @@ using PecaMonitoramentoAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configura a string de conexão com o PostgreSQL
+// Configura a string de conexï¿½o com o PostgreSQL
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Registro da conexão com Dapper
+// Registro da conexï¿½o com Dapper
 builder.Services.AddScoped<IDbConnection>(sp => new NpgsqlConnection(connectionString));
 builder.Services.AddSingleton<DapperContext>();
 
-// Configuração do JWT
+// Configuraï¿½ï¿½o do JWT
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -37,20 +37,37 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Repositórios
+// Repositï¿½rios
 builder.Services.AddScoped<IPecaRepository, PecaRepository>();
 builder.Services.AddScoped<IMonitoramentoRepository, MonitoramentoRepository>();
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Novo repositório
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Novo repositï¿½rio
+builder.Services.AddScoped<IProducaoRepository, ProducaoRepository>();
+builder.Services.AddScoped<ISensorRepository, SensorRepository>();
 
-// Serviços
+// Serviï¿½os
 builder.Services.AddScoped<IPecaService, PecaService>();
 builder.Services.AddScoped<IMonitoramentoService, MonitoramentoService>();
-builder.Services.AddScoped<IAuthService, AuthService>(); // Novo serviço
+builder.Services.AddScoped<IAuthService, AuthService>(); // Novo serviï¿½o
+builder.Services.AddScoped<ISensorService, SensorService>();
+builder.Services.AddScoped<IProducaoService, ProducaoService>();
 
 // Controller e API
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+// Configura serviÃ§os CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:5500") 
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 
 var app = builder.Build();
 
@@ -64,6 +81,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // IMPORTANTE: UseAuthentication antes de UseAuthorization
+app.UseCors(); 
 app.UseAuthentication();
 app.UseAuthorization();
 

@@ -4,21 +4,21 @@ using PecaMonitoramentoAPI.Services.Interfaces;
 
 namespace PecaMonitoramentoAPI.Services
 {
-    public class PecaService : IPecaService
+    public class SensorService : ISensorService
     {
-        private readonly IPecaRepository _repository;
+        private readonly ISensorRepository _repository;
 
-        public PecaService(IPecaRepository repository)
+        public SensorService(ISensorRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<IEnumerable<ReadPecaDTO>> GetAllAsync()
+        public async Task<IEnumerable<ReadSensorDTO>> GetAllAsync()
         {
             return await _repository.GetAllAsync();
         }
 
-        public async Task<ReadPecaDTO?> GetByIdAsync(int id)
+        public async Task<ReadSensorDTO?> GetByIdAsync(int id)
         {
             return await _repository.GetByIdAsync(id);
         }

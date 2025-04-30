@@ -4,26 +4,26 @@ using PecaMonitoramentoAPI.Services.Interfaces;
 
 namespace PecaMonitoramentoAPI.Services
 {
-    public class MonitoramentoService : IMonitoramentoService
+    public class ProducaoService : IProducaoService
     {
-        private readonly IMonitoramentoRepository _repository;
+        private readonly IProducaoRepository _repository;
 
-        public MonitoramentoService(IMonitoramentoRepository repository)
+        public ProducaoService(IProducaoRepository repository)
         {
             _repository = repository;
         }
 
-        public async Task<IEnumerable<ReadMonitoramentoDTO>> GetAllAsync()
+        public async Task<IEnumerable<ReadProducaoDTO>> GetAllAsync()
         {
             return await _repository.GetAllAsync();
         }
 
-        public async Task<ReadMonitoramentoDTO?> GetByIdAsync(int id)
+        public async Task<ReadProducaoDTO?> GetByIdAsync(int id)
         {
             return await _repository.GetByIdAsync(id);
         }
 
-        public async Task<int> CreateAsync(CreateMonitoramentoDTO dto)
+        public async Task<int> CreateAsync(CreateProducaoDTO dto)
         {
             return await _repository.CreateAsync(dto);
         }
@@ -33,9 +33,9 @@ namespace PecaMonitoramentoAPI.Services
             return await _repository.DeleteAsync(id);
         }
 
-        public async Task<ReadMonitoramentoDTO?> GetLatestBySensorIdAsync(int sensorId)
+        public async Task<IEnumerable<ReadProducaoDTO>> GetRefugosAsync()
         {
-            return await _repository.GetLatestBySensorIdAsync(sensorId);
+            return await _repository.GetRefugosAsync();
         }
     }
 }

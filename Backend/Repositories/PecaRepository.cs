@@ -16,31 +16,25 @@ namespace PecaMonitoramentoAPI.Repositories
 
         public async Task<IEnumerable<ReadPecaDTO>> GetAllAsync()
         {
-            var query = "SELECT id_peca AS IdPeca, tipo_peca AS TipoPeca FROM peca";
+            var query = @"SELECT 
+                            id_peca AS IdPeca,
+                            tipo_material AS TipoMaterial
+                        FROM peca";
+
             using var connection = _context.CreateConnection();
             return await connection.QueryAsync<ReadPecaDTO>(query);
         }
 
         public async Task<ReadPecaDTO?> GetByIdAsync(int id)
         {
-            var query = "SELECT id_peca AS IdPeca, tipo_peca AS TipoPeca FROM peca WHERE id_peca = @id";
+            var query = @"SELECT 
+                            id_peca AS IdPeca,
+                            tipo_material AS TipoMaterial
+                        FROM peca
+                        WHERE id_peca = @id";
+
             using var connection = _context.CreateConnection();
             return await connection.QueryFirstOrDefaultAsync<ReadPecaDTO>(query, new { id });
-        }
-
-        public async Task<int> CreateAsync(CreatePecaDTO peca)
-        {
-            var query = "INSERT INTO peca (tipo_peca) VALUES (@TipoPeca) RETURNING id_peca";
-            using var connection = _context.CreateConnection();
-            return await connection.ExecuteScalarAsync<int>(query, peca);
-        }
-
-        public async Task<bool> DeleteAsync(int id)
-        {
-            var query = "DELETE FROM peca WHERE id_peca = @id";
-            using var connection = _context.CreateConnection();
-            var affectedRows = await connection.ExecuteAsync(query, new { id });
-            return affectedRows > 0;
         }
     }
 }

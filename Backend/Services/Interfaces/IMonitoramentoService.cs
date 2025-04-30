@@ -8,5 +8,6 @@ namespace PecaMonitoramentoAPI.Services.Interfaces
         Task<ReadMonitoramentoDTO?> GetByIdAsync(int id);
         Task<int> CreateAsync(CreateMonitoramentoDTO dto);
         Task<bool> DeleteAsync(int id);
+        Task<ReadMonitoramentoDTO?> GetLatestBySensorIdAsync(int sensorId); 
     }
 }

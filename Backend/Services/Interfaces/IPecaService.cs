@@ -6,7 +6,6 @@ namespace PecaMonitoramentoAPI.Services.Interfaces
     {
         Task<IEnumerable<ReadPecaDTO>> GetAllAsync();
         Task<ReadPecaDTO?> GetByIdAsync(int id);
-        Task<int> CreateAsync(CreatePecaDTO dto);
-        Task<bool> DeleteAsync(int id);
+        
     }
 }

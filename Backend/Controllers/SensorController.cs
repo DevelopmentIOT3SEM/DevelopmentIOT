@@ -6,11 +6,11 @@ namespace PecaMonitoramentoAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class PecaController : ControllerBase
+    public class SensorController : ControllerBase
     {
-        private readonly IPecaService _service;
+        private readonly ISensorService _service;
 
-        public PecaController(IPecaService service)
+        public SensorController(ISensorService service)
         {
             _service = service;
         }
@@ -18,17 +18,17 @@ namespace PecaMonitoramentoAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var pecas = await _service.GetAllAsync();
-            return Ok(pecas);
+            var sensores = await _service.GetAllAsync();
+            return Ok(sensores);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var peca = await _service.GetByIdAsync(id);
-            if (peca == null)
+            var sensor = await _service.GetByIdAsync(id);
+            if (sensor == null)
                 return NotFound();
-            return Ok(peca);
+            return Ok(sensor);
         }
     }
 }

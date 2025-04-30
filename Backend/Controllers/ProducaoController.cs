@@ -6,11 +6,11 @@ namespace PecaMonitoramentoAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class MonitoramentoController : ControllerBase
+    public class ProducaoController : ControllerBase
     {
-        private readonly IMonitoramentoService _service;
+        private readonly IProducaoService _service;
 
-        public MonitoramentoController(IMonitoramentoService service)
+        public ProducaoController(IProducaoService service)
         {
             _service = service;
         }
@@ -18,21 +18,21 @@ namespace PecaMonitoramentoAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var monitoramentos = await _service.GetAllAsync();
-            return Ok(monitoramentos);
+            var producoes = await _service.GetAllAsync();
+            return Ok(producoes);
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var monitoramento = await _service.GetByIdAsync(id);
-            if (monitoramento == null)
+            var producao = await _service.GetByIdAsync(id);
+            if (producao == null)
                 return NotFound();
-            return Ok(monitoramento);
+            return Ok(producao);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateMonitoramentoDTO dto)
+        public async Task<IActionResult> Create([FromBody] CreateProducaoDTO dto)
         {
             var id = await _service.CreateAsync(dto);
             return CreatedAtAction(nameof(GetById), new { id }, dto);
@@ -45,6 +45,13 @@ namespace PecaMonitoramentoAPI.Controllers
             if (!deleted)
                 return NotFound();
             return NoContent();
+        }
+
+        [HttpGet("refugos")]
+        public async Task<IActionResult> GetRefugos()
+        {
+            var refugos = await _service.GetRefugosAsync();
+            return Ok(refugos);
         }
     }
 }

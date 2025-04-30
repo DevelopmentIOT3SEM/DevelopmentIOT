@@ -3,6 +3,6 @@
     public class ReadPecaDTO
     {
         public int IdPeca { get; set; }
-        public string TipoPeca { get; set; } = string.Empty;
+        public string TipoMaterial { get; set; } = string.Empty;
     }
 }
