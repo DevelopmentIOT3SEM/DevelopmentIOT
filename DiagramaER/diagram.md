@@ -1,39 +1,37 @@
 ```mermaid
 erDiagram
+    Usuarios {
+        int Id PK
+        varchar Nome
+        varchar Email
+        varchar SenhaHash
+    }
 
     Peca {
-      int Id PK
-      varchar Tipo
+        int id_peca PK
+        varchar tipo_material
     }
 
     Sensor {
-      int Id PK
-      varchar Nome
-    }
-
-    Erros {
-      int Id PK
-      varchar Codigo
-      timestamp Timestamp
+        int id_sensor PK
+        varchar nome
     }
 
     Monitoramento {
-      int Id PK
-      int IdSensor FK
-      boolean Status
-      timestamp Timestamp
+        int id_monitoramento PK
+        int id_sensor FK
+        varchar estado
+        timestamp timestamp_monitoramento
     }
 
     Producao {
-      int Id PK
-      int IdPeca FK
-      int Rampa
-      timestamp Timestamp
+        int id_producao PK
+        int id_peca FK
+        int rampa
+        timestamp timestamp_producao
     }
 
-    Peca ||--o{ Producao : "1:N"
-    Sensor ||--o{ Monitoramento : "1:N"
-    
-
+    Sensor ||--o{ Monitoramento : "1:n"
+    Peca ||--o{ Producao : "1:n"
 
 ```
