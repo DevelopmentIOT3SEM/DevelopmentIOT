@@ -32,5 +32,10 @@ namespace PecaMonitoramentoAPI.Services
         {
             return await _repository.DeleteAsync(id);
         }
+
+        public async Task<ReadMonitoramentoDTO?> GetLatestBySensorIdAsync(int sensorId)
+        {
+            return await _repository.GetLatestBySensorIdAsync(sensorId);
+        }
     }
 }

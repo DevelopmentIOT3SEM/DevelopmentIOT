@@ -62,5 +62,21 @@ namespace PecaMonitoramentoAPI.Repositories
 
             return affectedRows > 0;
         }
+
+        public async Task<ReadMonitoramentoDTO?> GetLatestBySensorIdAsync(int sensorId)
+        {
+            var query = @"SELECT 
+                            id_monitoramento AS IdMonitoramento,
+                            id_sensor AS IdSensor,
+                            estado AS Estado,
+                            timestamp_monitoramento AS TimestampMonitoramento
+                        FROM monitoramento
+                        WHERE id_sensor = @sensorId
+                        ORDER BY timestamp_monitoramento DESC
+                        LIMIT 1";
+
+            using var connection = _context.CreateConnection();
+            return await connection.QueryFirstOrDefaultAsync<ReadMonitoramentoDTO>(query, new { sensorId });
+        }
     }
 }
