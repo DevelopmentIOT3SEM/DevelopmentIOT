@@ -62,5 +62,20 @@ namespace PecaMonitoramentoAPI.Repositories
 
             return affectedRows > 0;
         }
+
+        public async Task<IEnumerable<ReadProducaoDTO>> GetRefugosAsync()
+        {
+            var query = @"SELECT 
+                            p.id_producao AS IdProducao,
+                            p.id_peca AS IdPeca,
+                            p.rampa AS Rampa,
+                            p.timestamp_producao AS TimestampProducao
+                        FROM producao p
+                        JOIN peca pc ON p.id_peca = pc.id_peca
+                        WHERE pc.tipo_material = 'Refugo'";
+
+            using var connection = _context.CreateConnection();
+            return await connection.QueryAsync<ReadProducaoDTO>(query);
+        }
     }
 }

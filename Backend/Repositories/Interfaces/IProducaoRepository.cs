@@ -8,5 +8,6 @@ namespace PecaMonitoramentoAPI.Repositories.Interfaces
         Task<ReadProducaoDTO?> GetByIdAsync(int id);
         Task<int> CreateAsync(CreateProducaoDTO dto);
         Task<bool> DeleteAsync(int id);
+        Task<IEnumerable<ReadProducaoDTO>> GetRefugosAsync(); 
     }
 }

@@ -32,5 +32,10 @@ namespace PecaMonitoramentoAPI.Services
         {
             return await _repository.DeleteAsync(id);
         }
+
+        public async Task<IEnumerable<ReadProducaoDTO>> GetRefugosAsync()
+        {
+            return await _repository.GetRefugosAsync();
+        }
     }
 }

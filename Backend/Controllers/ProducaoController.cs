@@ -46,5 +46,12 @@ namespace PecaMonitoramentoAPI.Controllers
                 return NotFound();
             return NoContent();
         }
+
+        [HttpGet("refugos")]
+        public async Task<IActionResult> GetRefugos()
+        {
+            var refugos = await _service.GetRefugosAsync();
+            return Ok(refugos);
+        }
     }
 }
