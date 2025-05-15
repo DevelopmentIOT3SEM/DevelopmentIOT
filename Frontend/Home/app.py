@@ -13,7 +13,7 @@ def get_dados():
 
     np.random.seed(42)
     turnos = ['Manhã', 'Tarde', 'Noite']
-    tipos_materiais = ['Plástico', 'Metal', 'Papel', 'Vidro']
+    tipos_materiais = ['Plástico', 'Metal']
     data_inicial = datetime(2025, 3, 1)
     dias = 30
     linhas = []
@@ -35,6 +35,8 @@ def get_dados():
                 erro_plastico_como_metal = np.random.randint(0, mal_separado + 1)
                 erro_metal_como_plastico = mal_separado - erro_plastico_como_metal
                 umidade = np.random.randint(0, 8)
+                esteira_lig = True
+                atuadores = False
 
                 linhas.append({
                     'data': data.strftime('%Y-%m-%d'),
@@ -51,7 +53,9 @@ def get_dados():
                     'acertos_algoritmo': acertos_algoritmo,
                     'erro_plastico_como_metal': erro_plastico_como_metal,
                     'erro_metal_como_plastico': erro_metal_como_plastico,
-                    'umidade': umidade
+                    'umidade': umidade,
+                    'esteira_lig': esteira_lig,
+                    'atuadores': atuadores
                 })
 
 

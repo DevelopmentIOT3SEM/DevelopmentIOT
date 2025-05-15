@@ -35,6 +35,9 @@ input, button{ /*Jeito que vai ficar os inputs e buttons da tela*/
     padding: 12px 20px;
     border-radius: 12px;
 }
+
+
+
 input{ /*Cor dos inputs e cor que sairá o texto*/
     background-color: #56575a9a;
     color: rgba(255,255, 255, 0.9);
@@ -109,13 +112,26 @@ p{
     width: 100%;
     height: 100%;
     content: "";
-    background-image: url(backg.png);
+    background-image: url(Images/backg.png);
     background-position: center;
     background-size: cover;
     position: absolute;
     top: 0;
     right: 0;
     z-index: 0;
+}
+
+.btn-sair {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
 }
 
 .card.loginActive .fazerLogin {

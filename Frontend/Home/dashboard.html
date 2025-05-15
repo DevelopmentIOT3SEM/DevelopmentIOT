@@ -3,16 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="monitoramento.css">
-    <title>Monitoramento</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="sidebar">
-        <img id="logo"src="Images/logo.png" alt="">
-        <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_cinza1.png">Dashboard</button>
-        <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_cinza2.png">Monitoramento</button>
-        <button class="botao_header"> <img id="botao3" class="imagem_botao" src="Images/imagem_cinza3.png">LogOut</button>
+    <div class="navbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+        <div class="sidebar">
+            <button class="close-btn" onclick="toggleSidebar()">X</button>
+            <div class="imagem-container">
+                <img id="logo" src="Images/logoo2.png" alt="">
+            </div>
+            
+            <div>
+                <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_azul1.png">Dashboard</button>
+                <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_azul2.png">Monitoramento</button>
+                <button class="botao_header" onclick="mudarChatbot()"> <img id="botao2" class="imagem_botao" src="Images/chatbot (2).png">Chatbot</button>
+                <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_azul3.png">LogOut</button>
+            </div>
+        </div>
+        <div class="botoes">
+            <button class="botao-1" id="bots" style="cursor: text;">Filtrar por:</button>
+            <div class="dropdown">
+                <button class="botao-1" id="bots" onclick="trocarMaterial()">Filtrar por Material</button>
+                <div class="dropdown-content">
+                    <a href="#">Madeira</a>
+                    <a href="#">Metal</a>
+                    <a href="#">Plástico</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="botao-1" id="bots" onclick="trocarTurno()">Todos os Turnos</button>
+                <div class="dropdown-content">
+                    <a href="#">Manhã</a>
+                    <a href="#">Tarde</a>
+                    <a href="#">Noite</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="botao-1" id="bots" onclick="trocarData()">Filtrar Data</button>
+                <div class="dropdown-content">
+                    <input type="date" id="dataFiltro">
+                </div>
+            </div>
+        </div>
     </div>
-    <script src="script.js"></script>
+
+    <div class="conteudo">
+        <div class="linha">
+            <div class="grafico1">
+                <h2>Evolução da Eficiência</h2>
+                <canvas id="graficoevolucao"></canvas>
+            </div>
+        </div>
+        <div class="linha">
+            <div class="grafico2">
+                <h2>Comparação de Eficiência</h2>
+                <canvas id="graficoeficiencia"></canvas>
+            </div>
+            <div class="grafico3">
+                <h2>Composição dos Erros</h2>
+                <canvas id="graficoErros"></canvas>
+            </div>
+        </div>
+        <div class="linha">
+            <div class="grafico4">
+                <h2>Tempo médio de Processamento</h2>
+                <canvas id="histogramaChart"></canvas>
+            </div>
+        </div>
+        <div class="linha">
+            <div class="grafico5">
+                <h2>Mapa de Desempenho da Linha de Produção</h2>
+                <div id="heatmap"></div>
+            </div>
+            <div class="grafico6">
+                <h2>Correlação Entre Variáveis</h2>
+                <canvas id="graficoDispersao"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

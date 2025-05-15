@@ -1,120 +1,252 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoVida</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <div class="background background1">
-    <nav class="navbar navbar-expand-lg navbar-dark px-3 mt-2">
-      <a class="navbar-brand" href="#"><img src="logoo.png" style="width: 150px;"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Sobre a Empresa</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Sobre Nós</a></li>
-          <li class="nav-item">
-            <button class="btn btn-outline-light ms-2">Login</button>
-          </li>
-        </ul>
+    <!-- Seção 1: Cabeçalho com Imagem de Fundo -->
+    <div class="background background1">
+        <nav class="navbar navbar-expand-lg navbar-dark px-3 py-2 py-lg-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../Principal/imagens/logoo.png" style="width: 150px;" alt="EcoVida Logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre a Empresa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Objetivos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Tecnologias</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Sobre Nós</a></li>
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                            <button class="btn btn-outline-light w-100" ><a href="../Home/loginCadastro.html">Login</a></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      
+        <div class="container my-auto py-5">
+            <div class="row">
+                <div class="col-12 col-md-10 col-lg-8">
+                    <p class="custom-text">Reduza o <span>desperdício</span></p>
+                    <p class="custom-text">Reutilize com <span>consciência</span></p>
+                    <p class="custom-text">Recicle pelo <span>amanhã</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Seção 2: Sobre a Empresa -->
+    <div class="background background2 py-5">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 col-xl-8">
+                    <div class="text-center bg-dark bg-opacity-75 text-white p-4 p-md-5 rounded-4">
+                        <h2 class="fw-bold"><span>Sobre a Empresa</span></h2>
+                        <p class="mt-3">
+                            A Eco Vida é uma plataforma dedicada à automatização de máquinas com o objetivo de contribuir para a preservação do meio ambiente. Por meio de tecnologias inovadoras e soluções inteligentes, ajudamos empresas a implementar processos mais eficientes e sustentáveis. Nosso foco é otimizar operações, reduzir desperdícios e promover práticas eco-friendly, tornando a automatização uma aliada no cuidado com o planeta. Com a Eco Vida, buscamos um futuro mais verde e tecnológico. 
+                        </p>
+                        <p>
+                            Trabalhamos com reciclagem, energia renovável e educação ambiental para construir um futuro mais verde.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nova Seção: Para que Serve o Projeto -->
+    <div class="background background1 py-5">
+      <div class="container my-5">
+          <h2 class="fw-bold text-center text-white mb-5"><span>Objetivos do Projeto</span></h2>
+          <div class="row g-4 justify-content-center">
+              <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card h-100 bg-dark bg-opacity-75 text-white rounded-4">
+                      <img src="../Principal/imagens/reciclagem.jpeg" class="card-img-top rounded-top-4" alt="Reduzir impacto ambiental">
+                      <div class="card-body text-center">
+                          <h5 class="card-title">Reduzir Impacto Ambiental</h5>
+                          <p class="card-text">Desenvolver máquinas mais eficientes para diminuir o consumo de recursos naturais e a emissão de poluentes.</p>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card h-100 bg-dark bg-opacity-75 text-white rounded-4">
+                      <img src="../Principal/imagens/reciclagem.png" class="card-img-top rounded-top-4" alt="Facilitar reciclagem">
+                      <div class="card-body text-center">
+                          <h5 class="card-title">Facilitar a Reciclagem</h5>
+                          <p class="card-text">Automatizar o processo de separação e reaproveitamento de materiais, tornando a reciclagem mais acessível.</p>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-12 col-md-6 col-lg-4">
+                  <div class="card h-100 bg-dark bg-opacity-75 text-white rounded-4">
+                      <img src="../Principal/imagens/sustentabilidade.png" class="card-img-top rounded-top-4" alt="Educar para sustentabilidade">
+                      <div class="card-body text-center">
+                          <h5 class="card-title">Educar para Sustentabilidade</h5>
+                          <p class="card-text">Conscientizar empresas e comunidades sobre práticas sustentáveis e uso responsável dos recursos.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </nav>
-  
-    <div class="container mt-5 d-flex">
-      <div class="col">
-        <p class="custom-text">Escrita de <span>qualquer</span> coisa</p>
-        <p class="custom-text">Escrita de <span>qualquer</span> coisa</p>
-        <p class="custom-text">Escrita de <span>qualquer</span> coisa</p>
-      </div>
-    </div>
   </div>
   
-  <div class="background background2 d-flex align-items-center justify-content-center">
-    <div class="container text-center bg-dark bg-opacity-75 text-white p-5 rounded-4 w-50">
-      <h2 class="fw-bold">Sobre a Empresa</h2>
-      <p class="mt-3">
-        A Eco Vida é uma plataforma dedicada à automatização de máquinas com o objetivo de contribuir para a preservação do meio ambiente. Por meio de tecnologias inovadoras e soluções inteligentes, ajudamos empresas a implementar processos mais eficientes e sustentáveis. Nosso foco é otimizar operações, reduzir desperdícios e promover práticas eco-friendly, tornando a automatização uma aliada no cuidado com o planeta. Com a Eco Vida, buscamos um futuro mais verde e tecnológico. 
-      </p>
-      <p>
-        Trabalhamos com reciclagem, energia renovável e educação ambiental para construir um futuro mais verde.
-      </p>
+
+    <!-- Nova Seção: Tecnologias Usadas -->
+    <div class="background background2 py-5">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-10 col-xl-8">
+                    <div class="text-center bg-dark bg-opacity-75 text-white p-4 p-md-5 rounded-4">
+                        <h2 class="fw-bold"><span>Tecnologias Usadas</span></h2>
+                        <div class="row mt-4">
+                            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                <img src="../Principal/imagens/html.png" style="width: 80px; margin-top: 10px;" alt="Tecnologia 1" class="img-fluid w-10">
+                                <p class="mt-2">HTML</p>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                <img src="../Principal/imagens/js.webp" style="width: 100px;" alt="Tecnologia 2" class="img-fluid">
+                                <p class="mt-2">JavaScript</p>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                <img src="../Principal/imagens/css.png" style="width: 90px; margin-top: 10px;" alt="Tecnologia 3" class="img-fluid">
+                                <p class="mt-2">CSS</p>
+                            </div>
+                            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                                <img src="../Principal/imagens/python.png" style="width: 100px;" alt="Tecnologia 4" class="img-fluid">
+                                <p class="mt-2">Python</p>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                          <div class="col-6 col-md-4 col-lg-3 mb-4">
+                              <img src="../Principal/imagens/node-red.png" style="width: 90px;" alt="Tecnologia 1" class="img-fluid w-10">
+                              <p class="mt-2">Node-Red</p>
+                          </div>
+                          <div class="col-6 col-md-4 col-lg-3 mb-4">
+                              <img src="../Principal/imagens/postgre.png" style="width: 100px;" alt="Tecnologia 2" class="img-fluid">
+                              <p class="mt-2">PostgreSQL</p>
+                          </div>
+                          <div class="col-6 col-md-4 col-lg-3 mb-4">
+                              <img src="../Principal/imagens/bootstrap-4096.png" style="width: 100px;" alt="Tecnologia 3" class="img-fluid">
+                              <p class="mt-2">Bootstrap</p>
+                          </div>
+                          <div class="col-6 col-md-4 col-lg-3 mb-4">
+                              <img src="../Principal/imagens/seaborn.svg" style="width: 100px;" alt="Tecnologia 4" class="img-fluid">
+                              <p class="mt-2">Seaborn</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  
-
-  <div class="background background3 d-flex align-items-center justify-content-center">
-    <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="card mb-3 bg-dark bg-opacity-75 text-white p-5" style="max-width: 940px; border-radius: 30px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="Captura de tela 2025-02-06 203219.png" class="img-fluid " style="border-radius: 50%;" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h2>Tobias Perassi Alquezar</h2>
-                  <p class="card-text"></p>
-                  <p class="card-text" style="font-size: 70px;">Front-End</p>
+    <!-- Seção 3: Carrossel -->
+    <div class="background background3 py-5">
+        <div class="container my-5">
+            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
+                                    <img src="../Principal/imagens/Captura de tela 2025-02-06 203219.png" class="img-fluid rounded-circle" alt="Foto do Colaborador">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-4 p-lg-5">
+                                        <h2 class="card-title"><span>Tobias Perassi Alquezar</span></h2>
+                                        <p class="card-text">
+                                            Analista e Desenvolvedor apaixonado por inovação e automação. Contribui para a transformação sustentável da empresa.
+                                        </p>
+                                        <p class="card-text">
+                                            <small>Front-End | ADS Senai</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
+                                    <img src="../Principal/imagens/carlinhos.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-4 p-lg-5">
+                                        <h2 class="card-title"><span>Carlos Eduardo Pereira de Oliveira</span></h2>
+                                        <p class="card-text">
+                                            Desenvolvedor com interesse em back end.
+                                        </p>
+                                        <p class="card-text">
+                                            <small>Puxar dados do CLP | ADS Senai</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
+                                    <img src="../Principal/imagens/serjao.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-4 p-lg-5">
+                                        <h2 class="card-title"><span>Rafael Serio Sinkevicius</span></h2>
+                                        <p class="card-text">
+                                            Desenvolvedor com grande interesse em automação e inteligência artificial, buscando transformar dados em respostas inteligentes e precisas
+                                        </p>
+                                        <p class="card-text">
+                                            <small>Chatbot | ADS Senai</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                            <div class="row g-0">
+                                <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
+                                    <img src="../Principal/imagens/giovana.jpg" class="img-fluid rounded-circle" alt="Foto do Colaborador">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body p-4 p-lg-5">
+                                        <h2 class="card-title"><span>Giovana Rafaela da Silva</span></h2>
+                                        <p class="card-text">
+                                            Desenvolvedora apaixonada por frontend e banco de dados, com foco em criar interfaces intuitivas e gerenciar dados de forma eficiente.
+                                        </p>
+                                        <p class="card-text">
+                                            <small>Banco de Dados e Ciência de Dados | ADS Senai</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-          </div>
         </div>
-        <div class="carousel-item">
-          <div class="card mb-3 bg-dark bg-opacity-75 text-white p-5" style="max-width: 940px; border-radius: 30px;">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <img src="Captura de tela 2025-02-06 203219.png" class="img-fluid " style="border-radius: 50%;" alt="...">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Tobias Perassi Alquezar</h5>
-                  <p class="card-text"></p>
-                  <p class="card-text"><small class="text-white p-5">Me chamo Tobias Perassi Alquezar, tenho 18 anos e sou estudante de Análise e Desenvolvimento de Sistemas (ADS) no SENAI. Desde que iniciei minha trajetória acadêmica, venho me dedicando ao aprendizado e desenvolvimento de soluções na área de tecnologia da informação, com foco especial em desenvolvimento web, lógica de programação e sistemas orientados a dados. Tenho conhecimentos em linguagens como HTML, CSS, JavaScript e PHP, além de noções de banco de dados com MySQL e frameworks modernos. Também estou sempre me atualizando sobre boas práticas de usabilidade, segurança e performance, buscando unir design e funcionalidade em projetos web. </small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="card bg-dark bg-opacity-75 text-white p-4" style="max-width: 940px; border-radius: 30px;">
-            <div class="row g-0">
-              <div class="col-md-4 d-flex align-items-center justify-content-center">
-                <img src="Captura de tela 2025-02-06 203219.png" class="img-fluid rounded-circle" style="max-width: 80%;" alt="Foto do Colaborador">
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h2 class="card-title">Tobias Perassi Alquezar</h2>
-                  <p class="card-text">
-                    Analista e Desenvolvedor apaixonado por inovação e automação. Contribui para a transformação sustentável da empresa.
-                  </p>
-                  <p class="card-text">
-                    <small>Front-End | ADS no SENAI</small>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true">
-        </span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

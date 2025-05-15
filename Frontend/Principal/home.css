@@ -1,40 +1,166 @@
 body {
-    color: white;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 .background {
-    width: 100%;
-    height: 585px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+} .btn:hover{
+  a{
+    color: black;
+  }
 }
 
 .background1 {
-    background-image: url('fundo_home.png');
+  background-image: url('../Principal/imagens/fundo_home.png');
 }
 
 .background2 {
-    background-image: url('fundo_home2.png');
+  background-image: url('../Principal/imagens/fundo_home2.png');
 }
 
 .background3 {
-  background-image: url('fundo_home3.png');
+  background-image: url('../Principal/imagens/fundo_home3.png');
 }
+
+.background4 {
+  background-image: url('https://images.unsplash.com/photo-1507521628349-6e9b8a9e6d5b?w=1920&h=1080&fit=crop');
+}
+
+.background5 {
+  background-image: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=1920&h=1080&fit=crop');
+}
+
+.custom-text {
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+span {
+  color: #007bff;
+}
+
+.custom-lines {
+  width: 100%;
+  height: 150px;
+  background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+}
+
+/* Estilização para as novas seções */
+.background4 ul li img,
+.background5 .row img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.background5 .row img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .background2 .container,
+  .background4 .container,
+  .background5 .container {
+      width: 75% !important;
+  }
+  
+  .carousel-item .card {
+      max-width: 90% !important;
+      margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .background {
+      height: auto;
+      padding-bottom: 2rem;
+  }
+  
+  .background2 .container,
+  .background4 .container,
+  .background5 .container {
+      width: 90% !important;
+      padding: 2rem !important;
+  }
+  
+  .carousel-item .card {
+      flex-direction: column;
+  }
+  
+  .carousel-item .col-md-4 {
+      margin-bottom: 1.5rem;
+  }
+  
+  .carousel-item img {
+      max-width: 200px !important;
+      margin: 0 auto;
+  }
+
+  .background4 ul li img,
+  .background5 .row img {
+      width: 40px;
+      height: 40px;
+  }
+
+  .background5 .row img {
+      width: 80px;
+      height: 80px;
+  }
+}
+
+@media (max-width: 576px) {
   .custom-text {
-    font-size: 3rem;
-    font-weight: bold;
+      font-size: 1.8rem;
   }
-  .custom-text span {
-    color: #007bff;
+  
+  .navbar-brand img {
+      width: 120px !important;
   }
-  .custom-lines {
-    width: 100%;
-    height: 150px;
-    background: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+  
+  .background2 .container,
+  .background4 .container,
+  .background5 .container {
+      padding: 1.5rem !important;
+  }
+  
+  .carousel-item .card-body {
+      padding: 1rem !important;
+  }
+  
+  .carousel-item h2 {
+      font-size: 1.5rem;
+  }
+
+  .background4 ul li img {
+      width: 30px;
+      height: 30px;
+  }
+
+  .background5 .row img {
+      width: 60px;
+      height: 60px;
+  }
+}
+
+.botoes1{
+  display: flex;
 }
