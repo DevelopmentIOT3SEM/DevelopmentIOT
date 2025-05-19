@@ -45,17 +45,24 @@
 </head>
 <body>
     <div class="tudo">
-        <div class="sidebar">
-            <div>
-                <img id="logo" src="Images/logoo2.png">
-                <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_azul1.png">Dashboard</button>
-                <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_azul2.png">Monitoramento</button>
-                <button class="botao_header" onclick="mudarChatbot()"> <img id="botao2" class="imagem_botao" src="Images/chatbot (2).png">Chatbot</button>
-                <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_azul3.png">LogOut</button>
-            </div>
-        </div>
+        <div class="navbar">
+          <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+          <div class="sidebar">
+              <button class="close-btn" onclick="toggleSidebar()">X</button>
+              <div class="imagem-container">
+                  <img id="logo" src="Images/logoo2.png" alt="">
+              </div>
+              
+              <div>
+                  <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_azul1.png">Dashboard</button>
+                  <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_azul2.png">Monitoramento</button>
+                  <button class="botao_header" onclick="mudarChatbot()"> <img id="botao2" class="imagem_botao" src="Images/chatbot (2).png">Chatbot</button>
+                  <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_azul3.png">LogOut</button>
+              </div>
+          </div>
+      </div>
         <div class="bloco-direita">
-            <h1>🔍 Monitoramento da Máquina</h1>
+            <h1 style="margin-top: 50px;">Monitoramento da Máquina</h1>
             <div class="dashboard">
                 <div class="card">
                 <h2>Esteiras</h2>
@@ -86,7 +93,6 @@
                 <h2>Erros</h2>
                 <ul id="erros">
                     <li>Sensor de posição falhou</li>
-                    <li>Atuador atrasado</li>
                 </ul>
                 </div>
             </div>

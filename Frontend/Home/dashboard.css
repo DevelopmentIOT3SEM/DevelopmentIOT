@@ -174,13 +174,18 @@ body {
 .grafico4,
 .grafico5,
 .grafico6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
     padding: 1rem;
     flex: 1 1 45%;
     text-align: center;
-    min-width: 300px;
+    min-width: 150px;
 }
 
 .grafico1,
@@ -200,8 +205,8 @@ body {
 }
 
 .grafico3 canvas {
-    height: 150px !important;
-    width: 100% !important;
+    height: 75% !important;
+    width: 75% !important;
 }
 
 .grafico4 canvas {
@@ -245,22 +250,60 @@ h2 {
 
 /* Responsividade para telas menores */
 @media (max-width: 1024px) {
+    .navbar {
+        justify-content: center;
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .botoes {
+        flex-direction: row;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    #bots {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 1rem;
+    }
+
+    .close-btn {
+        display: block; /* Mostra o botão de fechar em telas menores */
+    }
+
     .sidebar {
-        width: 60px;
-        min-width: 60px;
+        transform: translateX(-100%);
+        width: 200px;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
     }
 
     .sidebar img#logo {
-        display: none;
+        display: block;
+        width: 100%;
+        max-width: 120px;
     }
 
     .botao_header {
-        justify-content: center;
+        font-size: 1rem;
+        justify-content: flex-start;
+        padding: 10px 20px;
+        width: 100%;
     }
 
     .botao_header .imagem_botao {
-        margin: 0;
-        width: 30px;
+        margin-right: 10px;
+        width: 20px;
     }
 
     .conteudo {
@@ -368,7 +411,8 @@ h2 {
     }
 
     .grafico3 canvas {
-        height: 120px !important;
+        height: 250px !important;
+        width: 300px !important;
     }
 
     .grafico4 canvas {
@@ -376,11 +420,12 @@ h2 {
     }
 
     .grafico5 #heatmap {
-        height: 150px !important;
+        height: 300px !important;
+        width: 300px !important;
     }
 
     .grafico6 canvas {
-        height: 150px !important;
+        height: 300px !important;
     }
 }
 
@@ -413,7 +458,7 @@ h2 {
     }
 
     .grafico3 canvas {
-        height: 100px !important;
+        height: 250px !important;
     }
 
     .grafico4 canvas {
@@ -421,11 +466,11 @@ h2 {
     }
 
     .grafico5 #heatmap {
-        height: 120px !important;
+        height: 300px !important;
     }
 
     .grafico6 canvas {
-        height: 120px !important;
+        height: 300px !important;
     }
 
     .sidebar {
