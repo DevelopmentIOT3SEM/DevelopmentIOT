@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    width: 65rem;
+    height: 40rem;
+    z-index: 2;
+    margin: auto;
+    margin-left: 23rem;
+    margin-right: 23rem;
+    border-radius: 13px;
+    box-shadow: 3px 3px 3px rgba(79, 79, 79, 0.434);
+}
+
+.bot {
+    display: flex;
+    flex-direction: row;
+    background-color: #010b21;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    height: 3.5rem;
+}
+
+.interacao {
+    margin-top: auto; 
+    display: flex;
+    justify-content: end;
+    justify-content: row;
+    position: relative;
+}
+
+#chat {
+    display: flex;
+    width: 60rem;
+    padding: 1.5rem 1rem;
+    border-radius: 13px;
+    border: 1px solid gray;
+    justify-content: end;
+    margin-bottom: 1rem;
+    margin-right: 2.5rem;
+}
+#foto{
+    height: 2.75rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+#nome{
+    color: white;
+    margin-top: 1.25rem;
+    margin-left: 0.5rem;
+    font-size:large;
+}
+#send {
+    position: absolute;
+    right: 3.5rem;
+    top: 42%;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+}
+input::placeholder{
+    font-size: larger;
+}
+input:focus{
+    outline: 1.5px solid #97a2bb;
+}
+

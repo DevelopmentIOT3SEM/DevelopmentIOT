@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="chatbot.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+        <div class="sidebar">
+            <button class="close-btn" onclick="toggleSidebar()">X</button>
+            <div class="imagem-container">
+                <img id="logo" src="Images/logoo2.png" alt="">
+            </div>
+            <div>
+                <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_azul1.png">Dashboard</button>
+                <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_azul2.png">Monitoramento</button>
+                <button class="botao_header" onclick="mudarChatbot()"> <img id="botao2" class="imagem_botao" src="Images/chatbot (2).png">Chatbot</button>
+                <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_azul3.png">LogOut</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="bot">
+                <img src="../Home/Images/chatbot (1).png" id="foto">
+                <p id="nome">EcoBot</p>
+            </div>
+            <div class="interacao">
+                <input type="text" placeholder="Pergunte algo ao EcoBot.." id="chat">
+                    <img onclick="Mandar()" src="../Home/Images/mandar.png" id="send">
+            </div>
+            
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>
