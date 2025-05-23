@@ -11,12 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-  
+    <div class="navbar">
+        <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
         <div class="sidebar">
             <button class="close-btn" onclick="toggleSidebar()">X</button>
             <div class="imagem-container">
                 <img id="logo" src="Images/logoo2.png" alt="">
             </div>
+            
             <div>
                 <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_azul1.png">Dashboard</button>
                 <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_azul2.png">Monitoramento</button>
@@ -24,13 +26,15 @@
                 <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_azul3.png">LogOut</button>
             </div>
         </div>
+    </div>
+
         <div class="container">
             <div class="bot">
                 <img src="../Home/Images/chatbot (1).png" id="foto">
                 <p id="nome">EcoBot</p>
             </div>
             <div class="interacao">
-                <input type="text" placeholder="Pergunte algo ao EcoBot.." id="chat">
+                <input type="text" placeholder="Pergunte algo ao EcoBot.." id="chat" autocomplete="off">
                     <img onclick="Mandar()" src="../Home/Images/mandar.png" id="send">
             </div>
             
