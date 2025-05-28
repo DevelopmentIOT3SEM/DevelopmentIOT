@@ -137,9 +137,8 @@ body {
     background-color: #eee;
 }
 
-/* Estilo do botão de fechar */
 .close-btn {
-    display: none; /* Escondido por padrão */
+    display: none;
     background: none;
     border: none;
     color: #bce7f8;
@@ -151,7 +150,6 @@ body {
     margin-left: 100px;
 }
 
-/* Conteúdo Principal */
 .conteudo {
     margin-left: 17%;
     padding: 7rem 2rem 2rem;
@@ -193,7 +191,6 @@ body {
     flex: 1 1 100%;
 }
 
-/* Ajustes de altura dos gráficos */
 .grafico1 canvas {
     height: 300px !important;
     width: 100% !important;
@@ -224,20 +221,17 @@ body {
     width: 100% !important;
 }
 
-/* Imagem e botões pequenos */
 .imagem_botao {
     width: 20px;
     height: auto;
 }
 
-/* Estilos de textos */
 h1,
 h2 {
     color: #2931ac;
     margin-bottom: 1rem;
 }
 
-/* Botão de menu hambúrguer */
 .menu-toggle {
     display: none;
     background: none;
@@ -248,7 +242,6 @@ h2 {
     padding: 0.5rem;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 1024px) {
     .navbar {
         justify-content: center;
@@ -276,7 +269,7 @@ h2 {
     }
 
     .close-btn {
-        display: block; /* Mostra o botão de fechar em telas menores */
+        display: block; 
     }
 
     .sidebar {
@@ -351,7 +344,7 @@ h2 {
     }
 
     .close-btn {
-        display: block; /* Mostra o botão de fechar em telas menores */
+        display: block; 
     }
 
     .sidebar {
