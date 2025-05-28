@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <!-- Seção 1: Cabeçalho com Imagem de Fundo -->
     <div class="background background1">
         <nav class="navbar navbar-expand-lg navbar-dark px-3 py-2 py-lg-3">
             <div class="container-fluid">
@@ -42,7 +41,6 @@
         </div>
     </div>
     
-    <!-- Seção 2: Sobre a Empresa -->
     <div class="background background2 py-5">
         <div class="container my-5">
             <div class="row justify-content-center">
@@ -61,7 +59,6 @@
         </div>
     </div>
 
-    <!-- Nova Seção: Para que Serve o Projeto -->
     <div class="background background1 py-5">
       <div class="container my-5">
           <h2 class="fw-bold text-center text-white mb-5"><span>Objetivos do Projeto</span></h2>
@@ -100,7 +97,6 @@
   </div>
   
 
-    <!-- Nova Seção: Tecnologias Usadas -->
     <div class="background background2 py-5">
         <div class="container my-5">
             <div class="row justify-content-center">
@@ -149,101 +145,210 @@
         </div>
     </div>
 
-    <!-- Seção 3: Carrossel -->
-    <div class="background background3 py-5">
-        <div class="container my-5">
-            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
-                            <div class="row g-0">
-                                <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
-                                    <img src="../Principal/imagens/Captura de tela 2025-02-06 203219.png" class="img-fluid rounded-circle" alt="Foto do Colaborador">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body p-4 p-lg-5">
-                                        <h2 class="card-title"><span>Tobias Perassi Alquezar</span></h2>
-                                        <p class="card-text">
-                                            Analista e Desenvolvedor apaixonado por inovação e automação. Contribui para a transformação sustentável da empresa.
-                                        </p>
-                                        <p class="card-text">
-                                            <small>Front-End | ADS Senai</small>
-                                        </p>
-                                    </div>
-                                </div>
+   <div class="background background3 min-vh-100 d-flex justify-content-center align-items-center py-5">
+    <div class="container my-5">
+        <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="8" aria-label="Slide 9"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/Captura de tela 2025-02-06 203219.png" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
                             </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
-                            <div class="row g-0">
-                                <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
-                                    <img src="../Principal/imagens/carlinhos.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body p-4 p-lg-5">
-                                        <h2 class="card-title"><span>Carlos Eduardo Pereira de Oliveira</span></h2>
-                                        <p class="card-text">
-                                            Desenvolvedor com interesse em back end.
-                                        </p>
-                                        <p class="card-text">
-                                            <small>Puxar dados do CLP | ADS Senai</small>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
-                            <div class="row g-0">
-                                <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
-                                    <img src="../Principal/imagens/serjao.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body p-4 p-lg-5">
-                                        <h2 class="card-title"><span>Rafael Serio Sinkevicius</span></h2>
-                                        <p class="card-text">
-                                            Desenvolvedor com grande interesse em automação e inteligência artificial, buscando transformar dados em respostas inteligentes e precisas
-                                        </p>
-                                        <p class="card-text">
-                                            <small>Chatbot | ADS Senai</small>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
-                            <div class="row g-0">
-                                <div class="col-md-4 d-flex align-items-center justify-content-center p-4">
-                                    <img src="../Principal/imagens/giovana.jpg" class="img-fluid rounded-circle" alt="Foto do Colaborador">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body p-4 p-lg-5">
-                                        <h2 class="card-title"><span>Giovana Rafaela da Silva</span></h2>
-                                        <p class="card-text">
-                                            Desenvolvedora apaixonada por frontend e banco de dados, com foco em criar interfaces intuitivas e gerenciar dados de forma eficiente.
-                                        </p>
-                                        <p class="card-text">
-                                            <small>Banco de Dados e Ciência de Dados | ADS Senai</small>
-                                        </p>
-                                    </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Tobias Perassi Alquezar</span></h2>
+                                    <p class="card-text">
+                                        Analista e Desenvolvedor apaixonado por inovação e automação. Contribui para a transformação sustentável da empresa.
+                                    </p>
+                                    <p class="card-text">
+                                        <small>Front-End | ADS Senai</small>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                <div class="carousel-item">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/carlinhos.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Carlos Eduardo Pereira de Oliveira</span></h2>
+                                    <p class="card-text">
+                                        Desenvolvedor com interesse em back end.
+                                    </p>
+                                    <p class="card-text">
+                                        <small>Puxar dados do CLP | ADS Senai</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/serjao.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Rafael Serio Sinkevicius</span></h2>
+                                    <p class="card-text">
+                                        Desenvolvedor com grande interesse em automação e inteligência artificial, buscando transformar dados em respostas inteligentes e precisas
+                                    </p>
+                                    <p class="card-text">
+                                        <small>Chatbot | ADS Senai</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/giovana.jpg" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Giovana Rafaela da Silva</span></h2>
+                                    <p class="card-text">
+                                        <small>Banco de Dados, Ciência de Dados, Pesquisa e Artigo Técnico | ADS Senai</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/juan.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Juan Pablo</span></h2>
+                                    <p class="card-text">
+                                        Desenvolvedor com interesse em back end.
+                                    </p>
+                                    <p class="card-text">
+                                        <small>GitHub | ADS Senai</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/luizao.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Luiz Teles</span></h2>
+                                    <p class="card-text">
+                                        Desenvolvedor com interesse em back end.
+                                    </p>
+                                    <p class="card-text">
+                                        <small>GitHub | ADS Senai</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/juan.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Matheus Barbosa</span></h2>
+                                    <p class="card-text">
+                                        Desenvolvedor com interesse em back end.
+                                    </p>
+                                    <p class="card-text">
+                                        <small>GitHub | ADS Senai</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/julio.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Julio Figueiredo</span></h2>
+                                    <p class="card-text">
+                                        Desenvolvedor com interesse em back end.
+                                    </p>
+                                    <p class="card-text">
+                                        <small>GitHub | ADS Senai</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="card bg-dark bg-opacity-75 text-white overflow-hidden" style="border-radius: 30px;">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-12 col-md-4 d-flex justify-content-center p-4">
+                                <img src="../Principal/imagens/leo.jpeg" class="img-fluid rounded-circle" alt="Foto do Colaborador" style="max-width: 200px;">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <div class="card-body p-4 p-lg-5">
+                                    <h2 class="card-title"><span>Leonardo Pereira Camillo</span></h2>
+                                    <p class="card-text">
+                                        Desenvolvedor com interesse em back end.
+                                    </p>
+                                    <p class="card-text">
+                                        <small>GitHub | ADS Senai</small>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </div>
 
