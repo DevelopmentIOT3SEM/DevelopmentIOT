@@ -1,10 +1,10 @@
-*{ /*Definições padrão e fonte*/
+*{ 
     margin: 0;
     padding: 0; 
     box-sizing: border-box;
     font-family: "Onest";
 }
-.onest { /*Definição da fonte utilizada*/
+.onest { 
     font-family: "Onest", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
@@ -24,10 +24,10 @@ form{
     gap: 16px;
     flex-direction: column;
 }
-form button{ /*Cor dos botões Entrar e Cadastrar*/
+form button{ 
     background: linear-gradient(90deg, #a3c1e5 0%, #647aa3 100%);
 }
-input, button{ /*Jeito que vai ficar os inputs e buttons da tela*/
+input, button{
     border: none;
     outline: none;
     width: 400px;
@@ -38,14 +38,14 @@ input, button{ /*Jeito que vai ficar os inputs e buttons da tela*/
 
 
 
-input{ /*Cor dos inputs e cor que sairá o texto*/
+input{ 
     background-color: #56575a9a;
     color: rgba(255,255, 255, 0.9);
 }
-input::placeholder{ /*Cor do placeholder que eu coloquei no HTML*/
+input::placeholder{ 
     color:rgba(255,255, 255, 0.5);
 }
-button{ /*Arrumando os botões e colocando transição*/
+button{ 
     font-weight: 700;
     margin-top: 20px;
     padding: 16px;
@@ -53,7 +53,7 @@ button{ /*Arrumando os botões e colocando transição*/
     color: #40394bcc;
     transition: all 0.3s ease;
 }
-button:hover{ /*A transição propriamente dita é aqui*/
+button:hover{ 
     transform: translateY(-4px);
 }
 p{
@@ -159,7 +159,6 @@ a{
     transform: translateX(50%);
 }
 
-/* Estilos para quando o cadastro está ativo */
 .card.cadastroActive .naotemCadastro {
     opacity: 0;
     pointer-events: none;
@@ -185,7 +184,7 @@ a{
     opacity: 1; 
 }
 
-/* Transições */
+
 .card::after {
     transition: all .5s;
 }
@@ -225,7 +224,6 @@ a{
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Faz a logo sumir durante as transições */
 .card.loginActive .formLogin::before,
 .card.cadastroActive .formCadastro::before {
     opacity: 0;
