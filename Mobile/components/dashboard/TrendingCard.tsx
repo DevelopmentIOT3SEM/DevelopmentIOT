@@ -2,6 +2,11 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useColorScheme } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
+import { TrendingUp, TrendingDown } from 'lucide-react-native';
+import { Users, DollarSign, SquareCheck as CheckSquare, ChartPie as PieChart } from 'lucide-react-native';
+import { BarChart } from 'react-native-chart-kit';
+import { ChartBar as BarChart2 } from 'lucide-react-native';
+
 
 export function TrendingCard() {
   const colorScheme = useColorScheme();
@@ -16,7 +21,7 @@ export function TrendingCard() {
         strokeWidth: 2,
       },
     ],
-    legend: ['Peças por esteira'],
+    legend: ['Sales'],
   };
   
   const chartConfig = {

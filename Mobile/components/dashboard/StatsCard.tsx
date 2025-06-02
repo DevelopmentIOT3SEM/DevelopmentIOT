@@ -2,12 +2,16 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useColorScheme } from 'react-native';
 import { TrendingUp, TrendingDown, Users, DollarSign, SquareCheck as CheckSquare, ChartPie as PieChart } from 'lucide-react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Package } from 'lucide-react-native'; // substituto para ConveyorBelt
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 interface StatsCardProps {
   title: string;
   value: string;
-  change: number;
-  iconName: 'users' | 'dollar-sign' | 'check-square' | 'pie-chart';
+  change: boolean;
+  iconName: 'users' | 'dollar-sign' | 'check-square' | 'pie-chart' | 'trending-up' | 'trending-down' | 'treasure-chest' | 'conveyor-belt';
   color: string;
 }
 
@@ -27,6 +31,14 @@ export function StatsCard({ title, value, change, iconName, color }: StatsCardPr
         return <CheckSquare {...props} />;
       case 'pie-chart':
         return <PieChart {...props} />;
+      case 'trending-up':
+        return <TrendingUp {...props} />;
+      case 'trending-down':
+        return <TrendingDown {...props} />;
+      case 'conveyor-belt':
+         return <Package {...props} />;
+         case 'treasure-chest':
+         return <MaterialCommunityIcons name="treasure-chest" {...props} />;
       default:
         return null;
     }
@@ -43,23 +55,18 @@ export function StatsCard({ title, value, change, iconName, color }: StatsCardPr
       
       <Text style={[styles.value, isDark && styles.valueDark]}>{value}</Text>
       
-      <View style={styles.footer}>
-        <View style={[
-          styles.changeContainer, 
-          change >= 0 ? styles.positiveContainer : styles.negativeContainer
-        ]}>
-          {change >= 0 ? (
-            <TrendingUp size={14} color="#10B981" />
-          ) : (
-            <TrendingDown size={14} color="#EF4444" />
-          )}
-          <Text style={change >= 0 ? styles.positiveText : styles.negativeText}>
-            {change >= 0 ? '+' : ''}{change}%
-          </Text>
+    <View style={styles.footer}>
+            <View style={[
+              styles.statusContainer,
+              change ? styles.activeContainer : styles.inactiveContainer
+                ]}>
+              <Text style={change ? styles.activeText : styles.inactiveText}>
+                {change ? 'Ativo' : 'Desativado'}
+              </Text>
+            </View>
         </View>
-        <Text style={[styles.period, isDark && styles.periodDark]}>{change >= 0 ? 'Aumentou' : 'Diminuiu'}</Text>
       </View>
-    </View>
+    
   );
 }
 
@@ -148,4 +155,26 @@ const styles = StyleSheet.create({
   periodDark: {
     color: '#94A3B8',
   },
+  statusContainer: {
+  paddingHorizontal: 8,
+  paddingVertical: 4,
+  borderRadius: 4,
+},
+activeContainer: {
+  backgroundColor: '#DCFCE7',
+},
+inactiveContainer: {
+  backgroundColor: '#FEE2E2',
+},
+activeText: {
+  fontFamily: 'Inter-Medium',
+  fontSize: 12,
+  color: '#10B981',
+},
+inactiveText: {
+  fontFamily: 'Inter-Medium',
+  fontSize: 12,
+  color: '#EF4444',
+},
+
 });
