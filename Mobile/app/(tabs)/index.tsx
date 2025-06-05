@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StyleSheet, ScrollView, RefreshControl } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, ScrollView, RefreshControl, ActivityIndicator, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { useAuth } from '@/context/AuthContext';
@@ -8,25 +8,51 @@ import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
 import { StatsCard } from '@/components/dashboard/StatsCard';
 import { ActivityCard } from '@/components/dashboard/ActivityCard';
 import { TrendingCard } from '@/components/dashboard/TrendingCard';
-import { useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { Package } from 'lucide-react-native';
-import { TrendingUp } from 'lucide-react-native';
 
 export default function DashboardScreen() {
-  const { user } = useAuth();
+  const { user, fetchProductionData, fetchRejectedData } = useAuth();
   const colorScheme = useColorScheme();
   const [refreshing, setRefreshing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [productionData, setProductionData] = useState<ProductionItem[]>([]);
+  const [rejectedData, setRejectedData] = useState<ProductionItem[]>([]);
+  const [error, setError] = useState<string | null>(null);
   const isDark = colorScheme === 'dark';
+
+  const countByRamp = (rampNumber: number, data: ProductionItem[]) => {
+    return data.filter(item => item.rampa === rampNumber).length;
+  };
+
+  const loadData = async () => {
+    try {
+      setLoading(true);
+      const [prodData, rejData] = await Promise.all([
+        fetchProductionData(),
+        fetchRejectedData()
+      ]);
+      setProductionData(prodData);
+      setRejectedData(rejData);
+      setError(null);
+    } catch (err) {
+      setError('Falha ao carregar dados');
+      console.error(err);
+    } finally {
+      setLoading(false);
+      setRefreshing(false);
+    }
+  };
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   const onRefresh = React.useCallback(() => {
     setRefreshing(true);
-    // Simulate data fetching
-    setTimeout(() => {
-      setRefreshing(false);
-    }, 1500);
+    loadData();
   }, []);
-  
+
+  // ... (mantenha os tratamentos de loading e error)
+
   return (
     <>
       <StatusBar style={isDark ? 'light' : 'dark'} />
@@ -41,33 +67,16 @@ export default function DashboardScreen() {
           
           <View style={styles.statsContainer}>
             <StatsCard 
-              title="Usuários" 
-              value="1" 
-              change={12.3}
-              iconName="users"
-              color="#3B82F6" 
-            />
-            <StatsCard 
-              title="Peças em estoque" 
-              value="23" 
-              change={8.1}
-              iconName="treasure-chest" 
-              color="#14B8A6"
-            />
-          </View>
-          
-          <View style={styles.statsContainer}>
-            <StatsCard 
               title="Rampa 1" 
-              value="5" 
-              change={-2.5}
+              value={countByRamp(1, productionData).toString()} 
+              status={countByRamp(1, productionData) > 0}
               iconName="conveyor-belt" 
               color="#9333EA"
             />
             <StatsCard 
               title="Rampa 2" 
-              value="15" 
-              change={4.6}
+              value={countByRamp(2, productionData).toString()} 
+              status={countByRamp(2, productionData) > 0}
               iconName="conveyor-belt" 
               color="#F59E0B"
             />
@@ -76,30 +85,46 @@ export default function DashboardScreen() {
           <View style={styles.statsContainer}>
             <StatsCard 
               title="Rampa 3" 
-              value="12" 
-              change={0}
+              value={countByRamp(3, productionData).toString()} 
+              status={countByRamp(3, productionData) > 0}
               iconName="conveyor-belt" 
               color="#9333EA"
             />
             <StatsCard 
-              title="Descarte" 
-              value="32" 
-              change={4.6}
-              iconName="conveyor-belt" 
+              title="Refugos" 
+              value={rejectedData.length.toString()} 
+              status={rejectedData.length > 0}
+              iconName="alert-octagon" // Ícone mais adequado para refugos
+              color="#EF4444" // Vermelho para indicar problema
+            />
+          </View>
+          
+          <View style={styles.statsContainer}>
+            <StatsCard 
+              title="Total Produzido" 
+              value={productionData.length.toString()} 
+              status={productionData.length > 0}
+              iconName="package" 
+              color="#14B8A6"
+            />
+            <StatsCard 
+              title="Taxa de Refugo" 
+              value={`${(rejectedData.length / (productionData.length + rejectedData.length) * 100).toFixed(1)}%`} 
+              status={(rejectedData.length / productionData.length) < 0.1} // Considera bom se <10%
+              iconName="trending-up" 
               color="#F59E0B"
             />
           </View>
           
-          <TrendingCard>
-           
-          </TrendingCard>
-          
+          <TrendingCard />
           <ActivityCard />
         </ScrollView>
       </SafeAreaView>
     </>
   );
 }
+
+// ... (mantenha os estilos existentes)
 
 const styles = StyleSheet.create({
   container: {

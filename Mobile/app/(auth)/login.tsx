@@ -14,18 +14,21 @@ export default function LoginScreen() {
   const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (email: string, password: string) => {
-    try {
-      setIsLoading(true);
-      setError(null);
-      await login(email, password);
-      router.replace('/(tabs)');
-    } catch (err) {
-      setError('Falha no login. Por favor, verifique suas credenciais.');
-      console.error(err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  try {
+    setIsLoading(true);
+    setError(null);
+    console.log('Tentando logar...');
+    await login(email, password);
+    console.log('Login feito, navegando...');
+    router.replace('/(tabs)');
+  } catch (err) {
+    setError('Falha no login. Por favor, verifique suas credenciais.');
+    console.error(err);
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   return (
     <>

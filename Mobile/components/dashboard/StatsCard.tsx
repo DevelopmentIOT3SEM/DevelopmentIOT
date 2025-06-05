@@ -1,44 +1,58 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useColorScheme } from 'react-native';
-import { TrendingUp, TrendingDown, Users, DollarSign, SquareCheck as CheckSquare, ChartPie as PieChart } from 'lucide-react-native';
-import { useNavigation } from '@react-navigation/native';
-import { Package } from 'lucide-react-native'; // substituto para ConveyorBelt
+import { 
+  TrendingUp, 
+  TrendingDown, 
+  Users, 
+  DollarSign, 
+  SquareCheck as CheckSquare, 
+  ChartPie as PieChart,
+  Package
+} from 'lucide-react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
-
+import { AlertOctagon } from 'lucide-react-native';
 
 interface StatsCardProps {
   title: string;
   value: string;
-  change: boolean;
-  iconName: 'users' | 'dollar-sign' | 'check-square' | 'pie-chart' | 'trending-up' | 'trending-down' | 'treasure-chest' | 'conveyor-belt';
+  status: boolean;
+  iconName: 'users' | 'dollar-sign' | 'check-square' | 'pie-chart' | 
+           'trending-up' | 'trending-down' | 'treasure-chest' | 'conveyor-belt' |
+           'alert-octagon' | 'package'; // Novos ícones
   color: string;
 }
 
-export function StatsCard({ title, value, change, iconName, color }: StatsCardProps) {
+// Adicione no switch do renderIcon
+
+export function StatsCard({ title, value, status, iconName, color }: StatsCardProps) {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
 
   const renderIcon = () => {
-    const props = { size: 24, color: color };
+    const iconProps = { size: 24, color: color };
     
     switch (iconName) {
       case 'users':
-        return <Users {...props} />;
+        return <Users {...iconProps} />;
       case 'dollar-sign':
-        return <DollarSign {...props} />;
+        return <DollarSign {...iconProps} />;
       case 'check-square':
-        return <CheckSquare {...props} />;
+        return <CheckSquare {...iconProps} />;
       case 'pie-chart':
-        return <PieChart {...props} />;
+        return <PieChart {...iconProps} />;
       case 'trending-up':
-        return <TrendingUp {...props} />;
+        return <TrendingUp {...iconProps} />;
       case 'trending-down':
-        return <TrendingDown {...props} />;
+        return <TrendingDown {...iconProps} />;
       case 'conveyor-belt':
-         return <Package {...props} />;
-         case 'treasure-chest':
-         return <MaterialCommunityIcons name="treasure-chest" {...props} />;
+        return <Package {...iconProps} />;
+      case 'treasure-chest':
+        return <MaterialCommunityIcons name="treasure-chest" {...iconProps} />;
+        case 'alert-octagon':
+        return <AlertOctagon {...iconProps} />;
+      case 'package':
+        return <Package {...iconProps} />;
       default:
         return null;
     }
@@ -55,21 +69,19 @@ export function StatsCard({ title, value, change, iconName, color }: StatsCardPr
       
       <Text style={[styles.value, isDark && styles.valueDark]}>{value}</Text>
       
-    <View style={styles.footer}>
-            <View style={[
-              styles.statusContainer,
-              change ? styles.activeContainer : styles.inactiveContainer
-                ]}>
-              <Text style={change ? styles.activeText : styles.inactiveText}>
-                {change ? 'Ativo' : 'Desativado'}
-              </Text>
-            </View>
+      <View style={styles.footer}>
+        <View style={[
+          styles.statusContainer,
+          status ? styles.activeContainer : styles.inactiveContainer
+        ]}>
+          <Text style={status ? styles.activeText : styles.inactiveText}>
+            {status ? 'Ativo' : 'Inativo'}
+          </Text>
         </View>
       </View>
-    
+    </View>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -82,7 +94,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 8,
     elevation: 2,
-    marginHorizontal: 4,
   },
   containerDark: {
     backgroundColor: '#1E293B',
@@ -121,60 +132,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  changeContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 6,
-    paddingVertical: 2,
+  statusContainer: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
     borderRadius: 4,
-    marginRight: 6,
   },
-  positiveContainer: {
+  activeContainer: {
     backgroundColor: '#DCFCE7',
   },
-  negativeContainer: {
+  inactiveContainer: {
     backgroundColor: '#FEE2E2',
   },
-  positiveText: {
+  activeText: {
     fontFamily: 'Inter-Medium',
     fontSize: 12,
     color: '#10B981',
-    marginLeft: 2,
   },
-  negativeText: {
+  inactiveText: {
     fontFamily: 'Inter-Medium',
     fontSize: 12,
     color: '#EF4444',
-    marginLeft: 2,
   },
-  period: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 12,
-    color: '#64748B',
-  },
-  periodDark: {
-    color: '#94A3B8',
-  },
-  statusContainer: {
-  paddingHorizontal: 8,
-  paddingVertical: 4,
-  borderRadius: 4,
-},
-activeContainer: {
-  backgroundColor: '#DCFCE7',
-},
-inactiveContainer: {
-  backgroundColor: '#FEE2E2',
-},
-activeText: {
-  fontFamily: 'Inter-Medium',
-  fontSize: 12,
-  color: '#10B981',
-},
-inactiveText: {
-  fontFamily: 'Inter-Medium',
-  fontSize: 12,
-  color: '#EF4444',
-},
-
 });
