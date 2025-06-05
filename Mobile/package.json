@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "EXPO_NO_TELEMETRY=1 expo start",
     "build:web": "expo export --platform web",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "web": "PORT=8081 expo start --web"
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.2.3",
@@ -16,7 +17,7 @@
     "@react-navigation/bottom-tabs": "^7.2.0",
     "@react-navigation/native": "^7.0.14",
     "axios": "^1.9.0",
-    "expo": "^53.0.9",
+    "expo": "^53.0.10",
     "expo-blur": "14.1.4",
     "expo-camera": "16.1.6",
     "expo-constants": "17.1.6",
