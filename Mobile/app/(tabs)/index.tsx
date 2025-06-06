@@ -8,6 +8,7 @@ import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
 import { StatsCard } from '@/components/dashboard/StatsCard';
 import { ActivityCard } from '@/components/dashboard/ActivityCard';
 import { TrendingCard } from '@/components/dashboard/TrendingCard';
+import { ProductionItem } from '@prisma/client';
 
 export default function DashboardScreen() {
   const { user, fetchProductionData, fetchRejectedData } = useAuth();
@@ -130,16 +131,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F7F9FC',
+    marginBottom: 8,  
   },
   containerDark: {
     backgroundColor: '#080C15',
   },
   scrollContent: {
-    padding: 16,
+    padding: 12,
   },
   statsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 16,
+    marginBottom: 12,
   },
 });

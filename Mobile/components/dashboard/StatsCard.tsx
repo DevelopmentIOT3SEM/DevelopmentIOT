@@ -94,6 +94,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.05,
     shadowRadius: 8,
     elevation: 2,
+    marginBottom: 12,
   },
   containerDark: {
     backgroundColor: '#1E293B',
@@ -136,6 +137,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 4,
+    
   },
   activeContainer: {
     backgroundColor: '#DCFCE7',
