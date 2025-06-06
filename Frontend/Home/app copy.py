@@ -43,8 +43,8 @@ def calcular_tempo_ligada_e_parada(monitoramento_data):
             if registro.get("estado") == "on":
                 inicio = datetime.fromisoformat(registro["timestampMonitoramento"].replace('Z', '+00:00'))
                 fim = (datetime.fromisoformat(monitoramento_data[i+1]["timestampMonitoramento"].replace('Z', '+00:00'))
-                       if i+1 < len(monitoramento_data)
-                       else datetime.now())
+                    if i+1 < len(monitoramento_data)
+                    else datetime.now())
                 total_tempo_ligada += fim - inicio
             elif registro.get("estado") == "off" and ultima_parada == "N/A":
                 ultima_parada = datetime.fromisoformat(registro["timestampMonitoramento"].replace('Z', '+00:00')).strftime("%d/%m/%Y às %H:%M")
