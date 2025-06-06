@@ -20,9 +20,8 @@ interface AuthContextType {
   fetchRejectedData: () => Promise<ProductionItem[]>;
 }
 
-const baseUrl = Platform.OS === 'android'
-  ? 'http://10.0.2.2:5271'
-  : 'http://localhost:5271';
+  const baseUrl = 'http://10.109.3.200:5271';
+
 
 const AuthContext = createContext<AuthContextType>({
   register: async () => {},

@@ -8,7 +8,7 @@ import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
 import { StatsCard } from '@/components/dashboard/StatsCard';
 import { ActivityCard } from '@/components/dashboard/ActivityCard';
 import { TrendingCard } from '@/components/dashboard/TrendingCard';
-import { ProductionItem } from '@prisma/client';
+import { ProductionItem } from '../prisma/client';
 
 export default function DashboardScreen() {
   const { user, fetchProductionData, fetchRejectedData } = useAuth();
@@ -125,13 +125,13 @@ export default function DashboardScreen() {
   );
 }
 
-// ... (mantenha os estilos existentes)
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F7F9FC',
-    marginBottom: 8,  
+      
   },
   containerDark: {
     backgroundColor: '#080C15',

@@ -64,33 +64,27 @@ export default function ChartsScreen() {
   
   const pieData = [
     {
-      name: 'Produto A',
+      name: 'Rampa 1',
       population: 45,
       color: '#3B82F6',
       legendFontColor: isDark ? '#FFFFFF' : '#1A2138',
       legendFontFamily: 'Inter-Regular',
     },
     {
-      name: 'Produto B',
+      name: 'Rampa 2',
       population: 28,
       color: '#14B8A6',
       legendFontColor: isDark ? '#FFFFFF' : '#1A2138',
       legendFontFamily: 'Inter-Regular',
     },
     {
-      name: 'Produto C',
+      name: 'Refugo',
       population: 17,
       color: '#9333EA',
       legendFontColor: isDark ? '#FFFFFF' : '#1A2138',
       legendFontFamily: 'Inter-Regular',
     },
-    {
-      name: 'Produto D',
-      population: 10,
-      color: '#F59E0B',
-      legendFontColor: isDark ? '#FFFFFF' : '#1A2138',
-      legendFontFamily: 'Inter-Regular',
-    },
+    
   ];
   
   return (
@@ -152,8 +146,8 @@ export default function ChartsScreen() {
           
           <View style={[styles.statsContainer, isDark && styles.statsContainerDark]}>
             <View style={styles.statItem}>
-              <Text style={[styles.statValue, isDark && styles.statValueDark]}>R$ 12.586</Text>
-              <Text style={[styles.statLabel, isDark && styles.statLabelDark]}>Receita Total</Text>
+              <Text style={[styles.statValue, isDark && styles.statValueDark]}>15</Text>
+              <Text style={[styles.statLabel, isDark && styles.statLabelDark]}>Total de peças</Text>
             </View>
             <View style={styles.statDivider} />
             <View style={styles.statItem}>
