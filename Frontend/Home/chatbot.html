@@ -34,9 +34,11 @@
                 <p id="nome">EcoBot</p>
             </div>
             <div class="interacao">
-                <input type="text" placeholder="Pergunte algo ao EcoBot.." id="chat" autocomplete="off">
-                    <img onclick="Mandar()" src="../Home/Images/mandar.png" id="send">
+                <input type="text" placeholder="Pergunte algo ao EcoBot.." id="mensagem" autocomplete="off">
+                    <img onclick="enviarMensagem()" src="../Home/Images/mandar.png" id="send">
             </div>
+
+            <div id="chat"> </div>
             
         </div>
     <script src="script.js"></script>
