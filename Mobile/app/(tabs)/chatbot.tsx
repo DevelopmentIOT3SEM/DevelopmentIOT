@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
-
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform } 
-from 'react-native';
+import { View, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'react-native';
@@ -13,29 +11,6 @@ type Message = {
   text: string;
   sender: 'user' | 'bot';
   timestamp: Date;
-};
-
-// Respostas simuladas para o chatbot
-const getBotResponse = (message: string): string => {
-  const lowerMessage = message.toLowerCase();
-  
-  if (lowerMessage.includes('hello') || lowerMessage.includes('hi')) {
-    return "Olá! Como posso te ajudar hoje com seus dados ou painel?";
-  } else if (lowerMessage.includes('dashboard')) {
-    return "Seu painel exibe métricas importantes como crescimento de usuários, receita, tarefas e taxas de conclusão. Você pode ver mais detalhes na seção de Análises.";
-  } else if (lowerMessage.includes('chart') || lowerMessage.includes('graph')) {
-    return "A seção de Análises oferece vários gráficos, incluindo linhas, barras e pizza. Você pode alternar entre eles e mudar o período para ver padrões diferentes nos seus dados.";
-  } else if (lowerMessage.includes('revenue') || lowerMessage.includes('sales')) {
-    return "Sua receita atual é de R$ 42.853, com um aumento de 8,1% em relação ao período anterior. Continue assim!";
-  } else if (lowerMessage.includes('user') || lowerMessage.includes('customer')) {
-    return "Você tem 12.592 usuários no total, com uma taxa de crescimento de 12,3% em relação ao último período. A maioria dos seus usuários está ativa nos dias de semana.";
-  } else if (lowerMessage.includes('help') || lowerMessage.includes('support')) {
-    return "Estou aqui para ajudar! Você pode me perguntar sobre métricas do painel, dados de gráficos ou como usar este aplicativo. Que informação específica você está procurando?";
-  } else if (lowerMessage.includes('thank')) {
-    return "De nada! Se tiver mais perguntas, é só me chamar.";
-  } else {
-    return "Não entendi bem. Você pode reformular sua pergunta sobre dados, painel ou gráficos?";
-  }
 };
 
 export default function ChatbotScreen() {
@@ -50,10 +25,10 @@ export default function ChatbotScreen() {
       timestamp: new Date(),
     },
   ]);
-  
+
   const flatListRef = useRef<FlatList>(null);
-  
-  const handleSend = () => {
+
+  const handleSend = async () => {
     if (message.trim()) {
       const userMessage: Message = {
         id: Date.now().toString(),
@@ -61,39 +36,64 @@ export default function ChatbotScreen() {
         sender: 'user',
         timestamp: new Date(),
       };
-      
+
       setMessages(prevMessages => [...prevMessages, userMessage]);
+      const userInput = message; // salva input
       setMessage('');
-      
-      // Simulate bot response delay
-      setTimeout(() => {
+
+      try {
+        const response = await fetch('localhost:5000/chatbot', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ message: userInput }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Erro na resposta da API');
+        }
+
+        const data = await response.json();
+
         const botMessage: Message = {
           id: (Date.now() + 1).toString(),
-          text: getBotResponse(message),
+          text: data.response || "Desculpe, não consegui entender a resposta.",
           sender: 'bot',
           timestamp: new Date(),
         };
-        
+
         setMessages(prevMessages => [...prevMessages, botMessage]);
-        
+
         // Scroll to bottom after bot response
         setTimeout(() => {
           flatListRef.current?.scrollToEnd({ animated: true });
         }, 100);
-      }, 1000);
-      
+
+      } catch (error) {
+        console.error('Erro ao chamar API:', error);
+        const errorMessage: Message = {
+          id: (Date.now() + 2).toString(),
+          text: 'Ocorreu um erro ao tentar se comunicar com o servidor.',
+          sender: 'bot',
+          timestamp: new Date(),
+        };
+
+        setMessages(prevMessages => [...prevMessages, errorMessage]);
+      }
+
       // Scroll to bottom after user message
       setTimeout(() => {
         flatListRef.current?.scrollToEnd({ animated: true });
       }, 100);
     }
   };
-  
+
   return (
     <>
       <StatusBar style={isDark ? 'light' : 'dark'} />
       <SafeAreaView style={[styles.container, isDark && styles.containerDark]} edges={['bottom']}>
-        <KeyboardAvoidingView 
+        <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
           style={styles.keyboardAvoidingView}
           keyboardVerticalOffset={80}
@@ -106,7 +106,7 @@ export default function ChatbotScreen() {
             contentContainerStyle={styles.messageList}
             showsVerticalScrollIndicator={false}
           />
-          
+
           <View style={[styles.inputContainer, isDark && styles.inputContainerDark]}>
             <TextInput
               style={[styles.input, isDark && styles.inputDark]}
@@ -176,6 +176,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#3B82F6',
     justifyContent: 'center',
     alignItems: 'center',
-    marginLeft: 8,  
+    marginLeft: 8,
   },
 });
