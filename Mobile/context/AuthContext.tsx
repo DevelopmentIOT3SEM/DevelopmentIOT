@@ -21,7 +21,7 @@ interface AuthContextType {
 }
 
   const baseUrl = Platform.OS === 'android' || Platform.OS === 'ios'
-  ? 'http://10.109.3.237:5271' // IP local para o celular acessar
+  ? 'http://10.109.3.211:5271' // IP local para o celular acessar
   : 'http://localhost:5271'; // Quando estiver testando pelo navegador
 
 

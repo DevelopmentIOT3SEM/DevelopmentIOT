@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import axios from 'axios';
 import { View, TextInput, TouchableOpacity, FlatList, KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
@@ -38,34 +39,24 @@ export default function ChatbotScreen() {
       };
 
       setMessages(prevMessages => [...prevMessages, userMessage]);
-      const userInput = message; // salva input
+      const userInput = message;
       setMessage('');
 
       try {
-        const response = await fetch('localhost:5000/chatbot', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ message: userInput }),
-        });
+      const response = await axios.post('http://10.109.3.211:5000/chat', {
+      mensagem: userInput,
+      });
 
-        if (!response.ok) {
-          throw new Error('Erro na resposta da API');
-        }
-
-        const data = await response.json();
 
         const botMessage: Message = {
           id: (Date.now() + 1).toString(),
-          text: data.response || "Desculpe, não consegui entender a resposta.",
+          text: response.data.resposta || "Desculpe, não consegui entender a resposta.",
           sender: 'bot',
           timestamp: new Date(),
         };
 
         setMessages(prevMessages => [...prevMessages, botMessage]);
 
-        // Scroll to bottom after bot response
         setTimeout(() => {
           flatListRef.current?.scrollToEnd({ animated: true });
         }, 100);
@@ -82,7 +73,6 @@ export default function ChatbotScreen() {
         setMessages(prevMessages => [...prevMessages, errorMessage]);
       }
 
-      // Scroll to bottom after user message
       setTimeout(() => {
         flatListRef.current?.scrollToEnd({ animated: true });
       }, 100);
@@ -110,7 +100,7 @@ export default function ChatbotScreen() {
           <View style={[styles.inputContainer, isDark && styles.inputContainerDark]}>
             <TextInput
               style={[styles.input, isDark && styles.inputDark]}
-              placeholder="Type your message..."
+              placeholder="Digite sua mensagem..."
               placeholderTextColor={isDark ? '#94A3B8' : '#64748B'}
               value={message}
               onChangeText={setMessage}
