@@ -2,7 +2,6 @@ const inputMensagem = document.getElementById("mensagem");
 const chatDiv = document.getElementById("chat");
 const clearButton = document.getElementById("clear-button");
 
-// Recupera histórico salvo ao iniciar
 window.onload = () => {
     const historico = localStorage.getItem("chatHistorico");
     if (historico) {
@@ -11,7 +10,6 @@ window.onload = () => {
     }
 };
 
-// Adiciona mensagem ao chat
 function adicionarMensagem(tipo, texto) {
     const msg = document.createElement("div");
     msg.classList.add("mensagem", tipo);
@@ -21,7 +19,6 @@ function adicionarMensagem(tipo, texto) {
     salvarHistorico();
 }
 
-// Adiciona mensagem de loading
 function mostrarLoading() {
     const loading = document.createElement("div");
     loading.id = "loading";
@@ -31,7 +28,6 @@ function mostrarLoading() {
     chatDiv.scrollTop = chatDiv.scrollHeight;
 }
 
-// Remove mensagem de loading
 function removerLoading() {
     const loading = document.getElementById("loading");
     if (loading) {
@@ -39,7 +35,6 @@ function removerLoading() {
     }
 }
 
-// Envia a mensagem
 function enviarMensagem() {
     const mensagem = inputMensagem.value.trim();
     if (!mensagem) return;
@@ -71,18 +66,15 @@ function enviarMensagem() {
     });
 }
 
-// Salva o histórico no localStorage
 function salvarHistorico() {
     localStorage.setItem("chatHistorico", chatDiv.innerHTML);
 }
 
-// Limpa o histórico
 clearButton.addEventListener("click", () => {
     chatDiv.innerHTML = "";
     localStorage.removeItem("chatHistorico");
 });
 
-// Enviar ao pressionar Enter
 inputMensagem.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         enviarMensagem();

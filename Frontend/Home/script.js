@@ -353,25 +353,5 @@ function toggleSidebar() {
 
 carregarDados();
 
-async function enviarMensagem(){
-  const input = document.getElementById('mensagem');
-  const texto = input.value.trim();
-
-  if (!texto) return;
-
-  const chat = document.getElementById('chat');
-  chat.innerHTML += `<div class="mensagem usuario">Você: ${texto}</div>`;
-
-  const resposta = await fetch('http://localhost:5000/chat', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ mensagem: texto })
-  });
-
-      const data = await resposta.json();
-
-      // Mostrar resposta do bot
-      chat.innerHTML += `<div class="mensagem bot">Bot: ${data.resposta}</div>`;
-
-      input.value = '';
-};
+  chat.innerHTML += `<div class="mensagem bot">Bot: ${data.resposta}</div>`;
+  input.value = '';

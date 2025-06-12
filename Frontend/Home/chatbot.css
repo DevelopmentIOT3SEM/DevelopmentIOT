@@ -342,13 +342,26 @@ input:focus {
     width: 80%;
 }
 
-#send-button, #clear-button {
+#send-button {
     padding: 8px;
     margin-left: 5px;
     display: flex;
     height: 30px;
 }
-
+#clear-button{
+   border-radius: 10px; 
+   border: none;
+   cursor: pointer;
+   margin-top: 3px;
+   padding: 5px;
+   margin-left: 5px;
+   display: flex;
+   height: 30px;
+   background-color: #D0E1F2;
+}
+#clear-button:hover{
+    background-color: #bac8e8;
+}
 .chat-container {
     flex: 1;
     overflow-y: auto;
