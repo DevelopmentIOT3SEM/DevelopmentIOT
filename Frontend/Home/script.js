@@ -321,21 +321,6 @@ function mudarLogin() {
   window.location.href = "loginCadastro.html";
 }
 
-function trocarMaterial() {
-  let dropdown = event.target.nextElementSibling;
-  dropdown.classList.toggle('active');
-}
-
-function trocarTurno() {
-  let dropdown = event.target.nextElementSibling;
-  dropdown.classList.toggle('active');
-}
-
-function trocarData() {
-  let dropdown = event.target.nextElementSibling;
-  dropdown.classList.toggle('active');
-}
-
 function toggleSidebar() {
   const sidebar = document.querySelector('.sidebar');
   sidebar.classList.toggle('active');
