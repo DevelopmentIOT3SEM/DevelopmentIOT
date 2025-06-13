@@ -149,7 +149,10 @@ body {
     right: 1rem;
     margin-left: 100px;
 }
-
+#valorEficienciaTotal {
+    font-size: 32px;
+    color: #004d40;
+}
 .conteudo {
     margin-left: 17%;
     padding: 7rem 2rem 2rem;

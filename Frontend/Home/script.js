@@ -12,8 +12,26 @@ async function carregarDados() {
       eficienciaPorTurno[turno] = [];
     });
 
-    const datas = [];
-    const eficiencias = [];
+    // Agregar eficiência por data
+    const eficienciaPorData = {};
+    dados.forEach(item => {
+      const turno = item.turno;
+      const eficiencia = (item.corretamente_separado / item.total_processado) * 100;
+      eficienciaPorTurno[turno].push(eficiencia);
+      const dataFormatada = new Date(item.data).toLocaleDateString('pt-BR');
+
+      if (!eficienciaPorData[dataFormatada]) {
+        eficienciaPorData[dataFormatada] = [];
+      }
+      eficienciaPorData[dataFormatada].push(eficiencia);
+    });
+
+    // Calcular média de eficiência por data
+    const datas = Object.keys(eficienciaPorData);
+    const eficiencias = datas.map(data => {
+      const valores = eficienciaPorData[data];
+      return valores.reduce((a, b) => a + b, 0) / valores.length;
+    });
 
     let erroPlasticoComoMetal = 0;
     let erroMetalComoPlastico = 0;
@@ -46,10 +64,7 @@ async function carregarDados() {
     dados.forEach(item => {
       const turno = item.turno;
       const eficiencia = (item.corretamente_separado / item.total_processado) * 100;
-      eficienciaPorTurno[turno].push(eficiencia);
       const dataFormatada = new Date(item.data).toLocaleDateString('pt-BR');
-      datas.push(dataFormatada);
-      eficiencias.push(eficiencia.toFixed(2));
 
       erroPlasticoComoMetal += parseInt(item.erro_plastico_como_metal) || 0;
       erroMetalComoPlastico += parseInt(item.erro_metal_como_plastico) || 0;
@@ -72,12 +87,15 @@ async function carregarDados() {
     gerarGraficoBarrasEficiência(eficienciaPorTurno);
     gerarGraficoLinhaEvolucao(datas, eficiencias);
     gerarGraficoPizzaErros(erroPlasticoComoMetal, erroMetalComoPlastico);
-    gerarhistograma(labels, bins);
     gerarheatmap(agrupado, turnos, materiais);
-    gerarGraficoDispersao(pontosDispersao);
+
+    const totalCorretamenteSeparado = dados.reduce((soma, item) => soma + item.corretamente_separado, 0);
+    const totalProcessado = dados.reduce((soma, item) => soma + item.total_processado, 0);
+    const eficienciaTotal = totalProcessado > 0 ? (totalCorretamenteSeparado / totalProcessado) * 100 : 0;
+    gerarGraficoDonutEficienciaTotal(eficienciaTotal);
+    
   } catch (error) {
     console.error('Erro:', error);
-    alert('Não foi possível carregar os dados. Verifique a API.');
   }
 }
 
@@ -95,7 +113,6 @@ function gerarGraficoBarrasEficiência(eficienciaPorTurno) {
     data: {
       labels: turnos,
       datasets: [{
-        label: 'Eficiência Média de Separação (%)',
         data: medias,
         backgroundColor: ['#4CAF50', '#2196F3', '#FF9800'],
         borderRadius: 10
@@ -105,6 +122,9 @@ function gerarGraficoBarrasEficiência(eficienciaPorTurno) {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
+        legend: {
+          display: false
+        },
         title: {
           display: true,
           text: 'Eficiência Média por Turno',
@@ -188,31 +208,6 @@ function gerarGraficoPizzaErros(erroPlasticoComoMetal, erroMetalComoPlastico) {
   });
 }
 
-function gerarhistograma(labels, bins) {
-  const ctx = document.getElementById('histogramaChart').getContext('2d');
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: labels,
-      datasets: [{
-        label: 'Frequência de Tempo Médio (seg/item)',
-        data: bins,
-        backgroundColor: 'rgba(54, 162, 235, 0.7)',
-        borderColor: 'rgba(54, 162, 235, 1)',
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: { beginAtZero: true, title: { display: true, text: 'Frequência' } },
-        x: { title: { display: true, text: 'Tempo Médio (seg/item)' } }
-      }
-    }
-  });
-}
-
 function gerarheatmap(agrupado, turnos, materiais) {
   const z = turnos.map(turno => {
     return materiais.map(material => {
@@ -275,15 +270,16 @@ function gerarheatmap(agrupado, turnos, materiais) {
   });
 }
 
-function gerarGraficoDispersao(pontos) {
-  const ctx = document.getElementById('graficoDispersao').getContext('2d');
+function gerarGraficoDonutEficienciaTotal(eficienciaTotal) {
+  const ctx = document.getElementById('graficoEficienciaTotal').getContext('2d');
   new Chart(ctx, {
-    type: 'scatter',
+    type: 'doughnut',
     data: {
+      labels: ['Eficiência', 'Ineficiência'],
       datasets: [{
-        label: 'Umidade x Taxa de Erro (%)',
-        data: pontos,
-        backgroundColor: 'rgba(255, 99, 132, 1)'
+        data: [eficienciaTotal, 100 - eficienciaTotal],
+        backgroundColor: ['blue', '#DCDCDC'],
+        borderWidth: 1
       }]
     },
     options: {
@@ -292,23 +288,17 @@ function gerarGraficoDispersao(pontos) {
       plugins: {
         title: {
           display: true,
-          text: 'Correlação: Umidade dos Materiais vs Taxa de Erro',
-          font: { size: 16 }
+          text: 'Eficiência Total da Produção',
+          font: { size: 18 }
         },
         tooltip: {
           callbacks: {
             label: function(context) {
-              return `Umidade: ${context.raw.x}%, Erro: ${context.raw.y.toFixed(2)}%`;
+              const label = context.label || '';
+              const value = context.parsed || 0;
+              return `${label}: ${value.toFixed(2)}%`;
             }
           }
-        }
-      },
-      scales: {
-        x: { title: { display: true, text: 'Umidade (%)' } },
-        y: {
-          title: { display: true, text: 'Taxa de Erro (%)' },
-          beginAtZero: true,
-          max: 100
         }
       }
     }

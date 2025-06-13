@@ -30,20 +30,34 @@ def get_turno(timestamp):
     except ValueError:
         return "Desconhecido"
 
+def get_real_umidade():
+    try:
+        response = requests.get(
+            "https://api.weatherapi.com/v1/current.json",
+            params={"key": "f18fc45c8a3d4b8296e180450251206", "q": "Sao Paulo"}
+        )
+        response.raise_for_status()
+        data = response.json()
+        return data["current"]["humidity"]
+    except requests.RequestException as e:
+        print(f"Erro ao obter umidade: {e}")
+        return np.random.randint(0, 8)
+
 def calcular_tempo_ligada_e_parada(monitoramento_data):
-    if not monitoramento_data:
+    esteira_data = [reg for reg in monitoramento_data if reg.get("idSensor") == 3]
+    if not esteira_data:
         return "00:00:00", "N/A"
     
     total_tempo_ligada = timedelta()
     ultima_parada = "N/A"
     
     try:
-        monitoramento_data = sorted(monitoramento_data, key=lambda x: x.get("timestampMonitoramento", ""))
-        for i, registro in enumerate(monitoramento_data):
+        esteira_data = sorted(esteira_data, key=lambda x: x.get("timestampMonitoramento", ""))
+        for i, registro in enumerate(esteira_data):
             if registro.get("estado") == "on":
                 inicio = datetime.fromisoformat(registro["timestampMonitoramento"].replace('Z', '+00:00'))
-                fim = (datetime.fromisoformat(monitoramento_data[i+1]["timestampMonitoramento"].replace('Z', '+00:00'))
-                    if i+1 < len(monitoramento_data)
+                fim = (datetime.fromisoformat(esteira_data[i+1]["timestampMonitoramento"].replace('Z', '+00:00'))
+                    if i+1 < len(esteira_data)
                     else datetime.now())
                 total_tempo_ligada += fim - inicio
             elif registro.get("estado") == "off" and ultima_parada == "N/A":
@@ -58,6 +72,26 @@ def calcular_tempo_ligada_e_parada(monitoramento_data):
     tempo_ligada = f"{horas:02d}:{minutos:02d}:{segundos:02d}"
     
     return tempo_ligada, ultima_parada
+
+def get_latest_sensor_states(monitoramento_data):
+    sensor_states = {
+        1: False,  
+        2: False,  
+        3: False   
+    }
+    
+    processed_sensors = set()  
+    print("Monitoramento Data recebido:", monitoramento_data)  
+    
+    for registro in reversed(monitoramento_data):
+        id_sensor = registro.get("idSensor")
+        if id_sensor in sensor_states and id_sensor not in processed_sensors:
+            sensor_states[id_sensor] = registro.get("estado") == "on"
+            processed_sensors.add(id_sensor)
+            print(f"Processando sensor {id_sensor} com estado {registro.get('estado')} em {registro.get('timestampMonitoramento')}")
+    
+    print("Estados finais dos sensores:", sensor_states)  
+    return sensor_states
 
 @app.route('/api/dados', methods=['GET'])
 def get_dados():
@@ -78,6 +112,7 @@ def get_dados():
     peca_map = {peca["idPeca"]: peca["tipoMaterial"] for peca in pecas_data if "idPeca" in peca and "tipoMaterial" in peca}
 
     tempo_ligada, ultima_parada = calcular_tempo_ligada_e_parada(monitoramento_data)
+    sensor_states = get_latest_sensor_states(monitoramento_data)
 
     erros = 0
     df_producao = pd.DataFrame(producao_data)
@@ -109,9 +144,7 @@ def get_dados():
             acertos_algoritmo = int(total_processado * np.random.uniform(0.88, 0.98))
             erro_plastico_como_metal = len(grupo[(grupo["tipo_material"] == "Plástica") & (grupo["rampa"] == 1)])
             erro_metal_como_plastico = len(grupo[(grupo["tipo_material"] == "Metálica") & (grupo["rampa"] == 2)])
-            umidade = np.random.randint(0, 8)
-            esteira_lig = monitoramento_data[0]["estado"] == "on" if monitoramento_data else True
-            atuadores = False
+            umidade = get_real_umidade()
 
             linhas.append({
                 "data": data,
@@ -128,8 +161,9 @@ def get_dados():
                 "erro_plastico_como_metal": erro_plastico_como_metal,
                 "erro_metal_como_plastico": erro_metal_como_plastico,
                 "umidade": umidade,
-                "esteira_lig": esteira_lig,
-                "atuadores": atuadores,
+                "esteira_lig": sensor_states[3],
+                "atuador1": sensor_states[1],
+                "atuador2": sensor_states[2],
                 "tempoLigada": tempo_ligada,
                 "ultimaParada": ultima_parada,
                 "erros": erros
@@ -152,7 +186,8 @@ def get_dados():
             "erro_metal_como_plastico": 0,
             "umidade": 0,
             "esteira_lig": False,
-            "atuadores": False,
+            "atuador1": False,
+            "atuador2": False,
             "tempoLigada": "00:00:00",
             "ultimaParada": "N/A",
             "erros": 0

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="navbar">
         <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
@@ -17,23 +19,21 @@
             <div class="imagem-container">
                 <img id="logo" src="Images/logoo2.png" alt="">
             </div>
-            
+
             <div>
-                <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_azul1.png">Dashboard</button>
-                <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_azul2.png">Monitoramento</button>
-                <button class="botao_header" onclick="mudarChatbot()"> <img id="botao2" class="imagem_botao" src="Images/chatbot (2).png">Chatbot</button>
-                <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_azul3.png">LogOut</button>
+                <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img
+                        class="imagem_botao" src="Images/imagem_azul1.png">Dashboard</button>
+                <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao"
+                        src="Images/imagem_azul2.png">Monitoramento</button>
+                <button class="botao_header" onclick="mudarChatbot()"> <img id="botao2" class="imagem_botao"
+                        src="Images/chatbot (2).png">Chatbot</button>
+                <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao"
+                        src="Images/imagem_azul3.png">LogOut</button>
             </div>
         </div>
     </div>
 
     <div class="conteudo">
-        <div class="linha">
-            <div class="grafico1">
-                <h2>Evolução da Eficiência</h2>
-                <canvas id="graficoevolucao"></canvas>
-            </div>
-        </div>
         <div class="linha">
             <div class="grafico2">
                 <h2>Comparação de Eficiência</h2>
@@ -45,9 +45,9 @@
             </div>
         </div>
         <div class="linha">
-            <div class="grafico4">
-                <h2>Tempo médio de Processamento</h2>
-                <canvas id="histogramaChart"></canvas>
+            <div class="grafico1">
+                <h2>Evolução da Eficiência</h2>
+                <canvas id="graficoevolucao"></canvas>
             </div>
         </div>
         <div class="linha">
@@ -56,14 +56,15 @@
                 <div id="heatmap"></div>
             </div>
             <div class="grafico6">
-                <h2>Correlação Entre Variáveis</h2>
-                <canvas id="graficoDispersao"></canvas>
+                <h2>Eficiência total da produção</h2>
+                <canvas id="graficoEficienciaTotal"></canvas>
             </div>
         </div>
     </div>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
