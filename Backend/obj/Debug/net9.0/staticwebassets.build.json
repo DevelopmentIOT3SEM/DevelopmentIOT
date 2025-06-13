@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "ej43dPACiQwF0HxFAwPushxJ1xvjSWWL2czENBJsWls=",
+  "Source": "PecaMonitoramentoAPI",
+  "BasePath": "_content/PecaMonitoramentoAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
