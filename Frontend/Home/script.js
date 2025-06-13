@@ -342,3 +342,6 @@ function toggleSidebar() {
 }
 
 carregarDados();
+
+  chat.innerHTML += `<div class="mensagem bot">Bot: ${data.resposta}</div>`;
+  input.value = '';
