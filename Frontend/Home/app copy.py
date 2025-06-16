@@ -8,7 +8,7 @@ import pandas as pd
 app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-BASE_URL_ASPNET = "http://localhost:5271/api"
+BASE_URL_ASPNET = "http://52.44.49.80:5271/api"
 
 def fetch_from_aspnet(endpoint):
     try:
@@ -196,4 +196,4 @@ def get_dados():
     return jsonify(linhas)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host ="localhost", port=5500)

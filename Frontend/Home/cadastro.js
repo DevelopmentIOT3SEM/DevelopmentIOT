@@ -32,7 +32,7 @@ async function handleCadastro() {
     console.log('Dados enviados:', dados); 
 
     try {
-        const response = await fetch('http://localhost:5271/api/Auth/registrar', {
+        const response = await fetch('http://52.44.49.80:5271/api/Auth/registrar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

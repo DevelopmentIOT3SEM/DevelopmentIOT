@@ -1,7 +1,7 @@
 async function executarCodigos() {
     try {
-        console.log("Tentando conectar a http://127.0.0.1:5000/api/dados...");
-        const response = await fetch(`http://127.0.0.1:5000/api/dados?t=${new Date().getTime()}`, {
+        console.log("Tentando conectar a http://localhost:5500/api/dados...");
+        const response = await fetch(`http://localhost:5500/api/dados?t=${new Date().getTime()}`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json'
@@ -52,5 +52,5 @@ async function executarCodigos() {
 
 document.addEventListener("DOMContentLoaded", function () {
     executarCodigos(); 
-    setInterval(executarCodigos, 2000); 
+    setInterval(executarCodigos, 20000); 
 });
