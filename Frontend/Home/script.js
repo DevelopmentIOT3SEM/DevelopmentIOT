@@ -259,7 +259,7 @@ function gerarheatmap(agrupado, turnos, materiais) {
 
   const config = {
     responsive: true,
-    displayModeBar: true,
+    displayModeBar: false,
     modeBarButtonsToRemove: ['toImage', 'lasso2d', 'select2d']
   };
 
