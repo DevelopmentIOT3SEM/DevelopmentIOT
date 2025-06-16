@@ -43,7 +43,7 @@ export default function ChatbotScreen() {
       setMessage('');
 
       try {
-      const response = await axios.post('http://10.109.3.211:5000/chat', {
+      const response = await axios.post('http://192.168.66.11:500/chat', {
       mensagem: userInput,
       });
 

@@ -6,29 +6,38 @@ import { useColorScheme } from 'react-native';
 import { LineChart, BarChart, PieChart } from 'react-native-chart-kit';
 import { ChartSelector } from '@/components/charts/ChartSelector';
 import { ChartTimeFrameSelector } from '@/components/charts/ChartTimeFrameSelector';
-import { useAuth } from '@/context/AuthContext'; 
+import { useAuth } from '@/context/AuthContext';
 
 export default function ChartsScreen() {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
   const { fetchProductionData, fetchRejectedData } = useAuth();
 
-  const [activeChart, setActiveChart] = useState('line');
-  const [timeFrame, setTimeFrame] = useState('week');
+  // Estado dos seletores e dados
+  const [activeChart, setActiveChart] = useState<'line' | 'bar' | 'pie'>('line');
+  const [timeFrame, setTimeFrame] = useState<'week' | 'month' | 'year'>('week');
   const [productionData, setProductionData] = useState<any[]>([]);
   const [rejectedData, setRejectedData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
   const screenWidth = Dimensions.get('window').width - 32;
 
+  // Carregar e filtrar dados ao mudar o timeframe
   useEffect(() => {
     const loadData = async () => {
       try {
         setLoading(true);
         const prod = await fetchProductionData();
         const rej = await fetchRejectedData();
-        setProductionData(prod);
-        setRejectedData(rej);
+
+        // Filtrar produção para rampas 1 e 2
+        const filteredProd = prod.filter(item => item.rampa === 1 || item.rampa === 2);
+
+        // Filtrar refugo para rampas 1, 2 
+        const filteredRej = rej.filter(item => [1, 2, 3].includes(item.rampa));
+
+        setProductionData(filteredProd);
+        setRejectedData(filteredRej);
       } catch (error) {
         console.error('Erro ao carregar dados:', error);
       } finally {
@@ -38,43 +47,37 @@ export default function ChartsScreen() {
     loadData();
   }, [timeFrame]);
 
-
+  // Função para agrupar dados por dia da semana
   const groupByDayOfWeek = (data: any[]) => {
-    const days = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    // Labels em ordem segunda a domingo
+    const labels = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
     const counts = Array(7).fill(0);
 
     data.forEach(item => {
       const date = new Date(item.timestampProducao);
-      const day = date.getDay(); // 0 (Dom) - 6 (Sáb)
+      let day = date.getDay(); // 0=Dom, 1=Seg, ..., 6=Sáb
+
+      // Ajusta domingo para posição 6 e segunda para 0
+      day = day === 0 ? 6 : day - 1;
+
       counts[day]++;
     });
 
-    
-    const reorderedLabels = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
-    const reorderedCounts = [
-      counts[1],
-      counts[2],
-      counts[3],
-      counts[4],
-      counts[5],
-      counts[6],
-      counts[0],
-    ];
-
-    return { labels: reorderedLabels, counts: reorderedCounts };
+    return { labels, counts };
   };
 
-  // Dados para LineChart e BarChart
-  const { labels, counts } = groupByDayOfWeek(productionData);
+  // Dados agrupados para produção e refugo
+  const productionByDay = groupByDayOfWeek(productionData);
+  const rejectedByDay = groupByDayOfWeek(rejectedData);
 
-
-  const rampCounts = productionData.reduce((acc: Record<number, number>, cur) => {
+  // Dados para gráfico de pizza da produção: contagem por rampa (1 e 2)
+  const rampCountsProd = productionData.reduce((acc: Record<number, number>, cur) => {
     acc[cur.rampa] = (acc[cur.rampa] || 0) + 1;
     return acc;
   }, {});
 
-  const pieData = Object.entries(rampCounts).map(([rampa, count], index) => {
-    const colors = ['#3B82F6', '#14B8A6', '#9333EA', '#F59E0B', '#EF4444']; // cores para as rampas
+  const pieDataProd = Object.entries(rampCountsProd).map(([rampa, count], index) => {
+    const colors = ['#3B82F6', '#14B8A6', '#9333EA', '#F59E0B', '#EF4444'];
     return {
       name: `Rampa ${rampa}`,
       population: count,
@@ -84,26 +87,57 @@ export default function ChartsScreen() {
     };
   });
 
-  // Config do gráfico
+  // Dados para gráfico de pizza de refugo: rampas 1, 2 
+  const rampCountsRej = rejectedData.reduce((acc: Record<number, number>, cur) => {
+    acc[cur.rampa] = (acc[cur.rampa] || 0) + 1;
+    return acc;
+  }, {});
+
+  const pieDataRej = Object.entries(rampCountsRej).map(([rampa, count], index) => {
+    const colors = ['#EF4444', '#F59E0B', '#9333EA'];
+    return {
+      name: `Rampa ${rampa}`,
+      population: count,
+      color: colors[index % colors.length],
+      legendFontColor: isDark ? '#FFFFFF' : '#1A2138',
+      legendFontFamily: 'Inter-Regular',
+    };
+  });
+
+  // Config geral dos gráficos
   const chartConfig = {
-    backgroundGradientFrom: isDark ? '#1E293B' : '#FFFFFF',
-    backgroundGradientTo: isDark ? '#1E293B' : '#FFFFFF',
-    decimalPlaces: 0,
-    color: (opacity = 1) => isDark ? `rgba(255, 255, 255, ${opacity})` : `rgba(59, 130, 246, ${opacity})`,
-    labelColor: (opacity = 1) => isDark ? `rgba(255, 255, 255, ${opacity})` : `rgba(26, 33, 56, ${opacity})`,
-    style: { borderRadius: 16 },
-    propsForDots: { r: '6', strokeWidth: '2', stroke: '#3B82F6' },
-    propsForLabels: { fontFamily: 'Inter-Regular' },
+    backgroundGradientFrom: isDark ? '#0f172a' : '#ffffff',
+    backgroundGradientTo: isDark ? '#1e293b' : '#f0f4f8',
+    color: (opacity = 1) => `rgba(59, 130, 246, ${opacity})`, // azul
+    labelColor: (opacity = 1) => isDark ? `rgba(229, 231, 235, ${opacity})` : `rgba(51, 65, 85, ${opacity})`,
+    strokeWidth: 2,
+    useShadowColorFromDataset: false,
+    propsForDots: {
+      r: '4',
+      strokeWidth: '2',
+      stroke: '#3B82F6',
+    },
   };
 
+  // Dados para gráficos de linha e barra (produção por dia)
   const lineData = {
-    labels,
-    datasets: [{ data: counts, color: () => '#3B82F6', strokeWidth: 2 }],
+    labels: productionByDay.labels,
+    datasets: [
+      {
+        data: productionByDay.counts,
+        color: (opacity = 1) => `rgba(59, 130, 246, ${opacity})`,
+        strokeWidth: 2,
+      },
+    ],
   };
 
   const barData = {
-    labels,
-    datasets: [{ data: counts }],
+    labels: productionByDay.labels,
+    datasets: [
+      {
+        data: productionByDay.counts,
+      },
+    ],
   };
 
   if (loading) {
@@ -119,19 +153,15 @@ export default function ChartsScreen() {
       <StatusBar style={isDark ? 'light' : 'dark'} />
       <SafeAreaView style={[styles.container, isDark && styles.containerDark]} edges={['bottom']}>
         <ScrollView contentContainerStyle={styles.scrollContent}>
-          <View style={styles.headerContainer}>
-            <Text style={[styles.title, isDark && styles.titleDark]}>Análise de Dados</Text>
-            <Text style={[styles.subtitle, isDark && styles.subtitleDark]}>
-              Visualize o desempenho do seu negócio
-            </Text>
-          </View>
 
-          <View style={styles.chartControls}>
-            <ChartSelector activeChart={activeChart} setActiveChart={setActiveChart} />
-            <ChartTimeFrameSelector timeFrame={timeFrame} setTimeFrame={setTimeFrame} />
-          </View>
+          <Text style={[styles.title, isDark && styles.titleDark]}>
+            Produção por Dia da Semana (Rampas 1 e 2)
+          </Text>
 
-          <View style={[styles.chartContainer, isDark && styles.chartContainerDark]}>
+          <ChartSelector activeChart={activeChart} setActiveChart={setActiveChart} />
+          <ChartTimeFrameSelector timeFrame={timeFrame} setTimeFrame={setTimeFrame} />
+
+          <View style={{ marginTop: 20 }}>
             {activeChart === 'line' && (
               <LineChart
                 data={lineData}
@@ -139,26 +169,21 @@ export default function ChartsScreen() {
                 height={220}
                 chartConfig={chartConfig}
                 bezier
-                style={styles.chart}
+                style={styles.chartStyle}
               />
             )}
-
             {activeChart === 'bar' && (
               <BarChart
                 data={barData}
                 width={screenWidth}
                 height={220}
                 chartConfig={chartConfig}
-                style={styles.chart}
-                yAxisLabel=""
-                yAxisSuffix=""
-                showValuesOnTopOfBars
+                style={styles.chartStyle}
               />
             )}
-
             {activeChart === 'pie' && (
               <PieChart
-                data={pieData}
+                data={pieDataProd}
                 width={screenWidth}
                 height={220}
                 chartConfig={chartConfig}
@@ -166,11 +191,59 @@ export default function ChartsScreen() {
                 backgroundColor="transparent"
                 paddingLeft="15"
                 absolute
-                style={styles.chart}
               />
             )}
           </View>
+
+          <Text style={[styles.title, isDark && styles.titleDark, { marginTop: 40 }]}>
+            Refugo por Dia da Semana (Rampas 1 e 2)
+          </Text>
+
           {}
+          <View style={{ marginTop: 20 }}>
+            <LineChart
+              data={{
+                labels: rejectedByDay.labels,
+                datasets: [
+                  {
+                    data: rejectedByDay.counts,
+                    color: (opacity = 1) => `rgba(239, 68, 68, ${opacity})`, // vermelho para refugo
+                    strokeWidth: 2,
+                  },
+                ],
+              }}
+              width={screenWidth}
+              height={220}
+              chartConfig={{
+                ...chartConfig,
+                color: (opacity = 1) => `rgba(239, 68, 68, ${opacity})`,
+                labelColor: (opacity = 1) => isDark ? `rgba(254, 202, 202, ${opacity})` : `rgba(153, 27, 27, ${opacity})`,
+              }}
+              bezier
+              style={styles.chartStyle}
+            />
+          </View>
+
+          <Text style={[styles.title, isDark && styles.titleDark, { marginTop: 40 }]}>
+            Refugo por Rampa
+          </Text>
+
+          <PieChart
+            data={pieDataRej}
+            width={screenWidth}
+            height={220}
+            chartConfig={{
+              ...chartConfig,
+              color: (opacity = 1) => `rgba(239, 68, 68, ${opacity})`,
+              labelColor: (opacity = 1) => isDark ? `rgba(254, 202, 202, ${opacity})` : `rgba(153, 27, 27, ${opacity})`,
+            }}
+            accessor="population"
+            backgroundColor="transparent"
+            paddingLeft="15"
+            absolute
+            style={{ marginTop: 10 }}
+          />
+
         </ScrollView>
       </SafeAreaView>
     </>
@@ -178,59 +251,27 @@ export default function ChartsScreen() {
 }
 
 const styles = StyleSheet.create({
-  
   container: {
     flex: 1,
-    backgroundColor: '#F7F9FC',
+    backgroundColor: '#FFFFFF',
   },
   containerDark: {
-    backgroundColor: '#080C15',
+    backgroundColor: '#0f172a',
   },
   scrollContent: {
-    padding: 16,
-  },
-  headerContainer: {
-    marginBottom: 24,
+    paddingHorizontal: 16,
+    paddingBottom: 40,
   },
   title: {
     fontFamily: 'Inter-Bold',
-    fontSize: 24,
+    fontSize: 18,
     color: '#1A2138',
-    marginBottom: 4,
+    marginTop: 20,
   },
   titleDark: {
-    color: '#FFFFFF',
+    color: '#F1F5F9',
   },
-  subtitle: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
-    color: '#64748B',
+  chartStyle: {
+    borderRadius: 16,
   },
-  subtitleDark: {
-    color: '#94A3B8',
-  },
-  chartControls: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 16,
-  },
-  chartContainer: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
-  },
-  chartContainerDark: {
-    backgroundColor: '#1E293B',
-  },
-  chart: {
-    borderRadius: 12,
-    marginVertical: 8,
-  },
-  
 });

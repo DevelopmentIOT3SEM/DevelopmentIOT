@@ -32,46 +32,6 @@ export function ChartTimeFrameSelector({ timeFrame, setTimeFrame }: ChartTimeFra
           Semana
         </Text>
       </TouchableOpacity>
-      
-      <TouchableOpacity
-        style={[
-          styles.option,
-          timeFrame === 'month' && styles.activeOption,
-          timeFrame === 'month' && isDark && styles.activeOptionDark,
-        ]}
-        onPress={() => setTimeFrame('month')}
-      >
-        <Text 
-          style={[
-            styles.optionText,
-            timeFrame === 'month' && styles.activeText,
-            isDark && styles.textDark,
-            timeFrame === 'month' && isDark && styles.activeTextDark,
-          ]}
-        >
-          Mês
-        </Text>
-      </TouchableOpacity>
-      
-      <TouchableOpacity
-        style={[
-          styles.option,
-          timeFrame === 'year' && styles.activeOption,
-          timeFrame === 'year' && isDark && styles.activeOptionDark,
-        ]}
-        onPress={() => setTimeFrame('year')}
-      >
-        <Text 
-          style={[
-            styles.optionText,
-            timeFrame === 'year' && styles.activeText,
-            isDark && styles.textDark,
-            timeFrame === 'year' && isDark && styles.activeTextDark,
-          ]}
-        >
-          Ano
-        </Text>
-      </TouchableOpacity>
     </View>
   );
 }
@@ -82,6 +42,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: 8,
     padding: 4,
+    justifyContent: 'flex-start', // alinhado à esquerda
+    width: 120,                    // largura menor pro container
   },
   containerDark: {
     backgroundColor: '#1E293B',
@@ -89,7 +51,7 @@ const styles = StyleSheet.create({
   option: {
     alignItems: 'center',
     paddingVertical: 6,
-    paddingHorizontal: 12,
+    paddingHorizontal: 12,        // menos padding pra ficar menor
     borderRadius: 6,
   },
   activeOption: {

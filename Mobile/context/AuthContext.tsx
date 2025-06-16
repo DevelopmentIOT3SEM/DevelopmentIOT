@@ -20,9 +20,7 @@ interface AuthContextType {
   fetchRejectedData: () => Promise<ProductionItem[]>;
 }
 
-  const baseUrl = Platform.OS === 'android' || Platform.OS === 'ios'
-  ? 'http://10.109.3.211:5271' // IP local para o celular acessar
-  : 'http://localhost:5271'; // Quando estiver testando pelo navegador
+const baseUrl = 'http://52.44.49.80:5271';
 
 
 const AuthContext = createContext<AuthContextType>({
@@ -63,7 +61,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         email,
         senha: password,
       });
-      // Você pode decidir se quer logar automaticamente após registrar
+
     } catch (error: any) {
       if (axios.isAxiosError(error)) {
         console.error('Erro ao registrar:', error.response?.data);
@@ -74,30 +72,41 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const login = async (email: string, password: string) => {
-    try {
-      const response = await axios.post(`${baseUrl}/api/Auth/login`, {
-        email,
-        senha: password,
-      });
+const login = async (email: string, password: string) => {
+  try {
+    console.log('Tentando logar com:', { email, senha: password });
 
-      const token = response.data.token;
-      const name = response.data.name || ''; // ajuste conforme seu backend retorna o nome
+    const response = await axios.post(`${baseUrl}/api/Auth/login`, {
+      email,
+      senha: password,
+    });
 
-      if (token) {
-        await AsyncStorage.setItem('token', token);
-        await AsyncStorage.setItem('userName', name);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-        setUser({ name });
-        setIsAuthenticated(true);
-      } else {
-        throw new Error('Token não recebido.');
-      }
-    } catch (error) {
-      console.error('Erro ao fazer login:', error);
-      throw error;
+    console.log('Resposta completa:', response);
+
+    const token = response.data.token;
+
+    if (token) {
+      await AsyncStorage.setItem('token', token);
+      // Como não vem nome, pode deixar como "Usuário" genérico ou null
+      await AsyncStorage.setItem('userName', 'Usuário');
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      setUser({ name: 'Usuário' });
+      setIsAuthenticated(true);
+    } else {
+      throw new Error('Token não recebido.');
     }
-  };
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error('Erro de Axios: ', error.response?.status, error.response?.data);
+      throw new Error(error.response?.data?.message || 'Falha no login. Por favor, verifique suas credenciais.');
+    } else {
+      console.error('Erro inesperado:', error);
+      throw new Error('Erro inesperado ao fazer login.');
+    }
+  }
+};
+
+
 
   const logout = async () => {
     await AsyncStorage.removeItem('token');

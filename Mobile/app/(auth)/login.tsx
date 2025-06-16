@@ -22,7 +22,7 @@ export default function LoginScreen() {
     console.log('Login feito, navegando...');
     router.replace('/(tabs)');
   } catch (err) {
-    setError('Falha no login. Por favor, verifique suas credenciais.');
+   setError((err as Error).message || 'Falha no login. Por favor, verifique suas credenciais.');
     console.error(err);
   } finally {
     setIsLoading(false);

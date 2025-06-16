@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { Eye, EyeOff } from 'lucide-react-native';
 
-// ...importações mantidas...
-
 
 interface RegisterFormProps {
   onSubmit: (name: string, email: string, password: string) => void;
@@ -130,7 +128,6 @@ export function RegisterForm({ onSubmit, isLoading }: RegisterFormProps) {
   );
 }
 
-// styles mantidos como estão
 
 
 const styles = StyleSheet.create({

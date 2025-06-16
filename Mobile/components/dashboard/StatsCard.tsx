@@ -12,6 +12,8 @@ import {
 } from 'lucide-react-native';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { AlertOctagon } from 'lucide-react-native';
+import { Layers } from 'lucide-react-native';
+
 
 interface StatsCardProps {
   title: string;
@@ -19,11 +21,10 @@ interface StatsCardProps {
   status: boolean;
   iconName: 'users' | 'dollar-sign' | 'check-square' | 'pie-chart' | 
            'trending-up' | 'trending-down' | 'treasure-chest' | 'conveyor-belt' |
-           'alert-octagon' | 'package'; // Novos ícones
+           'alert-octagon' | 'package' | 'layers'; 
   color: string;
 }
 
-// Adicione no switch do renderIcon
 
 export function StatsCard({ title, value, status, iconName, color }: StatsCardProps) {
   const colorScheme = useColorScheme();
@@ -53,6 +54,9 @@ export function StatsCard({ title, value, status, iconName, color }: StatsCardPr
         return <AlertOctagon {...iconProps} />;
       case 'package':
         return <Package {...iconProps} />;
+      case 'layers':
+      return <Layers {...iconProps} />;
+
       default:
         return null;
     }

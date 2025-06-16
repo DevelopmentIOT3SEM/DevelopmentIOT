@@ -1,130 +1,106 @@
-import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 import { useColorScheme } from 'react-native';
-import { Check, X, UserPlus, ShoppingCart, Bell } from 'lucide-react-native';
+import { ShoppingCart, X } from 'lucide-react-native';
+import { useAuth } from '@/context/AuthContext'; // ajuste o caminho para o seu projeto
 
-type ActivityType = 'task' | 'user' | 'sale' | 'alert';
-
-interface Activity {
+interface CombinedItem {
   id: string;
-  type: ActivityType;
-  title: string;
-  description: string;
-  time: string;
-  status?: 'completed' | 'failed';
+  type: 'production' | 'rejected';
+  rampa: number;
+  timestamp: string;
 }
-
-const activities: Activity[] = [
-  {
-    id: '1',
-    type: 'task',
-    title: 'Rotação de peças',
-    description: 'Rotação das peças concluído',
-    time: 'há 2h',
-    status: 'completed',
-  },
-  {
-    id: '2',
-    type: 'user',
-    title: 'Novo Usuário',
-    description: 'João Silva entrou',
-    time: 'há 3h',
-  },
-  {
-    id: '3',
-    type: 'sale',
-    title: 'Esteira cheia',
-    description: 'Esteira de peças grandes cheia',
-    time: 'há 5h',
-  },
-  {
-    id: '4',
-    type: 'task',
-    title: 'Integração com API',
-    description: 'Falha ao conectar ao servidor',
-    time: 'há 1 dia',
-    status: 'failed',
-  },
-  {
-    id: '5',
-    type: 'alert',
-    title: 'Alerta do Sistema',
-    description: 'Armazenamento 85% cheio',
-    time: 'há 1 dia',
-  },
-];
 
 export function ActivityCard() {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
-  
-  const renderActivityIcon = (type: ActivityType, status?: string) => {
-    if (type === 'task') {
-      if (status === 'completed') {
-        return (
-          <View style={[styles.iconContainer, { backgroundColor: '#DCFCE7' }]}>
-            <Check size={14} color="#10B981" />
-          </View>
-        );
-      } else if (status === 'failed') {
-        return (
-          <View style={[styles.iconContainer, { backgroundColor: '#FEE2E2' }]}>
-            <X size={14} color="#EF4444" />
-          </View>
-        );
-      }
-    } else if (type === 'user') {
-      return (
-        <View style={[styles.iconContainer, { backgroundColor: '#E0E7FF' }]}>
-          <UserPlus size={14} color="#6366F1" />
-        </View>
+  const { fetchProductionData, fetchRejectedData } = useAuth();
+  const [activities, setActivities] = useState<CombinedItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+ useEffect(() => {
+  const loadActivities = async () => {
+    try {
+      const productionData = await fetchProductionData();
+      const rejectedData = await fetchRejectedData();
+
+      // Filtrar para remover itens com rampa 3
+      const filteredProduction = productionData.filter(item => item.rampa !== 3);
+      const filteredRejected = rejectedData.filter(item => item.rampa !== 3);
+
+      const formattedProduction = filteredProduction.map(item => ({
+        id: `P-${item.idProducao}`,
+        type: 'production' as const,
+        rampa: item.rampa,
+        timestamp: item.timestampProducao,
+      }));
+
+      const formattedRejected = filteredRejected.map(item => ({
+        id: `R-${item.idProducao}`,
+        type: 'rejected' as const,
+        rampa: item.rampa,
+        timestamp: item.timestampProducao,
+      }));
+
+      const combined = [...formattedProduction, ...formattedRejected].sort(
+        (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
       );
-    } else if (type === 'sale') {
-      return (
-        <View style={[styles.iconContainer, { backgroundColor: '#DBEAFE' }]}>
-          <ShoppingCart size={14} color="#3B82F6" />
-        </View>
-      );
-    } else if (type === 'alert') {
-      return (
-        <View style={[styles.iconContainer, { backgroundColor: '#FEF3C7' }]}>
-          <Bell size={14} color="#F59E0B" />
-        </View>
-      );
+
+      setActivities(combined);
+    } catch (error) {
+      console.error('Erro ao carregar atividades:', error);
+    } finally {
+      setLoading(false);
     }
-    
-    return null;
   };
-  
-  const renderItem = ({ item }: { item: Activity }) => (
+
+  loadActivities();
+}, []);
+
+
+  const renderItem = ({ item }: { item: CombinedItem }) => (
     <View style={styles.activityItem}>
-      {renderActivityIcon(item.type, item.status)}
+      <View style={[styles.iconContainer, isDark && styles.iconContainerDark]}>
+        {item.type === 'production' ? (
+          <ShoppingCart size={16} color="#3B82F6" />
+        ) : (
+          <X size={16} color="#EF4444" />
+        )}
+      </View>
       <View style={styles.activityContent}>
         <Text style={[styles.activityTitle, isDark && styles.activityTitleDark]}>
-          {item.title}
+          {item.type === 'production' ? 'Peças Produzidas' : 'Peças Rejeitadas'}
         </Text>
         <Text style={[styles.activityDescription, isDark && styles.activityDescriptionDark]}>
-          {item.description}
+          Rampa: {item.rampa}
+        </Text>
+        <Text style={[styles.activityTime, isDark && styles.activityTimeDark]}>
+          {new Date(item.timestamp).toLocaleString()}
         </Text>
       </View>
-      <Text style={[styles.activityTime, isDark && styles.activityTimeDark]}>
-        {item.time}
-      </Text>
     </View>
   );
-  
+
   return (
     <View style={[styles.container, isDark && styles.containerDark]}>
       <View style={styles.header}>
         <Text style={[styles.title, isDark && styles.titleDark]}>Atividades Recentes</Text>
       </View>
-      
-      <FlatList
-        data={activities}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-        scrollEnabled={false}
-      />
+
+      {loading ? (
+        <ActivityIndicator size="large" color="#3B82F6" />
+      ) : activities.length > 0 ? (
+        <FlatList
+          data={activities}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+          scrollEnabled={false}
+        />
+      ) : (
+        <Text style={[styles.emptyText, isDark && styles.emptyTextDark]}>
+          Nenhuma atividade encontrada.
+        </Text>
+      )}
     </View>
   );
 }
@@ -163,12 +139,16 @@ const styles = StyleSheet.create({
     borderBottomColor: '#F1F5F9',
   },
   iconContainer: {
-    width: 28,
-    height: 28,
-    borderRadius: 14,
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#F1F5F9',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
+  },
+  iconContainerDark: {
+    backgroundColor: '#334155',
   },
   activityContent: {
     flex: 1,
@@ -177,7 +157,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Medium',
     fontSize: 14,
     color: '#1A2138',
-    marginBottom: 2,
   },
   activityTitleDark: {
     color: '#FFFFFF',
@@ -194,9 +173,18 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter-Regular',
     fontSize: 12,
     color: '#94A3B8',
-    marginLeft: 8,
+    marginTop: 2,
   },
   activityTimeDark: {
+    color: '#CBD5E1',
+  },
+  emptyText: {
+    textAlign: 'center',
+    fontFamily: 'Inter-Regular',
+    fontSize: 14,
     color: '#64748B',
+  },
+  emptyTextDark: {
+    color: '#94A3B8',
   },
 });
