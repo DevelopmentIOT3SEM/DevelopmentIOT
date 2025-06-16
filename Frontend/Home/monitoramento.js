@@ -52,5 +52,5 @@ async function executarCodigos() {
 
 document.addEventListener("DOMContentLoaded", function () {
     executarCodigos(); 
-    setInterval(executarCodigos, 20000); 
+    setInterval(executarCodigos, 500); 
 });
