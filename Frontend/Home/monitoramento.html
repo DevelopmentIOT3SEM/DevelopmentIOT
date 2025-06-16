@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="monitoramento.css">
+    <title>Monitoramento</title>
+
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .status {
+      font-weight: bold;
+      color: green;
+    }
+
+    .status_off {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    <div class="tudo">
+        <div class="navbar">
+          <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+          <div class="sidebar">
+              <button class="close-btn" onclick="toggleSidebar()">X</button>
+              <div class="imagem-container">
+                  <img id="logo" src="Images/logoo2.png" alt="">
+              </div>
+              
+              <div>
+                  <button style="margin-top: 40px;" class="botao_header" onclick="mudarDashboard()"><img class="imagem_botao" src="Images/imagem_azul1.png">Dashboard</button>
+                  <button class="botao_header" onclick="mudarMonitoramento()"> <img id="botao2" class="imagem_botao" src="Images/imagem_azul2.png">Monitoramento</button>
+                  <button class="botao_header" onclick="mudarChatbot()"> <img id="botao2" class="imagem_botao" src="Images/chatbot (2).png">Chatbot</button>
+                  <button class="botao_header" onclick="mudarLogin()"> <img id="botao3" class="imagem_botao" src="Images/imagem_azul3.png">LogOut</button>
+              </div>
+          </div>
+      </div>
+        <div class="bloco-direita">
+            <h1 style="margin-top: 50px;">Monitoramento da Máquina</h1>
+            <div class="dashboard">
+                <div class="card">
+                    <h2>Esteira</h2>
+                    <p class="status" id="esteira_lig"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Atuador 1</h2>
+                    <p class="status" id="atuador1"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Atuador 2</h2>
+                    <p class="status" id="atuador2"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Tempo de Máquina Ligada</h2>
+                    <p id="tempoLigada"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Última Parada</h2>
+                    <p id="ultimaParada"></p>
+                </div>
+
+                <div class="card">
+                    <h2>Erros de separação</h2>
+                    <p id="erros"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="monitoramento.js"></script>
+</body>
+</html>
