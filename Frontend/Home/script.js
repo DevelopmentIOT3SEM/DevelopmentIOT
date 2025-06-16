@@ -1,6 +1,6 @@
 async function carregarDados() {
   try {
-    const response = await fetch('http://127.0.0.1:5000/api/dados');
+    const response = await fetch('http://localhost:5500/api/dados');
     if (!response.ok) throw new Error('Erro ao carregar dados da API');
     const dados = await response.json();
 
@@ -12,7 +12,6 @@ async function carregarDados() {
       eficienciaPorTurno[turno] = [];
     });
 
-    // Agregar eficiência por data
     const eficienciaPorData = {};
     dados.forEach(item => {
       const turno = item.turno;
@@ -26,7 +25,6 @@ async function carregarDados() {
       eficienciaPorData[dataFormatada].push(eficiencia);
     });
 
-    // Calcular média de eficiência por data
     const datas = Object.keys(eficienciaPorData);
     const eficiencias = datas.map(data => {
       const valores = eficienciaPorData[data];
@@ -297,7 +295,7 @@ function gerarGraficoDonutEficienciaTotal(eficienciaTotal) {
               const label = context.label || '';
               const value = context.parsed || 0;
               return `${label}: ${value.toFixed(2)}%`;
-            }
+            } 
           }
         }
       }
