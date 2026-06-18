@@ -15,6 +15,7 @@ import { Bar, Doughnut, Line } from 'react-chartjs-2';
 import { Layers, AlertOctagon, Package, Percent } from 'lucide-react';
 import { getProducao, getRefugos } from '@/services/api';
 import type { Producao } from '@/services/types';
+import { paraDataLocal } from '@/utils/datas';
 import './Dashboard.css';
 
 ChartJS.register(
@@ -62,7 +63,7 @@ export function Dashboard() {
   const porDiaSemana = useMemo(() => {
     const counts = Array(7).fill(0);
     producao.forEach((p) => {
-      const dia = new Date(p.timestampProducao).getDay();
+      const dia = paraDataLocal(p.timestampProducao).getDay();
       counts[dia] += 1;
     });
     return counts;

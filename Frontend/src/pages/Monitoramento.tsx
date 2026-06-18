@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getMonitoramentos, getSensores } from '@/services/api';
 import type { Monitoramento as Mon, Sensor } from '@/services/types';
+import { formatarDataHora } from '@/utils/datas';
 import './Monitoramento.css';
 
 const POLL_MS = 5000;
@@ -72,7 +73,7 @@ export function Monitoramento() {
               </div>
               {ultimo && (
                 <span className="muted sensor-ts">
-                  Última leitura: {new Date(ultimo.timestampMonitoramento).toLocaleString('pt-BR')}
+                  Última leitura: {formatarDataHora(ultimo.timestampMonitoramento)}
                 </span>
               )}
             </div>
