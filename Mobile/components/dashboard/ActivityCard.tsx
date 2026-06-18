@@ -11,6 +11,15 @@ interface CombinedItem {
   timestamp: string;
 }
 
+// Quantas atividades mostrar (evita uma lista enorme com muitos dados).
+const MAX_RECENTES = 8;
+
+// A API envia timestamps em UTC sem 'Z'; tratamos como UTC para exibir no fuso local.
+function formatarData(iso: string): string {
+  const temFuso = /[zZ]$|[+-]\d{2}:?\d{2}$/.test(iso);
+  return new Date(temFuso ? iso : `${iso}Z`).toLocaleString('pt-BR');
+}
+
 export function ActivityCard() {
   const colorScheme = useColorScheme();
   const isDark = colorScheme === 'dark';
@@ -42,9 +51,9 @@ export function ActivityCard() {
         timestamp: item.timestampProducao,
       }));
 
-      const combined = [...formattedProduction, ...formattedRejected].sort(
-        (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-      );
+      const combined = [...formattedProduction, ...formattedRejected]
+        .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+        .slice(0, MAX_RECENTES);
 
       setActivities(combined);
     } catch (error) {
@@ -75,7 +84,7 @@ export function ActivityCard() {
           Rampa: {item.rampa}
         </Text>
         <Text style={[styles.activityTime, isDark && styles.activityTimeDark]}>
-          {new Date(item.timestamp).toLocaleString()}
+          {formatarData(item.timestamp)}
         </Text>
       </View>
     </View>
@@ -85,6 +94,9 @@ export function ActivityCard() {
     <View style={[styles.container, isDark && styles.containerDark]}>
       <View style={styles.header}>
         <Text style={[styles.title, isDark && styles.titleDark]}>Atividades Recentes</Text>
+        <Text style={[styles.headerHint, isDark && styles.activityTimeDark]}>
+          Últimas {MAX_RECENTES} peças
+        </Text>
       </View>
 
       {loading ? (
@@ -122,6 +134,12 @@ const styles = StyleSheet.create({
   },
   header: {
     marginBottom: 16,
+  },
+  headerHint: {
+    fontFamily: 'Inter-Regular',
+    fontSize: 12,
+    color: '#94A3B8',
+    marginTop: 2,
   },
   title: {
     fontFamily: 'Inter-Bold',
