@@ -74,8 +74,9 @@ API, que persiste em PostgreSQL. Web, Mobile e Chatbot consomem a API.
       ingestão de sensores, processar-peca (rampa correta), `[Authorize]` (401/204)
 - [x] Bug real corrigido rodando: coluna `senha` vs `SenhaHash` no repositório
 - [x] **Chatbot** ajustado (env, timeout, robustez, bug idPeca) e **validado contra a API** no Docker
+- [x] **Web (Vite) testada de pé** contra a API — login, dashboard com gráficos, monitoramento e chatbot
+- [x] **Simulador da esteira** (Python + fluxo Node-RED) gerando produção realista — Node-RED validado produzindo sozinho
 - [ ] Testar mobile contra a API (build já ok; falta rodar no device/emulador)
-- [ ] Testar web contra a API (na migração p/ Vite)
 
 ### Fase 4 — Vitrine (LinkedIn)
 - [x] **Migrar frontend HTML → Vite** (React + TS) — build limpo, CORS ok, consome a API direto
