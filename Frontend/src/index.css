@@ -1,0 +1,118 @@
+:root {
+  --green-700: #15803d;
+  --green-600: #16a34a;
+  --green-500: #22c55e;
+  --green-100: #dcfce7;
+  --slate-900: #0f172a;
+  --slate-700: #334155;
+  --slate-500: #64748b;
+  --slate-300: #cbd5e1;
+  --slate-100: #f1f5f9;
+  --slate-50: #f8fafc;
+  --red-500: #ef4444;
+  --amber-500: #f59e0b;
+  --blue-500: #3b82f6;
+  --white: #ffffff;
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--slate-900);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--slate-50);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.25rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  transition: filter 0.15s ease, background 0.15s ease;
+}
+.btn-primary {
+  background: var(--green-600);
+  color: var(--white);
+}
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--slate-700);
+}
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Cards */
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+}
+
+/* Inputs */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate-700);
+}
+.field input {
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--slate-300);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--white);
+  color: var(--slate-900);
+}
+.field input:focus {
+  outline: 2px solid var(--green-500);
+  border-color: transparent;
+}
+
+.alert-error {
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.muted {
+  color: var(--slate-500);
+}

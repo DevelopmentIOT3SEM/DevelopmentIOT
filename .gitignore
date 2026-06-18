@@ -16,6 +16,11 @@ dist/
 npm-debug.log*
 yarn-error.log*
 
+# TypeScript build (composite) outputs
+*.tsbuildinfo
+Frontend/vite.config.js
+Frontend/vite.config.d.ts
+
 # ===== Python / Chatbot =====
 __pycache__/
 *.py[cod]

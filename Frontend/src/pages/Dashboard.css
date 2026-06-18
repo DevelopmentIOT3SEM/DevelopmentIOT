@@ -1,0 +1,39 @@
+.dashboard h1 {
+  font-size: 1.6rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.charts-grid .card h3 {
+  margin-bottom: 1rem;
+}
+
+.charts-grid .wide {
+  grid-column: 1 / -1;
+}

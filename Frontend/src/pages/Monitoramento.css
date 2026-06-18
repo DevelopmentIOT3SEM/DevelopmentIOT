@@ -1,0 +1,50 @@
+.monitoramento h1 {
+  font-size: 1.6rem;
+}
+
+.sensores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.sensor {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sensor-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sensor-nome {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.sensor-ts {
+  font-size: 0.8rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+.badge.on {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+.badge.off {
+  background: #fee2e2;
+  color: #991b1b;
+}
+.badge.unknown {
+  background: var(--slate-100);
+  color: var(--slate-500);
+}

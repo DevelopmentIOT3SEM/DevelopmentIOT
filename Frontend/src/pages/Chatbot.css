@@ -1,0 +1,69 @@
+.chatbot h1 {
+  font-size: 1.6rem;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 65vh;
+  margin-top: 1.5rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+.chat-mensagens {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bolha {
+  max-width: 75%;
+  padding: 0.6rem 0.9rem;
+  border-radius: 14px;
+  line-height: 1.35;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.bolha.user {
+  align-self: flex-end;
+  background: var(--green-600);
+  color: var(--white);
+  border-bottom-right-radius: 4px;
+}
+
+.bolha.bot {
+  align-self: flex-start;
+  background: var(--slate-100);
+  color: var(--slate-900);
+  border-bottom-left-radius: 4px;
+}
+
+.bolha.digitando {
+  color: var(--slate-500);
+  font-style: italic;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.9rem;
+  border-top: 1px solid var(--slate-100);
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--slate-300);
+  border-radius: 999px;
+  font-size: 1rem;
+}
+
+.chat-input input:focus {
+  outline: 2px solid var(--green-500);
+  border-color: transparent;
+}

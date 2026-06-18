@@ -1,0 +1,52 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--green-100), var(--slate-50));
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--green-700);
+  margin-bottom: 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  background: var(--slate-100);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 0.55rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--slate-500);
+}
+
+.tab.active {
+  background: var(--white);
+  color: var(--green-700);
+  box-shadow: var(--shadow);
+}
+
+.btn.full {
+  width: 100%;
+}
