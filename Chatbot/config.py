@@ -20,5 +20,6 @@ HOST = os.getenv("HOST", "0.0.0.0")
 PORT = int(os.getenv("PORT", "5000"))
 FLASK_DEBUG = os.getenv("FLASK_DEBUG", "0") == "1"
 
-# CORS: lista de origens separadas por vírgula, ou "*" para qualquer origem.
-CORS_ORIGINS = os.getenv("CORS_ORIGINS", "*")
+# CORS: "*" para qualquer origem, ou lista separada por vírgula.
+_cors = os.getenv("CORS_ORIGINS", "*").strip()
+CORS_ORIGINS = "*" if _cors == "*" else [o.strip() for o in _cors.split(",") if o.strip()]

@@ -63,7 +63,7 @@ services:
       - backend
     environment:
       - API_BASE_URL=http://backend:8080/api
-      - CORS_ORIGINS=${WEB_ORIGIN:-http://localhost:5173}
+      - CORS_ORIGINS=http://localhost:5173,http://localhost:8081
 
 volumes:
   postgres_data:
