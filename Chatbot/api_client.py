@@ -2,6 +2,7 @@
 para o usuário; falhas de rede são tratadas de forma uniforme e logadas."""
 import logging
 import re
+from collections import Counter
 from datetime import datetime
 
 import requests
@@ -108,6 +109,88 @@ def get_total_pecas_metalicas() -> str:
     except requests.RequestException as e:
         logger.warning("Falha ao obter peças metálicas: %s", e)
         return "Não consegui consultar as peças metálicas agora."
+
+
+def get_eficiencia() -> str:
+    try:
+        total = len(_get("producao"))
+        refugos = len(_get("producao/refugos"))
+    except requests.RequestException as e:
+        logger.warning("Falha ao calcular eficiência: %s", e)
+        return "Não consegui calcular a eficiência agora."
+    if total == 0:
+        return "Ainda não há produção registrada."
+    corretas = total - refugos
+    eficiencia = (corretas / total) * 100
+    return f"Eficiência da produção: {eficiencia:.1f}% ({corretas} de {total} peças classificadas corretamente)."
+
+
+def get_comparativo_materiais() -> str:
+    try:
+        data = _get("producao")
+    except requests.RequestException as e:
+        logger.warning("Falha ao comparar materiais: %s", e)
+        return "Não consegui comparar os materiais agora."
+    metal = sum(1 for p in data if p.get("idPeca") == ID_PECA_METALICA)
+    plast = sum(1 for p in data if p.get("idPeca") == ID_PECA_PLASTICA)
+    if metal == 0 and plast == 0:
+        return "Ainda não há peças classificadas."
+    if metal > plast:
+        veredito = f"As metálicas lideram ({metal} vs {plast})."
+    elif plast > metal:
+        veredito = f"As plásticas lideram ({plast} vs {metal})."
+    else:
+        veredito = f"Empate técnico ({metal} de cada)."
+    return f"Comparativo de materiais — metálicas: {metal}, plásticas: {plast}. {veredito}"
+
+
+def get_resumo() -> str:
+    try:
+        producao = _get("producao")
+        refugos = _get("producao/refugos")
+    except requests.RequestException as e:
+        logger.warning("Falha ao montar resumo: %s", e)
+        return "Não consegui montar o resumo agora."
+    total = len(producao)
+    if total == 0:
+        return "Ainda não há produção registrada."
+    metal = sum(1 for p in producao if p.get("idPeca") == ID_PECA_METALICA)
+    plast = sum(1 for p in producao if p.get("idPeca") == ID_PECA_PLASTICA)
+    ref = len(refugos)
+    taxa = (ref / total) * 100
+    return (
+        "📊 Resumo da produção:\n"
+        f"• Total de peças: {total}\n"
+        f"• Metálicas: {metal}\n"
+        f"• Plásticas: {plast}\n"
+        f"• Refugos: {ref}\n"
+        f"• Taxa de refugo: {taxa:.1f}%\n"
+        f"• Eficiência: {100 - taxa:.1f}%"
+    )
+
+
+def get_melhor_dia() -> str:
+    try:
+        data = _get("producao")
+    except requests.RequestException as e:
+        logger.warning("Falha ao buscar melhor dia: %s", e)
+        return "Não consegui consultar a produção agora."
+    if not data:
+        return "Ainda não há produção registrada."
+    contagem: Counter = Counter()
+    for p in data:
+        ts = p.get("timestampProducao")
+        if not ts:
+            continue
+        try:
+            dia = datetime.fromisoformat(ts).date()
+        except ValueError:
+            continue
+        contagem[dia] += 1
+    if not contagem:
+        return "Não consegui determinar as datas de produção."
+    dia, qtd = contagem.most_common(1)[0]
+    return f"O dia com mais produção foi {dia.strftime('%d/%m/%Y')}, com {qtd} peças."
 
 
 def get_info_pecas_por_tempo(mensagem: str) -> str:

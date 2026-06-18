@@ -41,8 +41,10 @@ curl -X POST http://localhost:5000/chat \
 # -> {"resposta": "Taxa de refugo: 50.00%"}
 ```
 
-Perguntas reconhecidas: taxa de refugo, status dos sensores, peças plásticas/metálicas,
-volume processado, total de produção, refugos, e datas (última peça, últimas N, DD/MM/AAAA).
+Entende variações com/sem acento e maiúsculas. Reconhece: `ajuda`, saudações,
+**resumo** geral, taxa de refugo, **eficiência**, status dos sensores,
+peças plásticas/metálicas, **comparativo de materiais**, **melhor dia**,
+volume/total de produção, refugos e datas (última peça, últimas N, DD/MM/AAAA).
 
 ## Configuração (variáveis de ambiente)
 
