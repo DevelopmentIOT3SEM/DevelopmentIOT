@@ -51,6 +51,19 @@ services:
       - Jwt__Secret=${JWT_SECRET:?defina JWT_SECRET no arquivo .env}
       - Cors__Origins__0=${WEB_ORIGIN:-http://localhost:5173}
 
+  chatbot:
+    build:
+      context: ../Chatbot
+    container_name: chatbot
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - backend
+    environment:
+      - API_BASE_URL=http://backend:8080/api
+      - CORS_ORIGINS=${WEB_ORIGIN:-http://localhost:5173}
+
 volumes:
   postgres_data:
   nodered_data:
