@@ -73,6 +73,22 @@ API, que persiste em PostgreSQL. Web, Mobile e Chatbot consomem a API.
 - [ ] Limpar notebook de DS e gerar gráficos de impacto
 - [ ] Organizar `docs/` (mover PDF e diagrama ER)
 
+## 🔎 Revisões técnicas (em `docs/`)
+
+- [Backend](docs/REVISAO_BACKEND.md) — registro retorna 500, conexão inconsistente, segredos versionados, endpoints públicos, rampa errada.
+- [Mobile](docs/REVISAO_MOBILE.md) — **3 bloqueadores de build** (import `prisma`, hook no topo, AuthProvider duplicado) + URLs hardcoded/HTTP.
+- [Frontend](docs/REVISAO_FRONTEND.md) — 3 back-ends inconsistentes, linhas órfãs quebram `script.js`, XSS no chat, auth cosmética, **WeatherAPI key exposta**.
+- [Chatbot](docs/REVISAO_CHATBOT.md) — `debug=True` (RCE), URL hardcoded, sem timeout. (Já **não** usa SQLite — consome a API .NET.)
+
+## 🔁 Temas transversais (aparecem em quase todos)
+
+1. **URLs de API hardcoded** em todo lugar (mobile, web, chatbot), às vezes inconsistentes entre si → centralizar por variável de ambiente.
+2. **Token mal guardado** — `AsyncStorage` (mobile) e `localStorage` (web), sem checar expiração.
+3. **Segredos no Git** — JWT + senha do banco (backend) e **WeatherAPI key** (front). Rotacionar e externalizar.
+4. **Sem tratamento de erro / feedback** — vários `fetch`/`requests` engolem erro só com `console`.
+5. **Código morto e resíduos de template** — `api.js`/`authService.js` (mobile), `Frontend/py`/`app copy.py`/imagens "- Copia" (web), `volume==operações` (chatbot).
+6. **READMEs desatualizados/mínimos** em todos os módulos.
+
 ## 📝 Notas
 
 - Branches antigas (`develop`, `feature/mobile`, `feature/data-science`)
