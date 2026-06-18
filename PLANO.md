@@ -61,7 +61,8 @@ API, que persiste em PostgreSQL. Web, Mobile e Chatbot consomem a API.
 - [x] **Backend:** bugs corrigidos (registro 500, rampa, sensor case-insensitive)
 - [x] **Backend:** acesso a dados padronizado (DapperContext); migrado p/ .NET 8 LTS
 - [x] **Backend:** `[Authorize]` em DELETE/criação; CORS configurável; Swagger Bearer; health check; ProblemDetails global
-- [ ] Centralizar URL da API no **mobile** por configuração (env)
+- [x] Centralizar URL da API no **mobile** por configuração (env) + remover URLs hardcoded
+- [x] **Mobile:** destravar build (3 bloqueadores), tipar gráficos, limpar código morto/template — `tsc` limpo
 - [ ] Centralizar URL da API na **web** (na migração p/ Vite)
 - [ ] Remover **WeatherAPI key** exposta do front (usuário vai revogar)
 
