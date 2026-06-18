@@ -1,14 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import axios from 'axios';
-import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
-interface ProductionItem {
-  idProducao: number;
-  idPcca: number;
-  rampa: number;
-  timestampProducao: string;
-}
+import { API_URL } from '@/config';
+import { ProductionItem } from '@/types/production';
 
 interface AuthContextType {
   register: (name: string, email: string, password: string) => Promise<void>;
@@ -20,7 +14,7 @@ interface AuthContextType {
   fetchRejectedData: () => Promise<ProductionItem[]>;
 }
 
-const baseUrl = 'http://52.44.49.80:5271';
+const baseUrl = API_URL;
 
 
 const AuthContext = createContext<AuthContextType>({
@@ -74,14 +68,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
 const login = async (email: string, password: string) => {
   try {
-    console.log('Tentando logar com:', { email, senha: password });
-
     const response = await axios.post(`${baseUrl}/api/Auth/login`, {
       email,
       senha: password,
     });
-
-    console.log('Resposta completa:', response);
 
     const token = response.data.token;
 

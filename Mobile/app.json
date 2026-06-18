@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "expo-nativewind",
-    "slug": "expo-nativewind",
+    "name": "Monitoramento de Peças",
+    "slug": "monitoramento-pecas",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/logo-mobile-.png",
-    "scheme": "myapp",
+    "scheme": "monitoramentopecas",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {

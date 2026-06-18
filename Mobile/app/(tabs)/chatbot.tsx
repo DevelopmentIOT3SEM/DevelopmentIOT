@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'react-native';
 import { Send } from 'lucide-react-native';
 import { ChatMessage } from '@/components/chatbot/ChatMessage';
+import { CHATBOT_URL } from '@/config';
 
 type Message = {
   id: string;
@@ -43,8 +44,8 @@ export default function ChatbotScreen() {
       setMessage('');
 
       try {
-      const response = await axios.post('http://192.168.66.11:500/chat', {
-      mensagem: userInput,
+      const response = await axios.post(`${CHATBOT_URL}/chat`, {
+        mensagem: userInput,
       });
 
 
