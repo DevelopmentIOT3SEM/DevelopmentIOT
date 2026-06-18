@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useColorScheme } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
-import { ProductionItem } from '../../prisma/client';
+import { ProductionItem } from '@/types/production';
 
 interface TrendingCardProps {
   productionData: ProductionItem[];

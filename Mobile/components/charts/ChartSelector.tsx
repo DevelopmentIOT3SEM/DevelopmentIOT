@@ -3,9 +3,11 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useColorScheme } from 'react-native';
 import { ChartBar as BarChart, ChartLine as LineChart, ChartPie as PieChart } from 'lucide-react-native';
 
+export type ChartType = 'line' | 'bar' | 'pie';
+
 interface ChartSelectorProps {
-  activeChart: string;
-  setActiveChart: (chart: string) => void;
+  activeChart: ChartType;
+  setActiveChart: (chart: ChartType) => void;
 }
 
 export function ChartSelector({ activeChart, setActiveChart }: ChartSelectorProps) {

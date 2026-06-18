@@ -8,7 +8,7 @@ import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
 import { StatsCard } from '@/components/dashboard/StatsCard';
 import { ActivityCard } from '@/components/dashboard/ActivityCard';
 import { TrendingCard } from '@/components/dashboard/TrendingCard';
-import { ProductionItem } from '../prisma/client';
+import { ProductionItem } from '@/types/production';
 
 export default function DashboardScreen() {
   const { user, fetchProductionData, fetchRejectedData } = useAuth();

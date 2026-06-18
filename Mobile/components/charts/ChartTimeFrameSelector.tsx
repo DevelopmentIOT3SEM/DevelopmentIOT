@@ -2,9 +2,11 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useColorScheme } from 'react-native';
 
+export type TimeFrame = 'week' | 'month' | 'year';
+
 interface ChartTimeFrameSelectorProps {
-  timeFrame: string;
-  setTimeFrame: (timeFrame: string) => void;
+  timeFrame: TimeFrame;
+  setTimeFrame: (timeFrame: TimeFrame) => void;
 }
 
 export function ChartTimeFrameSelector({ timeFrame, setTimeFrame }: ChartTimeFrameSelectorProps) {

@@ -7,11 +7,6 @@ import { useColorScheme } from 'react-native';
 import { Pressable, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-
-const { isAuthenticated, logout } = useAuth();
-
-
-
 export default function TabsLayout() {
   const { isAuthenticated, logout } = useAuth();
   const colorScheme = useColorScheme();

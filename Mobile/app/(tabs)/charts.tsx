@@ -7,6 +7,7 @@ import { LineChart, BarChart, PieChart } from 'react-native-chart-kit';
 import { ChartSelector } from '@/components/charts/ChartSelector';
 import { ChartTimeFrameSelector } from '@/components/charts/ChartTimeFrameSelector';
 import { useAuth } from '@/context/AuthContext';
+import { ProductionItem } from '@/types/production';
 
 export default function ChartsScreen() {
   const colorScheme = useColorScheme();
@@ -16,8 +17,8 @@ export default function ChartsScreen() {
   // Estado dos seletores e dados
   const [activeChart, setActiveChart] = useState<'line' | 'bar' | 'pie'>('line');
   const [timeFrame, setTimeFrame] = useState<'week' | 'month' | 'year'>('week');
-  const [productionData, setProductionData] = useState<any[]>([]);
-  const [rejectedData, setRejectedData] = useState<any[]>([]);
+  const [productionData, setProductionData] = useState<ProductionItem[]>([]);
+  const [rejectedData, setRejectedData] = useState<ProductionItem[]>([]);
   const [loading, setLoading] = useState(true);
 
   const screenWidth = Dimensions.get('window').width - 32;
@@ -48,7 +49,7 @@ export default function ChartsScreen() {
   }, [timeFrame]);
 
   // Função para agrupar dados por dia da semana
-  const groupByDayOfWeek = (data: any[]) => {
+  const groupByDayOfWeek = (data: ProductionItem[]) => {
     // Labels em ordem segunda a domingo
     const labels = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'];
     const counts = Array(7).fill(0);
@@ -179,6 +180,8 @@ export default function ChartsScreen() {
                 height={220}
                 chartConfig={chartConfig}
                 style={styles.chartStyle}
+                yAxisLabel=""
+                yAxisSuffix=""
               />
             )}
             {activeChart === 'pie' && (
