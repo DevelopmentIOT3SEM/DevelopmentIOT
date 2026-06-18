@@ -78,10 +78,11 @@ API, que persiste em PostgreSQL. Web, Mobile e Chatbot consomem a API.
 - [ ] Testar web contra a API (na migração p/ Vite)
 
 ### Fase 4 — Vitrine (LinkedIn)
-- [ ] **Migrar frontend HTML → Vite** (definir React / Vue / Vanilla+TS)
+- [x] **Migrar frontend HTML → Vite** (React + TS) — build limpo, CORS ok, consome a API direto
 - [ ] README raiz: problema, arquitetura (diagrama), stack, como rodar, prints/GIFs
 - [ ] Limpar notebook de DS e gerar gráficos de impacto
 - [ ] Organizar `docs/` (mover PDF e diagrama ER)
+- [ ] Merge da branch `chore/consolidacao` na `main`
 
 ## 🔎 Revisões técnicas (em `docs/`)
 
