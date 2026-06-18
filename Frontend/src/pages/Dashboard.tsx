@@ -105,50 +105,56 @@ export function Dashboard() {
         <div className="charts-grid">
           <div className="card">
             <h3>Produção por destino</h3>
-            <Bar
-              data={{
-                labels: ['Rampa 1', 'Rampa 2', 'Refugo'],
-                datasets: [{
-                  label: 'Peças',
-                  data: [stats.rampa1, stats.rampa2, stats.totalRefugo],
-                  backgroundColor: ['#16a34a', '#3b82f6', '#ef4444'],
-                  borderRadius: 6,
-                }],
-              }}
-              options={{ responsive: true, plugins: { legend: { display: false } } }}
-            />
+            <div className="chart-box">
+              <Bar
+                data={{
+                  labels: ['Rampa 1', 'Rampa 2', 'Refugo'],
+                  datasets: [{
+                    label: 'Peças',
+                    data: [stats.rampa1, stats.rampa2, stats.totalRefugo],
+                    backgroundColor: ['#16a34a', '#3b82f6', '#ef4444'],
+                    borderRadius: 6,
+                  }],
+                }}
+                options={{ responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }}
+              />
+            </div>
           </div>
 
           <div className="card">
             <h3>Taxa de refugo</h3>
-            <Doughnut
-              data={{
-                labels: ['Válidas', 'Refugo'],
-                datasets: [{
-                  data: [stats.totalValidas, stats.totalRefugo],
-                  backgroundColor: ['#16a34a', '#ef4444'],
-                }],
-              }}
-              options={{ responsive: true }}
-            />
+            <div className="chart-box">
+              <Doughnut
+                data={{
+                  labels: ['Válidas', 'Refugo'],
+                  datasets: [{
+                    data: [stats.totalValidas, stats.totalRefugo],
+                    backgroundColor: ['#16a34a', '#ef4444'],
+                  }],
+                }}
+                options={{ responsive: true, maintainAspectRatio: false }}
+              />
+            </div>
           </div>
 
           <div className="card wide">
             <h3>Produção por dia da semana</h3>
-            <Line
-              data={{
-                labels: DIAS,
-                datasets: [{
-                  label: 'Peças produzidas',
-                  data: porDiaSemana,
-                  borderColor: '#16a34a',
-                  backgroundColor: 'rgba(22, 163, 74, 0.2)',
-                  fill: true,
-                  tension: 0.3,
-                }],
-              }}
-              options={{ responsive: true, scales: { y: { beginAtZero: true } } }}
-            />
+            <div className="chart-box tall">
+              <Line
+                data={{
+                  labels: DIAS,
+                  datasets: [{
+                    label: 'Peças produzidas',
+                    data: porDiaSemana,
+                    borderColor: '#16a34a',
+                    backgroundColor: 'rgba(22, 163, 74, 0.2)',
+                    fill: true,
+                    tension: 0.3,
+                  }],
+                }}
+                options={{ responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }}
+              />
+            </div>
           </div>
         </div>
       )}

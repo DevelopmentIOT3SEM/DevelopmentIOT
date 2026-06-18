@@ -5,10 +5,16 @@
 .chat {
   display: flex;
   flex-direction: column;
-  height: 65vh;
+  height: calc(100dvh - 9rem);
   margin-top: 1.5rem;
   padding: 0;
   overflow: hidden;
+}
+
+@media (max-width: 720px) {
+  .chat {
+    height: calc(100dvh - 13rem);
+  }
 }
 
 .chat-mensagens {
