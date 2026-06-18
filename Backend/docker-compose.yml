@@ -50,6 +50,7 @@ services:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=${POSTGRES_DB:-pecasdb};Username=${POSTGRES_USER:-admin};Password=${POSTGRES_PASSWORD:-admin}
       - Jwt__Secret=${JWT_SECRET:?defina JWT_SECRET no arquivo .env}
       - Cors__Origins__0=${WEB_ORIGIN:-http://localhost:5173}
+      - Cors__Origins__1=http://localhost:8081
 
   chatbot:
     build:

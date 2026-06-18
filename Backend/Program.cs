@@ -97,7 +97,7 @@ builder.Services.AddHealthChecks();
 
 // CORS configurável: origens vêm de Cors:Origins (env/appsettings).
 var corsOrigins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>()
-    ?? new[] { "http://localhost:5173", "http://localhost:5500" };
+    ?? new[] { "http://localhost:5173", "http://localhost:8081" };
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
