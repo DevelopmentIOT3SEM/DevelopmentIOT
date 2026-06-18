@@ -73,9 +73,9 @@ API, que persiste em PostgreSQL. Web, Mobile e Chatbot consomem a API.
       validação (400), login+token, /me (200), senha errada (401),
       ingestão de sensores, processar-peca (rampa correta), `[Authorize]` (401/204)
 - [x] Bug real corrigido rodando: coluna `senha` vs `SenhaHash` no repositório
-- [ ] Testar mobile contra a API (depende dos fixes do mobile)
+- [x] **Chatbot** ajustado (env, timeout, robustez, bug idPeca) e **validado contra a API** no Docker
+- [ ] Testar mobile contra a API (build já ok; falta rodar no device/emulador)
 - [ ] Testar web contra a API (na migração p/ Vite)
-- [ ] Validar chatbot contra a API
 
 ### Fase 4 — Vitrine (LinkedIn)
 - [ ] **Migrar frontend HTML → Vite** (definir React / Vue / Vanilla+TS)
