@@ -1,8 +1,7 @@
-using System.Data;
 using System.Text;
-using Npgsql;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using PecaMonitoramentoAPI.Repositories;
 using PecaMonitoramentoAPI.Repositories.Interfaces;
 using PecaMonitoramentoAPI.Services;
@@ -11,14 +10,24 @@ using PecaMonitoramentoAPI.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configura a string de conex�o com o PostgreSQL
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// Connection string (vem de env/User Secrets em produção; default local em appsettings).
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? throw new InvalidOperationException(
+        "ConnectionStrings:DefaultConnection não configurada. Defina via appsettings ou variável de ambiente.");
 
-// Registro da conex�o com Dapper
-builder.Services.AddScoped<IDbConnection>(sp => new NpgsqlConnection(connectionString));
+// Segredo do JWT: obrigatório e com tamanho mínimo para HMAC-SHA256 (>= 256 bits / 32 chars).
+var jwtSecret = builder.Configuration["Jwt:Secret"];
+if (string.IsNullOrWhiteSpace(jwtSecret) || jwtSecret.Length < 32)
+{
+    throw new InvalidOperationException(
+        "Jwt:Secret ausente ou muito curto. Configure uma chave de pelo menos 32 caracteres " +
+        "(via variável de ambiente Jwt__Secret ou User Secrets).");
+}
+
+// Acesso a dados via Dapper (uma conexão nova por operação — ver DapperContext).
 builder.Services.AddSingleton<DapperContext>();
 
-// Configura��o do JWT
+// Autenticação JWT.
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -29,7 +38,7 @@ builder.Services.AddAuthentication(options =>
     options.TokenValidationParameters = new TokenValidationParameters
     {
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Secret"])),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret)),
         ValidateIssuer = false,
         ValidateAudience = false,
         ValidateLifetime = true,
@@ -37,54 +46,99 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-// Reposit�rios
+// Repositórios.
 builder.Services.AddScoped<IPecaRepository, PecaRepository>();
 builder.Services.AddScoped<IMonitoramentoRepository, MonitoramentoRepository>();
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>(); // Novo reposit�rio
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IProducaoRepository, ProducaoRepository>();
 builder.Services.AddScoped<ISensorRepository, SensorRepository>();
 
-// Servi�os
+// Serviços.
 builder.Services.AddScoped<IPecaService, PecaService>();
 builder.Services.AddScoped<IMonitoramentoService, MonitoramentoService>();
-builder.Services.AddScoped<IAuthService, AuthService>(); // Novo servi�o
+builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ISensorService, SensorService>();
 builder.Services.AddScoped<IProducaoService, ProducaoService>();
 
-// Controller e API
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
+// Swagger com suporte a Bearer (permite testar endpoints autenticados pela UI).
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Peça Monitoramento API",
+        Version = "v1",
+        Description = "API de monitoramento de peças recicláveis (metálico × plástico)."
+    });
 
-// Configura serviços CORS
+    var jwtScheme = new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Description = "Informe: Bearer {seu token JWT}",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        Reference = new OpenApiReference
+        {
+            Type = ReferenceType.SecurityScheme,
+            Id = "Bearer"
+        }
+    };
+    options.AddSecurityDefinition("Bearer", jwtScheme);
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        { jwtScheme, Array.Empty<string>() }
+    });
+});
+
+builder.Services.AddHealthChecks();
+
+// CORS configurável: origens vêm de Cors:Origins (env/appsettings).
+var corsOrigins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>()
+    ?? new[] { "http://localhost:5173", "http://localhost:5500" };
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:5500") 
+        policy.WithOrigins(corsOrigins)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
 
-
 var app = builder.Build();
 
-// Swagger (ambiente dev)
+// Tratamento global de exceções: responde ProblemDetails sem vazar stack trace.
+app.UseExceptionHandler(handler =>
+{
+    handler.Run(async context =>
+    {
+        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+        await Results.Problem(
+            title: "Ocorreu um erro inesperado.",
+            statusCode: StatusCodes.Status500InternalServerError
+        ).ExecuteAsync(context);
+    });
+});
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+else
+{
+    // HTTPS redirect só fora de Development (no container só há HTTP exposto).
+    app.UseHttpsRedirection();
+}
 
-app.UseHttpsRedirection();
-
-// IMPORTANTE: UseAuthentication antes de UseAuthorization
-app.UseCors(); 
+app.UseCors();
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapHealthChecks("/health");
 
 app.Run();

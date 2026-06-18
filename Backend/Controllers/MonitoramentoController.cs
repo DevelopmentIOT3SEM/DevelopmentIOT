@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using PecaMonitoramentoAPI.DTOs;
 using PecaMonitoramentoAPI.Services.Interfaces;
 
@@ -39,6 +40,7 @@ namespace PecaMonitoramentoAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize] // Operação destrutiva: exige usuário autenticado.
         public async Task<IActionResult> Delete(int id)
         {
             var deleted = await _service.DeleteAsync(id);

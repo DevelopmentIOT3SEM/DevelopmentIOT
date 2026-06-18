@@ -1,9 +1,14 @@
-﻿namespace PecaMonitoramentoAPI.Models.DTO
+using System.ComponentModel.DataAnnotations;
+
+namespace PecaMonitoramentoAPI.Models.DTO
 {
     public class LoginDTO
     {
-        public string Email { get; set; }
-        public string Senha { get; set; }
-    }
+        [Required(ErrorMessage = "O e-mail é obrigatório.")]
+        [EmailAddress(ErrorMessage = "E-mail em formato inválido.")]
+        public string Email { get; set; } = string.Empty;
 
+        [Required(ErrorMessage = "A senha é obrigatória.")]
+        public string Senha { get; set; } = string.Empty;
+    }
 }

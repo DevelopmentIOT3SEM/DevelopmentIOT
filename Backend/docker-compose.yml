@@ -1,24 +1,26 @@
 services:
   postgres:
-    image: postgres:latest
+    image: postgres:16
     container_name: postgres_db
     restart: always
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-      POSTGRES_DB: pecasdb
+      POSTGRES_USER: ${POSTGRES_USER:-admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-admin}
+      POSTGRES_DB: ${POSTGRES_DB:-pecasdb}
     ports:
-      - "5433:5432"  # Porta alterada
+      - "5433:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+      # Cria as tabelas e seeds na primeira subida do banco (volume vazio).
+      - ../Codigo_SQL/tabelas.sql:/docker-entrypoint-initdb.d/01-tabelas.sql:ro
 
   pgadmin:
     image: dpage/pgadmin4
     container_name: pgadmin
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@admin.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
     ports:
       - "5052:80"
     depends_on:
@@ -45,6 +47,9 @@ services:
       - postgres
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=${POSTGRES_DB:-pecasdb};Username=${POSTGRES_USER:-admin};Password=${POSTGRES_PASSWORD:-admin}
+      - Jwt__Secret=${JWT_SECRET:?defina JWT_SECRET no arquivo .env}
+      - Cors__Origins__0=${WEB_ORIGIN:-http://localhost:5173}
 
 volumes:
   postgres_data:
