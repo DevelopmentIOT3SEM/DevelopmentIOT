@@ -39,12 +39,13 @@ namespace PecaMonitoramentoAPI.Controllers
         {
             try
             {
-                var result = await _authService.Registrar(usuarioDTO); // Envia o DTO sem o id
-                return CreatedAtAction(nameof(Registrar), result);
+                var result = await _authService.Registrar(usuarioDTO);
+                return CreatedAtAction(nameof(GetMe), result);
             }
-            catch (Exception ex)
+            catch (InvalidOperationException ex)
             {
-                return BadRequest(ex.Message);
+                // E-mail já cadastrado: conflito de recurso.
+                return Conflict(new { mensagem = ex.Message });
             }
         }
 

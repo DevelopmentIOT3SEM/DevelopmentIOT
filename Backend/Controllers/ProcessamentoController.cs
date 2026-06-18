@@ -48,8 +48,9 @@ namespace PecaMonitoramentoAPI.Controllers
             }
 
             // Determinar o tipo detectado com base nos sensores
-            bool metalOn = sensorMetal.Estado == "on";
-            bool plasticoOn = sensorPlastico.Estado == "on";
+            // (comparação tolerante a caixa/espaços: "ON", " on ", etc.)
+            bool metalOn = string.Equals(sensorMetal.Estado?.Trim(), "on", StringComparison.OrdinalIgnoreCase);
+            bool plasticoOn = string.Equals(sensorPlastico.Estado?.Trim(), "on", StringComparison.OrdinalIgnoreCase);
 
             string tipoDetectado;
             if (metalOn && !plasticoOn)
@@ -81,8 +82,9 @@ namespace PecaMonitoramentoAPI.Controllers
             }
             else
             {
+                // Rampa 1 = Metálica, Rampa 2 = Plástica (independente do id da peça no banco).
                 idPeca = tipoDetectado == "Metálica" ? pecaMetalica.IdPeca : pecaPlastica.IdPeca;
-                rampa = idPeca; // Rampa 1 para Metálica, 2 para Plástica
+                rampa = tipoDetectado == "Metálica" ? 1 : 2;
             }
 
             // Criar evento de produção

@@ -33,13 +33,14 @@ namespace PecaMonitoramentoAPI.Services
         public async Task<UsuarioDTO> Registrar(UsuarioDTO usuarioDTO)
         {
             if (await _usuarioRepository.GetByEmail(usuarioDTO.Email) != null)
-                throw new Exception("Email já está em uso");
+                throw new InvalidOperationException("E-mail já está em uso");
 
+            // Senha é validada como obrigatória no DTO; o '!' apenas informa isso ao compilador.
             var usuario = new Usuario
             {
                 Nome = usuarioDTO.Nome,
                 Email = usuarioDTO.Email,
-                SenhaHash = BCrypt.Net.BCrypt.HashPassword(usuarioDTO.Senha)
+                SenhaHash = BCrypt.Net.BCrypt.HashPassword(usuarioDTO.Senha!)
             };
 
             usuario.Id = await _usuarioRepository.Create(usuario); // O ID é gerado pelo banco
@@ -55,7 +56,11 @@ namespace PecaMonitoramentoAPI.Services
         private string GenerateJwtToken(Usuario usuario)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_configuration["Jwt:Secret"]);
+            // UTF8 em ambos os lados (geração aqui e validação no Program.cs) para
+            // manter a chave consistente caso contenha caracteres não-ASCII.
+            var secret = _configuration["Jwt:Secret"]
+                ?? throw new InvalidOperationException("Jwt:Secret não configurado.");
+            var key = Encoding.UTF8.GetBytes(secret);
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
