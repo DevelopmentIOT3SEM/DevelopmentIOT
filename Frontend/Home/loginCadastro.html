@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <title>Form</title>
+</head>
+<body>
+    <section class="containerPrincipal">
+        <div class="card cadastroActive">
+            <div class="esquerda">
+                <div class="formLogin">
+                    <a class="btn-sair" href="../Principal/home.html">←</a>
+                    <img src="Images/logoo2.png" class="logo">
+                    <h2 id="entrar">Fazer Login</h2>
+                    <form id="login-form">
+                        <input type="email" name="email" id="login-email" placeholder="Email">
+                        <input type="password" name="password" id="login-password" placeholder="Senha">
+                        <button type="button" onclick="handleLogin()">Entrar</button>
+                    </form>
+                </div>
+                
+                <div class="fazerLogin">
+                    <h2 id="login">Já tem <br> uma conta?</h2>
+                    <button class="btnFacaLogin" onclick="toggleForm('login')">Faça Login</button>
+                </div>
+            </div>
+
+            <div class="direita">
+                <div class="formCadastro">
+                    <a class="btn-sair" href="../Principal/home.html">←</a>
+                    <img src="Images/logoo2.png" class="logo">
+                    <h2 id="entrar">Cadastro</h2>
+                    <form id="cadastro-form">
+                        <input type="text" name="nome" id="cadastro-nome" placeholder="Nome">
+                        <input type="email" name="email" id="cadastro-email" placeholder="Email">
+                        <input type="password" name="password" id="cadastro-senha" placeholder="Senha">
+                        <input type="password" name="password" id="cadastro-confirma-senha" placeholder="Confirme sua senha">
+                        <button type="button" onclick="handleCadastro()">Cadastrar</button>
+                    </form>
+                </div>
+
+                <div class="naotemCadastro">
+                    <h2 id="login">Não tem <br>uma conta?</h2>
+                    <button class="cadastreSe" onclick="toggleForm('cadastro')">Cadastre-se</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="cadastro.js" defer></script>
+</body>
+</html>

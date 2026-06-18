@@ -1,0 +1,324 @@
+*{ 
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: "Onest";
+}
+.onest { 
+    font-family: "Onest", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+body{
+    color: rgb(0, 0, 0);
+}
+h2{
+    font-size: 58px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+form{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+}
+form button{ 
+    background: linear-gradient(90deg, #a3c1e5 0%, #647aa3 100%);
+}
+input, button{
+    border: none;
+    outline: none;
+    width: 400px;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+
+
+input{ 
+    background-color: #56575a9a;
+    color: rgba(255,255, 255, 0.9);
+}
+input::placeholder{ 
+    color:rgba(255,255, 255, 0.5);
+}
+button{ 
+    font-weight: 700;
+    margin-top: 20px;
+    padding: 16px;
+    cursor: pointer;
+    color: #40394bcc;
+    transition: all 0.3s ease;
+}
+button:hover{ 
+    transform: translateY(-4px);
+}
+p{
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 32px ;
+}
+.containerPrincipal{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: flex;
+    width: 80%;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, 0.10);
+    border-radius: 32px;
+    padding: 32px 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+.esquerda,.direita{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    z-index: 1;
+}
+.formLogin, .fazerLogin, .formCadastro, .naotemCadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.fazerLogin, .naotemCadastro{
+    position: absolute;
+
+    h2,p{
+        color: rgba(46, 44, 44, 0.76);
+    }
+
+    button{
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1.8px solid #0E1C3B;
+    }
+}
+.card::after{
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(Images/backg.png);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.btn-sair {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    font-size: 50px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.card.loginActive .fazerLogin {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.loginActive .naotemCadastro{
+    transform: translateX(0);
+    transition: all .3s .3s;   
+    opacity: 1; 
+}
+
+.card.loginActive .formLogin{
+    transition: all .3s .3s;
+    opacity: 1; 
+}
+
+.card.loginActive .formCadastro{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.loginActive::after{
+    transform: translateX(50%);
+}
+
+.card.cadastroActive .naotemCadastro {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.cadastroActive .formLogin{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.cadastroActive::after{
+    transform: translateX(-50%);
+}
+
+.card.cadastroActive .fazerLogin{
+    transform: translateX(0);
+    transition: all .3s .3s;   
+    opacity: 1; 
+}
+
+.card.cadastroActive .formCadastro{
+    transition: all .3s .3s;
+    opacity: 1; 
+}
+
+
+.card::after {
+    transition: all .5s;
+}
+
+.naotemCadastro {
+    transition: all .3s 0;
+    transform: translateX(200%);
+    opacity: 0;
+}
+
+.fazerLogin {
+    transition: all .3s 0;
+    transform: translateX(-200%);
+    opacity: 0;
+}
+
+.formLogin {
+    opacity: 0;
+    transition: all .3s 0;
+}
+
+.formCadastro {
+    opacity: 0;
+    transition: all .3s 0;
+}
+#login{
+    color: #0E1C3B;
+}
+#entrar{
+    color: white;
+}
+
+.logo{
+    width: 130px; 
+    max-width: 100%; 
+    height: auto; 
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.card.loginActive .formLogin::before,
+.card.cadastroActive .formCadastro::before {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+}
+
+/*RESPONSIVIDADE DAS TELAS*/
+
+@media (max-width: 1095px) {
+    h2 {
+        font-size: 28px; 
+        margin-bottom: 16px; 
+        margin-top: 30px; 
+    }
+
+    .card {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    input, button {
+        width: 100%; 
+        font-size: 14px; 
+        padding: 10px; 
+    }
+
+    .esquerda, .direita {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+
+    .formLogin, .formCadastro {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    .fazerLogin, .naotemCadastro {
+        width: 100%;
+        transform: translateX(0);
+        margin-bottom: 20px; 
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+    }
+
+    .fazerLogin button, .naotemCadastro button {
+        width: auto; 
+        font-size: 14px; 
+        padding: 8px 16px; 
+    }
+    .fazerLogin::before,
+    .naotemCadastro::before background-image{
+        top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 24px; 
+        margin-bottom: 16px; 
+        margin-top: 40px; 
+    }
+
+    .card {
+        width: 95%;
+        padding: 15px;
+    }
+
+    input, button {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .fazerLogin, .naotemCadastro {
+        width: 100%;
+        transform: translateX(0);
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: center; 
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .fazerLogin button, .naotemCadastro button {
+        width: auto; 
+        font-size: 12px; 
+        padding: 6px 12px; 
+    }
+
+    .formLogin, .formCadastro {
+        margin-bottom: 20px; 
+    }
+
+    .containerPrincipal {
+        padding: 10px; 
+    }
+}
