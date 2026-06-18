@@ -66,10 +66,15 @@ API, que persiste em PostgreSQL. Web, Mobile e Chatbot consomem a API.
 - [ ] Remover **WeatherAPI key** exposta do front (usuário vai revogar)
 
 ### Fase 3 — Funcionar ponta-a-ponta
-- [ ] `docker-compose up` validando API + banco + Node-RED
-- [ ] Testar mobile contra a API
-- [ ] Testar web contra a API
-- [ ] Validar chatbot
+- [x] `docker-compose up` — Postgres + API + Node-RED + pgAdmin de pé
+- [x] Tabelas + seeds criados automaticamente (SQL init montado no Postgres)
+- [x] **API validada ponta-a-ponta**: health, registro (201), duplicado (409),
+      validação (400), login+token, /me (200), senha errada (401),
+      ingestão de sensores, processar-peca (rampa correta), `[Authorize]` (401/204)
+- [x] Bug real corrigido rodando: coluna `senha` vs `SenhaHash` no repositório
+- [ ] Testar mobile contra a API (depende dos fixes do mobile)
+- [ ] Testar web contra a API (na migração p/ Vite)
+- [ ] Validar chatbot contra a API
 
 ### Fase 4 — Vitrine (LinkedIn)
 - [ ] **Migrar frontend HTML → Vite** (definir React / Vue / Vanilla+TS)
