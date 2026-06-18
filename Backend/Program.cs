@@ -59,6 +59,7 @@ builder.Services.AddScoped<IMonitoramentoService, MonitoramentoService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ISensorService, SensorService>();
 builder.Services.AddScoped<IProducaoService, ProducaoService>();
+builder.Services.AddScoped<IEstatisticasService, EstatisticasService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

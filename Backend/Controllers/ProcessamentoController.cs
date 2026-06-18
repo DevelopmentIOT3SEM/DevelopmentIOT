@@ -87,11 +87,13 @@ namespace PecaMonitoramentoAPI.Controllers
                 rampa = tipoDetectado == "Metálica" ? 1 : 2;
             }
 
-            // Criar evento de produção
+            // Criar evento de produção (guarda esperado x detectado para análise de erros)
             var producaoDto = new CreateProducaoDTO
             {
                 IdPeca = idPeca,
-                Rampa = rampa
+                Rampa = rampa,
+                TipoEsperado = dto.TipoMaterialEsperado,
+                TipoDetectado = tipoDetectado
             };
 
             var idProducao = await _producaoService.CreateAsync(producaoDto);

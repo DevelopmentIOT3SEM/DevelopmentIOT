@@ -25,8 +25,10 @@ CREATE TABLE Monitoramento (
 
 CREATE TABLE Producao (
     id_producao SERIAL PRIMARY KEY,
-    id_peca INT REFERENCES Peca(id_peca) NOT NULL, 
+    id_peca INT REFERENCES Peca(id_peca) NOT NULL,
     rampa INT NOT NULL,
+    tipo_esperado VARCHAR(20),
+    tipo_detectado VARCHAR(20),
     timestamp_producao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
