@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -12,10 +12,9 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar, Doughnut, Line } from 'react-chartjs-2';
-import { Layers, AlertOctagon, Package, Percent } from 'lucide-react';
-import { getProducao, getRefugos } from '@/services/api';
-import type { Producao } from '@/services/types';
-import { paraDataLocal } from '@/utils/datas';
+import { Layers, AlertOctagon, Package, Percent, Gauge } from 'lucide-react';
+import { getEstatisticas } from '@/services/api';
+import type { Estatisticas } from '@/services/types';
 import './Dashboard.css';
 
 ChartJS.register(
@@ -23,11 +22,10 @@ ChartJS.register(
   Title, Tooltip, Legend,
 );
 
-const DIAS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+const baseOptions = { responsive: true, maintainAspectRatio: false };
 
 export function Dashboard() {
-  const [producao, setProducao] = useState<Producao[]>([]);
-  const [refugos, setRefugos] = useState<Producao[]>([]);
+  const [stats, setStats] = useState<Estatisticas | null>(null);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState<string | null>(null);
 
@@ -36,13 +34,12 @@ export function Dashboard() {
     (async () => {
       try {
         setLoading(true);
-        const [prod, refs] = await Promise.all([getProducao(), getRefugos()]);
+        const data = await getEstatisticas();
         if (!ativo) return;
-        setProducao(prod);
-        setRefugos(refs);
+        setStats(data);
         setErro(null);
       } catch {
-        if (ativo) setErro('Não foi possível carregar os dados da produção.');
+        if (ativo) setErro('Não foi possível carregar as estatísticas.');
       } finally {
         if (ativo) setLoading(false);
       }
@@ -50,33 +47,18 @@ export function Dashboard() {
     return () => { ativo = false; };
   }, []);
 
-  const stats = useMemo(() => {
-    const rampa1 = producao.filter((p) => p.rampa === 1).length;
-    const rampa2 = producao.filter((p) => p.rampa === 2).length;
-    const totalRefugo = refugos.length;
-    const totalValidas = rampa1 + rampa2;
-    const totalGeral = totalValidas + totalRefugo;
-    const taxaRefugo = totalGeral > 0 ? (totalRefugo / totalGeral) * 100 : 0;
-    return { rampa1, rampa2, totalRefugo, totalValidas, totalGeral, taxaRefugo };
-  }, [producao, refugos]);
-
-  const porDiaSemana = useMemo(() => {
-    const counts = Array(7).fill(0);
-    producao.forEach((p) => {
-      const dia = paraDataLocal(p.timestampProducao).getDay();
-      counts[dia] += 1;
-    });
-    return counts;
-  }, [producao]);
-
   if (loading) return <p className="muted">Carregando dados…</p>;
   if (erro) return <div className="alert-error">{erro}</div>;
+  if (!stats) return null;
+
+  const validas = stats.total - stats.totalRefugo;
 
   const cards = [
-    { label: 'Rampa 1 (Metálica)', value: stats.rampa1, icon: Layers, color: 'var(--green-600)' },
-    { label: 'Rampa 2 (Plástica)', value: stats.rampa2, icon: Layers, color: 'var(--blue-500)' },
+    { label: 'Metálicas', value: stats.totalMetalica, icon: Layers, color: 'var(--green-600)' },
+    { label: 'Plásticas', value: stats.totalPlastica, icon: Layers, color: 'var(--blue-500)' },
     { label: 'Refugos', value: stats.totalRefugo, icon: AlertOctagon, color: 'var(--red-500)' },
-    { label: 'Total produzido', value: stats.totalGeral, icon: Package, color: 'var(--slate-700)' },
+    { label: 'Total produzido', value: stats.total, icon: Package, color: 'var(--slate-700)' },
+    { label: 'Eficiência', value: `${stats.eficiencia.toFixed(1)}%`, icon: Gauge, color: 'var(--green-600)' },
     { label: 'Taxa de refugo', value: `${stats.taxaRefugo.toFixed(1)}%`, icon: Percent, color: 'var(--amber-500)' },
   ];
 
@@ -97,7 +79,7 @@ export function Dashboard() {
         ))}
       </div>
 
-      {stats.totalGeral === 0 ? (
+      {stats.total === 0 ? (
         <div className="card">
           <p className="muted">Ainda não há produção registrada. Os gráficos aparecem assim que houver dados.</p>
         </div>
@@ -108,51 +90,84 @@ export function Dashboard() {
             <div className="chart-box">
               <Bar
                 data={{
-                  labels: ['Rampa 1', 'Rampa 2', 'Refugo'],
+                  labels: ['Rampa 1 (Metálica)', 'Rampa 2 (Plástica)', 'Refugo'],
                   datasets: [{
                     label: 'Peças',
-                    data: [stats.rampa1, stats.rampa2, stats.totalRefugo],
+                    data: [stats.totalMetalica, stats.totalPlastica, stats.totalRefugo],
                     backgroundColor: ['#16a34a', '#3b82f6', '#ef4444'],
                     borderRadius: 6,
                   }],
                 }}
-                options={{ responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }}
+                options={{ ...baseOptions, plugins: { legend: { display: false } } }}
               />
             </div>
           </div>
 
           <div className="card">
-            <h3>Taxa de refugo</h3>
+            <h3>Eficiência da separação</h3>
             <div className="chart-box">
               <Doughnut
                 data={{
-                  labels: ['Válidas', 'Refugo'],
+                  labels: ['Corretas', 'Refugo'],
+                  datasets: [{ data: [validas, stats.totalRefugo], backgroundColor: ['#16a34a', '#ef4444'] }],
+                }}
+                options={baseOptions}
+              />
+            </div>
+          </div>
+
+          <div className="card">
+            <h3>Eficiência por turno</h3>
+            <div className="chart-box">
+              <Bar
+                data={{
+                  labels: stats.porTurno.map((t) => t.turno),
                   datasets: [{
-                    data: [stats.totalValidas, stats.totalRefugo],
-                    backgroundColor: ['#16a34a', '#ef4444'],
+                    label: 'Eficiência (%)',
+                    data: stats.porTurno.map((t) => t.eficiencia),
+                    backgroundColor: '#16a34a',
+                    borderRadius: 6,
                   }],
                 }}
-                options={{ responsive: true, maintainAspectRatio: false }}
+                options={{ ...baseOptions, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 100 } } }}
+              />
+            </div>
+          </div>
+
+          <div className="card">
+            <h3>Erros de classificação</h3>
+            <div className="chart-box">
+              <Bar
+                data={{
+                  labels: ['Plástico como metal', 'Metal como plástico', 'Não identificado'],
+                  datasets: [{
+                    label: 'Ocorrências',
+                    data: [stats.erros.plasticoComoMetal, stats.erros.metalComoPlastico, stats.erros.naoIdentificado],
+                    backgroundColor: ['#3b82f6', '#f59e0b', '#94a3b8'],
+                    borderRadius: 6,
+                  }],
+                }}
+                options={{ ...baseOptions, plugins: { legend: { display: false } } }}
               />
             </div>
           </div>
 
           <div className="card wide">
-            <h3>Produção por dia da semana</h3>
+            <h3>Produção por dia</h3>
             <div className="chart-box tall">
               <Line
                 data={{
-                  labels: DIAS,
+                  labels: stats.porDia.map((d) => d.data),
                   datasets: [{
                     label: 'Peças produzidas',
-                    data: porDiaSemana,
+                    data: stats.porDia.map((d) => d.total),
                     borderColor: '#16a34a',
                     backgroundColor: 'rgba(22, 163, 74, 0.2)',
                     fill: true,
                     tension: 0.3,
                   }],
                 }}
-                options={{ responsive: true, maintainAspectRatio: false, scales: { y: { beginAtZero: true } } }}
+                options={{ ...baseOptions, scales: { y: { beginAtZero: true } } }}
               />
             </div>
           </div>

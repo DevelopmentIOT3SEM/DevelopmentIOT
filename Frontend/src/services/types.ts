@@ -23,3 +23,15 @@ export interface Usuario {
   nome: string;
   email: string;
 }
+
+export interface Estatisticas {
+  total: number;
+  totalMetalica: number;
+  totalPlastica: number;
+  totalRefugo: number;
+  taxaRefugo: number;
+  eficiencia: number;
+  porTurno: { turno: string; total: number; eficiencia: number }[];
+  porDia: { data: string; total: number }[];
+  erros: { plasticoComoMetal: number; metalComoPlastico: number; naoIdentificado: number };
+}

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { Monitoramento, Producao, Sensor, Usuario } from './types';
+import type { Estatisticas, Monitoramento, Producao, Sensor, Usuario } from './types';
 
 const API_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:5271';
 const CHATBOT_URL = import.meta.env.VITE_CHATBOT_URL ?? 'http://localhost:5000';
@@ -57,6 +57,11 @@ export async function getProducao(): Promise<Producao[]> {
 
 export async function getRefugos(): Promise<Producao[]> {
   const { data } = await api.get<Producao[]>('/api/Producao/refugos');
+  return data;
+}
+
+export async function getEstatisticas(): Promise<Estatisticas> {
+  const { data } = await api.get<Estatisticas>('/api/Estatisticas');
   return data;
 }
 
