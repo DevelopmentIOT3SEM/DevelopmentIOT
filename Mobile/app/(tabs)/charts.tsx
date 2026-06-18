@@ -109,14 +109,14 @@ export default function ChartsScreen() {
   const chartConfig = {
     backgroundGradientFrom: isDark ? '#0f172a' : '#ffffff',
     backgroundGradientTo: isDark ? '#1e293b' : '#f0f4f8',
-    color: (opacity = 1) => `rgba(59, 130, 246, ${opacity})`, // azul
+    color: (opacity = 1) => `rgba(22, 163, 74, ${opacity})`, // azul
     labelColor: (opacity = 1) => isDark ? `rgba(229, 231, 235, ${opacity})` : `rgba(51, 65, 85, ${opacity})`,
     strokeWidth: 2,
     useShadowColorFromDataset: false,
     propsForDots: {
       r: '4',
       strokeWidth: '2',
-      stroke: '#3B82F6',
+      stroke: '#16a34a',
     },
   };
 
@@ -126,7 +126,7 @@ export default function ChartsScreen() {
     datasets: [
       {
         data: productionByDay.counts,
-        color: (opacity = 1) => `rgba(59, 130, 246, ${opacity})`,
+        color: (opacity = 1) => `rgba(22, 163, 74, ${opacity})`,
         strokeWidth: 2,
       },
     ],

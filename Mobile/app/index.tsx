@@ -6,7 +6,7 @@ export default function IndexPage() {
 
   // Redirect based on authentication status
   if (isAuthenticated) {
-    return <Redirect href="/(tabs)/" />;
+    return <Redirect href="/(tabs)" />;
   } else {
     return <Redirect href="/(auth)/login" />;
   }

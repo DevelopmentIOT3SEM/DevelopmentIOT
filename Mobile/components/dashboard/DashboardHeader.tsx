@@ -33,7 +33,7 @@ export function DashboardHeader({ userName = 'Usuário' }: DashboardHeaderProps)
         </Text>
       </View>
       <Text style={[styles.subtitle, isDark && styles.subtitleDark]}>
-        Aqui está o resumo da sua performance
+        Resumo da produção da esteira
       </Text>
     </View>
   );
@@ -62,10 +62,10 @@ const styles = StyleSheet.create({
   name: {
     fontFamily: 'Inter-Bold',
     fontSize: 24,
-    color: '#3B82F6',
+    color: '#16a34a',
   },
   nameDark: {
-    color: '#60A5FA',
+    color: '#22c55e',
   },
   subtitle: {
     fontFamily: 'Inter-Regular',

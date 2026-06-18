@@ -62,7 +62,7 @@ export function ActivityCard() {
     <View style={styles.activityItem}>
       <View style={[styles.iconContainer, isDark && styles.iconContainerDark]}>
         {item.type === 'production' ? (
-          <ShoppingCart size={16} color="#3B82F6" />
+          <ShoppingCart size={16} color="#16a34a" />
         ) : (
           <X size={16} color="#EF4444" />
         )}
@@ -88,7 +88,7 @@ export function ActivityCard() {
       </View>
 
       {loading ? (
-        <ActivityIndicator size="large" color="#3B82F6" />
+        <ActivityIndicator size="large" color="#16a34a" />
       ) : activities.length > 0 ? (
         <FlatList
           data={activities}

@@ -74,11 +74,11 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   userBubble: {
-    backgroundColor: '#3B82F6',
+    backgroundColor: '#16a34a',
     borderBottomRightRadius: 4,
   },
   userBubbleDark: {
-    backgroundColor: '#2563EB',
+    backgroundColor: '#15803d',
   },
   botBubble: {
     backgroundColor: '#FFFFFF',

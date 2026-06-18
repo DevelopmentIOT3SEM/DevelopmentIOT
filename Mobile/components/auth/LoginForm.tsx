@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator } from 'react-native';
 import { Eye, EyeOff } from 'lucide-react-native';
+import { colors, font, radius } from '@/constants/theme';
 
-
-interface LoginFormProps { 
+interface LoginFormProps {
   onSubmit: (email: string, password: string) => void;
   isLoading: boolean;
 }
@@ -12,13 +12,11 @@ export function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
-  
+
   const validateForm = () => {
     let isValid = true;
-    
     if (!email) {
       setEmailError('E-mail é obrigatório');
       isValid = false;
@@ -28,7 +26,7 @@ export function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
     } else {
       setEmailError('');
     }
-    
+
     if (!password) {
       setPasswordError('Senha é obrigatória');
       isValid = false;
@@ -38,16 +36,13 @@ export function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
     } else {
       setPasswordError('');
     }
-    
     return isValid;
   };
-  
+
   const handleSubmit = () => {
-    if (validateForm()) {
-      onSubmit(email, password);
-    }
+    if (validateForm()) onSubmit(email, password);
   };
-  
+
   return (
     <View style={styles.container}>
       <View style={styles.inputGroup}>
@@ -55,6 +50,7 @@ export function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
         <TextInput
           style={[styles.input, emailError ? styles.inputError : null]}
           placeholder="nome@exemplo.com"
+          placeholderTextColor={colors.slate400}
           value={email}
           onChangeText={setEmail}
           autoCapitalize="none"
@@ -64,13 +60,14 @@ export function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
         />
         {emailError ? <Text style={styles.errorText}>{emailError}</Text> : null}
       </View>
-      
+
       <View style={styles.inputGroup}>
         <Text style={styles.label}>Senha</Text>
         <View style={[styles.passwordContainer, passwordError ? styles.inputError : null]}>
           <TextInput
             style={styles.passwordInput}
             placeholder="••••••••"
+            placeholderTextColor={colors.slate400}
             value={password}
             onChangeText={setPassword}
             secureTextEntry={!showPassword}
@@ -78,103 +75,60 @@ export function LoginForm({ onSubmit, isLoading }: LoginFormProps) {
             autoComplete="password"
             editable={!isLoading}
           />
-          <TouchableOpacity 
-            style={styles.eyeButton} 
-            onPress={() => setShowPassword(!showPassword)}
-            disabled={isLoading}
-          >
-            {showPassword ? (
-              <EyeOff size={20} color="#64748B" />
-            ) : (
-              <Eye size={20} color="#64748B" />
-            )}
+          <TouchableOpacity style={styles.eyeButton} onPress={() => setShowPassword(!showPassword)} disabled={isLoading}>
+            {showPassword ? <EyeOff size={20} color={colors.slate500} /> : <Eye size={20} color={colors.slate500} />}
           </TouchableOpacity>
         </View>
         {passwordError ? <Text style={styles.errorText}>{passwordError}</Text> : null}
       </View>
-      
+
       <TouchableOpacity
         style={[styles.submitButton, isLoading ? styles.submitButtonDisabled : null]}
         onPress={handleSubmit}
         disabled={isLoading}
       >
-        {isLoading ? (
-          <ActivityIndicator color="#FFFFFF" size="small" />
-        ) : (
-          
-          <Text style={styles.submitButtonText}>Entrar</Text>
-        )}
+        {isLoading ? <ActivityIndicator color={colors.white} size="small" /> : <Text style={styles.submitButtonText}>Entrar</Text>}
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-  },
-  inputGroup: {
-    marginBottom: 20,
-  },
-  label: {
-    fontFamily: 'Inter-Medium',
-    fontSize: 14,
-    color: '#FFFFFF',
-    marginBottom: 8,
-  },
+  container: { width: '100%' },
+  inputGroup: { marginBottom: 18 },
+  label: { fontFamily: font.medium, fontSize: 14, color: colors.slate700, marginBottom: 8 },
   input: {
-    fontFamily: 'Inter-Regular',
-    height: 48,
+    fontFamily: font.regular,
+    height: 50,
     borderWidth: 1,
-    borderColor: '#4C4C4C',
-    borderRadius: 8,
+    borderColor: colors.slate300,
+    borderRadius: radius.sm,
     paddingHorizontal: 16,
-    backgroundColor: '#4C4C4C',
+    backgroundColor: colors.white,
     fontSize: 16,
-    color: '#7A7A7A',
+    color: colors.slate900,
   },
-  inputError: {
-    borderColor: '#E11D48',
-  },
-  errorText: {
-    fontFamily: 'Inter-Regular',
-    color: '#E11D48',
-    fontSize: 12,
-    marginTop: 4,
-  },
+  inputError: { borderColor: colors.red500 },
+  errorText: { fontFamily: font.regular, color: colors.red500, fontSize: 12, marginTop: 4 },
   passwordContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    height: 48,
-    borderWidth: 1,
-    borderColor: '#4C4C4C',
-    borderRadius: 8,
-    backgroundColor: '#4C4C4C',
-  },
-  passwordInput: {
-    flex: 1,
-    fontFamily: 'Inter-Regular',
-    paddingHorizontal: 16,
-    fontSize: 16,
-    color: '#1A2138',
-  },
-  eyeButton: {
-    padding: 10,
-  },
-  submitButton: {
     height: 50,
-    borderRadius: 8,
-    backgroundColor: '#5088BD',
+    borderWidth: 1,
+    borderColor: colors.slate300,
+    borderRadius: radius.sm,
+    backgroundColor: colors.white,
+  },
+  passwordInput: { flex: 1, fontFamily: font.regular, paddingHorizontal: 16, fontSize: 16, color: colors.slate900 },
+  eyeButton: { padding: 12 },
+  submitButton: {
+    height: 52,
+    borderRadius: radius.sm,
+    backgroundColor: colors.green600,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 16,
+    marginTop: 8,
   },
-  submitButtonDisabled: {
-    backgroundColor: '#93C5FD',
-  },
-  submitButtonText: {
-    fontFamily: 'Inter-Medium',
-    color: '#484848',
-    fontSize: 16,
-  }
+  submitButtonDisabled: { backgroundColor: colors.green500, opacity: 0.7 },
+  submitButtonText: { fontFamily: font.bold, color: colors.white, fontSize: 16 },
 });

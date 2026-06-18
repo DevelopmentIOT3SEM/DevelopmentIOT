@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link, useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
+import { Recycle } from 'lucide-react-native';
 import { useAuth } from '@/context/AuthContext';
 import { RegisterForm } from '@/components/auth/RegisterForm';
-import { StatusBar } from 'expo-status-bar';
-
-
+import { colors, font, radius } from '@/constants/theme';
 
 export default function RegisterScreen() {
   const { register } = useAuth();
@@ -21,8 +21,7 @@ export default function RegisterScreen() {
       await register(name, email, password);
       router.replace('/(tabs)');
     } catch (err) {
-      setError('Falha no cadastro. Por favor, tente novamente.');
-      console.error(err);
+      setError((err as Error).message || 'Falha no cadastro. Tente novamente.');
     } finally {
       setIsLoading(false);
     }
@@ -32,13 +31,14 @@ export default function RegisterScreen() {
     <>
       <StatusBar style="dark" />
       <SafeAreaView style={styles.container}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          style={styles.keyboardAvoidingView}
-        >
-          <ScrollView contentContainerStyle={styles.scrollContent}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.flex}>
+          <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
             <View style={styles.header}>
-              <Text style={styles.title}>Criar Conta</Text>
+              <View style={styles.brand}>
+                <Recycle size={28} color={colors.green600} />
+                <Text style={styles.brandText}>EcoVida</Text>
+              </View>
+              <Text style={styles.title}>Criar conta</Text>
               <Text style={styles.subtitle}>Cadastre-se para começar</Text>
             </View>
 
@@ -66,56 +66,17 @@ export default function RegisterScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#151313',
-  },
-  keyboardAvoidingView: {
-    flex: 1,
-  },
-  scrollContent: {
-    flexGrow: 1,
-    padding: 24,
-    justifyContent: 'center',
-  },
-  header: {
-    marginBottom: 32,
-  },
-  title: {
-    fontFamily: 'Inter-Bold',
-    fontSize: 28,
-    color: '#FFFFFF',
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
-    color: '#64748B',
-  },
-  errorContainer: {
-    backgroundColor: '#FFDDE0',
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 16,
-  },
-  errorText: {
-    fontFamily: 'Inter-Regular',
-    color: '#E11D48',
-    fontSize: 14,
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 24,
-  },
-  footerText: {
-    fontFamily: 'Inter-Regular',
-    color: '#FFFFFF',
-    fontSize: 14,
-  },
-  footerLink: {
-    fontFamily: 'Inter-Medium',
-    color: '#3B82F6',
-    fontSize: 14,
-  },
+  container: { flex: 1, backgroundColor: colors.bg },
+  flex: { flex: 1 },
+  scrollContent: { flexGrow: 1, padding: 24, justifyContent: 'center' },
+  header: { marginBottom: 28 },
+  brand: { flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 16 },
+  brandText: { fontFamily: font.bold, fontSize: 22, color: colors.green700 },
+  title: { fontFamily: font.bold, fontSize: 26, color: colors.slate900, marginBottom: 6 },
+  subtitle: { fontFamily: font.regular, fontSize: 15, color: colors.slate500 },
+  errorContainer: { backgroundColor: colors.red100, borderRadius: radius.sm, padding: 12, marginBottom: 16 },
+  errorText: { fontFamily: font.regular, color: '#991b1b', fontSize: 14 },
+  footer: { flexDirection: 'row', justifyContent: 'center', marginTop: 24 },
+  footerText: { fontFamily: font.regular, color: colors.slate500, fontSize: 14 },
+  footerLink: { fontFamily: font.bold, color: colors.green600, fontSize: 14 },
 });

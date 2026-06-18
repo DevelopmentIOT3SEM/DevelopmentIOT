@@ -27,7 +27,7 @@ export function ChartSelector({ activeChart, setActiveChart }: ChartSelectorProp
         <LineChart 
           size={18} 
           color={activeChart === 'line' 
-            ? (isDark ? '#FFFFFF' : '#3B82F6')
+            ? (isDark ? '#FFFFFF' : '#16a34a')
             : (isDark ? '#94A3B8' : '#64748B')
           } 
         />
@@ -54,7 +54,7 @@ export function ChartSelector({ activeChart, setActiveChart }: ChartSelectorProp
         <BarChart 
           size={18} 
           color={activeChart === 'bar' 
-            ? (isDark ? '#FFFFFF' : '#3B82F6')
+            ? (isDark ? '#FFFFFF' : '#16a34a')
             : (isDark ? '#94A3B8' : '#64748B')
           } 
         />
@@ -81,7 +81,7 @@ export function ChartSelector({ activeChart, setActiveChart }: ChartSelectorProp
         <PieChart 
           size={18} 
           color={activeChart === 'pie' 
-            ? (isDark ? '#FFFFFF' : '#3B82F6')
+            ? (isDark ? '#FFFFFF' : '#16a34a')
             : (isDark ? '#94A3B8' : '#64748B')
           } 
         />
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   activeOption: {
-    backgroundColor: '#EBF5FF',
+    backgroundColor: '#dcfce7',
   },
   activeOptionDark: {
     backgroundColor: '#1E40AF',
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     marginLeft: 6,
   },
   activeText: {
-    color: '#3B82F6',
+    color: '#16a34a',
   },
   textDark: {
     color: '#94A3B8',

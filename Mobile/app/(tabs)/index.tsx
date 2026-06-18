@@ -80,14 +80,14 @@ export default function DashboardScreen() {
               value={countByRamp(1, productionData).toString()}
               status={countByRamp(1, productionData) > 0}
               iconName="conveyor-belt"
-              color="#9333EA"
+              color="#16a34a"
             />
             <StatsCard
               title="Rampa 2"
               value={countByRamp(2, productionData).toString()}
               status={countByRamp(2, productionData) > 0}
               iconName="conveyor-belt"
-              color="#F59E0B"
+              color="#3b82f6"
             />
           </View>
 
@@ -97,7 +97,7 @@ export default function DashboardScreen() {
               value={totalRamp1And2().toString()}
               status={totalRamp1And2() > 0}
               iconName="layers"
-              color="#3B82F6"
+              color="#334155"
             />
             <StatsCard
               title="Refugos"

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, KeyboardAvoidingView, Platform, ScrollView, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Link, useRouter,  } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import { useAuth } from '@/context/AuthContext';
 import { LoginForm } from '@/components/auth/LoginForm';
-import { StatusBar } from 'expo-status-bar';
-import { Image } from 'react-native';
+import { colors, font, radius } from '@/constants/theme';
 
 export default function LoginScreen() {
   const { login } = useAuth();
@@ -14,39 +14,28 @@ export default function LoginScreen() {
   const [error, setError] = useState<string | null>(null);
 
   const handleLogin = async (email: string, password: string) => {
-  try {
-    setIsLoading(true);
-    setError(null);
-    console.log('Tentando logar...');
-    await login(email, password);
-    console.log('Login feito, navegando...');
-    router.replace('/(tabs)');
-  } catch (err) {
-   setError((err as Error).message || 'Falha no login. Por favor, verifique suas credenciais.');
-    console.error(err);
-  } finally {
-    setIsLoading(false);
-  }
-};
-
+    try {
+      setIsLoading(true);
+      setError(null);
+      await login(email, password);
+      router.replace('/(tabs)');
+    } catch (err) {
+      setError((err as Error).message || 'Falha no login. Verifique suas credenciais.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <>
       <StatusBar style="dark" />
       <SafeAreaView style={styles.container}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-          style={styles.keyboardAvoidingView}
-        >
-          <ScrollView contentContainerStyle={styles.scrollContent}>
-
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.flex}>
+          <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
             <View style={styles.header}>
-                <Image
-                    source={require('../../assets/images/logo-mobile-.png')} 
-                    style={styles.logo}
-                />
+              <Image source={require('../../assets/images/logo-mobile-.png')} style={styles.logo} resizeMode="contain" />
               <Text style={styles.title}>Bem-vindo de volta</Text>
-              <Text style={styles.subtitle}>Entre na sua conta</Text>
+              <Text style={styles.subtitle}>Entre na sua conta para continuar</Text>
             </View>
 
             {error && (
@@ -73,62 +62,16 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#151313',
-  },
-  keyboardAvoidingView: {
-    flex: 1,
-  },
-  scrollContent: {
-    flexGrow: 1,
-    padding: 24,
-    justifyContent: 'center',
-  },
-  header: {
-    marginBottom: 32,
-  },
-  title: {
-    fontFamily: 'Inter-Bold',
-    fontSize: 28,
-    color: '#FFFFFF',
-    marginBottom: 8,
-  },
-  subtitle: {
-    fontFamily: 'Inter-Regular',
-    fontSize: 16,
-    color: '#64748B',
-  },
-  errorContainer: {
-    backgroundColor: '#FFDDE0',
-    borderRadius: 8,
-    padding: 12,
-    marginBottom: 16,
-  },
-  errorText: {
-    fontFamily: 'Inter-Regular',
-    color: '#E11D48',
-    fontSize: 14,
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 24,
-  },
-  footerText: {
-    fontFamily: 'Inter-Regular',
-    color: '#FFFFFF',
-    fontSize: 14,
-  },
-  footerLink: {
-    fontFamily: 'Inter-Medium',
-    color: '#3B82F6',
-    fontSize: 14,
-  },
-  logo: {
-    width: 260,
-    height: 130,
-    alignSelf: 'center',
-    marginBottom: 25
-  }
+  container: { flex: 1, backgroundColor: colors.bg },
+  flex: { flex: 1 },
+  scrollContent: { flexGrow: 1, padding: 24, justifyContent: 'center' },
+  header: { marginBottom: 28, alignItems: 'center' },
+  logo: { width: 200, height: 110, marginBottom: 12 },
+  title: { fontFamily: font.bold, fontSize: 26, color: colors.slate900, marginBottom: 6 },
+  subtitle: { fontFamily: font.regular, fontSize: 15, color: colors.slate500 },
+  errorContainer: { backgroundColor: colors.red100, borderRadius: radius.sm, padding: 12, marginBottom: 16 },
+  errorText: { fontFamily: font.regular, color: '#991b1b', fontSize: 14 },
+  footer: { flexDirection: 'row', justifyContent: 'center', marginTop: 24 },
+  footerText: { fontFamily: font.regular, color: colors.slate500, fontSize: 14 },
+  footerLink: { fontFamily: font.bold, color: colors.green600, fontSize: 14 },
 });

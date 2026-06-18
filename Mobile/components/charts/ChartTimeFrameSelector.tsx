@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
   },
   activeOption: {
-    backgroundColor: '#EBF5FF',
+    backgroundColor: '#dcfce7',
   },
   activeOptionDark: {
     backgroundColor: '#1E40AF',
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     color: '#64748B',
   },
   activeText: {
-    color: '#3B82F6',
+    color: '#16a34a',
   },
   textDark: {
     color: '#94A3B8',
