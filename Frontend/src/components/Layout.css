@@ -74,25 +74,45 @@
   .sidebar {
     width: 100%;
     height: auto;
-    position: static;
+    position: sticky;
+    top: 0;
+    z-index: 10;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    border-right: none;
+    border-bottom: 1px solid var(--slate-100);
   }
   .brand {
-    padding: 0.25rem 0.5rem;
+    padding: 0;
+    font-size: 1.1rem;
+    flex-shrink: 0;
   }
   .nav {
     flex-direction: row;
-    flex: 1;
+    gap: 0.15rem;
+  }
+  .nav-item {
+    padding: 0.5rem;
   }
   .nav-item span {
     display: none;
   }
   .logout {
     margin-top: 0;
+    flex-shrink: 0;
   }
   .content {
     padding: 1.25rem;
+  }
+}
+
+/* Telas bem estreitas: esconde o texto da marca, mantém só o ícone. */
+@media (max-width: 420px) {
+  .brand span {
+    display: none;
   }
 }
