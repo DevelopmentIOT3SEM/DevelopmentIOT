@@ -57,9 +57,13 @@ API, que persiste em PostgreSQL. Web, Mobile e Chatbot consomem a API.
 - [ ] Validar e fazer merge na `main`
 
 ### Fase 2 — Segurança & configuração
-- [ ] Tirar segredos do `appsettings.json` → variáveis de ambiente / `.env.example`
-- [ ] Centralizar URL da API (mobile e web) por configuração
-- [ ] Revisar CORS e validação de input (ver relatório do backend)
+- [x] **Backend:** segredos → env/User Secrets + `.env.example` + validação no startup
+- [x] **Backend:** bugs corrigidos (registro 500, rampa, sensor case-insensitive)
+- [x] **Backend:** acesso a dados padronizado (DapperContext); migrado p/ .NET 8 LTS
+- [x] **Backend:** `[Authorize]` em DELETE/criação; CORS configurável; Swagger Bearer; health check; ProblemDetails global
+- [ ] Centralizar URL da API no **mobile** por configuração (env)
+- [ ] Centralizar URL da API na **web** (na migração p/ Vite)
+- [ ] Remover **WeatherAPI key** exposta do front (usuário vai revogar)
 
 ### Fase 3 — Funcionar ponta-a-ponta
 - [ ] `docker-compose up` validando API + banco + Node-RED
